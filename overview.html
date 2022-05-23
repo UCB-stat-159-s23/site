@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics 159/259, Spring 2022 Course Summary &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Statistics 159/259: Weekly Plan" href="schedule.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/01-Intro-Jupyter.html">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/West_Coast_HeatWave_Basic.html">
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/climate-data.html">
+   Climate, oceans and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/environments/conda-envs.html">
+   A quick guide to conda environments on our JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/matplotlib_beyond_basics.html">
+   Matplotlib: Beyond the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/documentation.html">
+   Documentation, JupyterBook and Github Pages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/data-serialization.html">
+   Data Serialization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab01/lab01.html">
+   Lab Session 1 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab04/lab04.html">
+   Lab Session 4: Version control with Jupytext
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab05/lab05.html">
+   Lab Session 5: Climate data and xarray
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab06/lab06.html">
+   Lab Session 6: Automation and Make
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab07/lab07.html">
+   Lab Session 7: Local Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab08/lab08.html">
+   Lab Session 8: Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab09/lab09.html">
+   Lab Session 9: Jupyter Book
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/overview.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-resources">
+   Key Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#textbook-and-supporting-materials">
+   Textbook and supporting materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-bibliography">
+   Other bibliography
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plos-ten-simple-rules">
+     PLOS Ten Simple Rules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#national-academies-reports">
+     National Academies Reports
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-general-references-on-reproduciblity-and-open-science">
+     Other general references on reproduciblity and open science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility-and-earth-climate-science">
+     Reproducibility and earth/climate science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terms-related-to-reproducibility">
+     Terms related to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility-and-the-philosophy-of-science">
+     Reproducibility and the Philosophy of Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-reproducibility">
+     Obstacles to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-replicability">
+     Obstacles to replicability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-good-science-and-applied-statistics">
+     Obstacles to good science and applied Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weaponizing-reproducible-open-science">
+     Weaponizing reproducible/open science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-ideas-tools-from-software-engineering-that-can-help-improve-science">
+     Key ideas/tools from software engineering that can help improve science
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistics 159/259, Spring 2022 Course Summary</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-resources">
+   Key Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#textbook-and-supporting-materials">
+   Textbook and supporting materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-bibliography">
+   Other bibliography
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plos-ten-simple-rules">
+     PLOS Ten Simple Rules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#national-academies-reports">
+     National Academies Reports
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-general-references-on-reproduciblity-and-open-science">
+     Other general references on reproduciblity and open science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility-and-earth-climate-science">
+     Reproducibility and earth/climate science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terms-related-to-reproducibility">
+     Terms related to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility-and-the-philosophy-of-science">
+     Reproducibility and the Philosophy of Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-reproducibility">
+     Obstacles to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-replicability">
+     Obstacles to replicability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-good-science-and-applied-statistics">
+     Obstacles to good science and applied Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weaponizing-reproducible-open-science">
+     Weaponizing reproducible/open science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-ideas-tools-from-software-engineering-that-can-help-improve-science">
+     Key ideas/tools from software engineering that can help improve science
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="statistics-159-259-spring-2022-course-summary">
+<h1>Statistics 159/259, Spring 2022 Course Summary<a class="headerlink" href="#statistics-159-259-spring-2022-course-summary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This course teaches “the why and how” of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment. We will interleave practical topics in software engineering and statistical computing with broader discussions on elements of the philosophy of science and the foundations of statistics.</p>
+<p>More details can be found <a class="reference internal" href="syllabus.html"><span class="doc std std-doc">in the syllabus</span></a>.</p>
+</div>
+<div class="section" id="key-resources">
+<h2>Key Resources<a class="headerlink" href="#key-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Communication: <a class="reference external" href="https://piazza.com/class/kykqjx3dgbt406">class Piazza</a>.</p></li>
+<li><p>Lectures will be recorded and posted in the Kaltura system (visible via bCourses), but attendance is mandatory. (Much of the pedagogical value of the class is in participating in discussions and code reviews).</p></li>
+<li><p>Course readings that are not easy to find free on the web or through the UC Berkeley Library will be posted to bCourses.</p></li>
+<li><p>Computing resources</p>
+<ul>
+<li><p>We will use Jupyter notebooks. We will start with hosted notebooks on our <a class="reference external" href="https://stat159.datahub.berkeley.edu">Stat 159 JupyterHub</a>. Later in the term, we will discuss installing Jupyter on your own device. The JupyterHub server will have all the packages you need pre-installed.</p></li>
+<li><p>The sources for class notes and most other materials are available <a class="reference external" href="https://github.com/UCB-stat-159-s22/site">on github</a>, with a rendered version <a class="reference external" href="https://ucb-stat-159-s22.github.io/site">here</a>.</p></li>
+<li><p>Assignments should be submitted by pull request to your private repositories using the <a class="reference external" href="https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom">GitHub Clasroom</a>.</p></li>
+<li><p>Whenever you need to work with GitHub, remember to activate GitHub authentication from the JupyterHub, by running the command <code class="docutils literal notranslate"><span class="pre">github-app-user-auth</span></code> at a terminal and following the instructions. If once authenticated you can’t push to a given repo, it may be that you forgot to add that repo/org to your setup of the authentication app, go <a class="reference external" href="https://github.com/apps/stat159-berkeley-datahub-access">here</a> to configure the app’s permissions.</p></li>
+</ul>
+</li>
+<li><p><strong>A note on the Berkeley Library EZProxy:</strong> Some of the resources listed here are scientific articles available only behind journal paywalls. If you haven’t already, you should configure your web browser to use the campus <a class="reference external" href="https://guides.lib.berkeley.edu/ezproxy">library EZProxy</a> so you can access them even if you are working from an off-campus network.</p></li>
+</ul>
+</div>
+<div class="section" id="textbook-and-supporting-materials">
+<h2>Textbook and supporting materials<a class="headerlink" href="#textbook-and-supporting-materials" title="Permalink to this headline">¶</a></h2>
+<p>While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: <a class="reference external" href="https://merely-useful.tech/py-rse">Research software engineering in Python</a>.  We will complement it with these other scientific python resources:</p>
+<ul class="simple">
+<li><p>Katy Huff’s - <a class="reference external" href="http://physics.codes/">Effective Computation in Physics</a>.</p></li>
+<li><p>Jake van der Plas’ <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython">A Whirlwind Tour of Python</a>.</p></li>
+<li><p>Stefan van der Walt’s <a class="reference external" href="https://github.com/stefanv/ds_intro">Python Survival Pack</a> and <a class="reference external" href="https://github.com/elegant-scipy/elegant-scipy">Elegant SciPy Book</a>. The <a class="reference external" href="https://github.com/elegant-scipy/elegant-scipy">full book</a> and all the <a class="reference external" href="https://github.com/elegant-scipy/notebooks">notebooks</a> are available.</p></li>
+<li><p>Josh Bloom’s <a class="reference external" href="https://github.com/profjsb/python-seminar">Python for Data Science Berkeley Course</a>.</p></li>
+<li><p><a class="reference external" href="https://www.scipy-lectures.org/intro/">Lecture notes on scientific python</a></p></li>
+<li><p><a class="reference external" href="https://github.com/TiesdeKok/LearnPythonforResearch">Getting started with Python for research</a>, a gentle introduction to Python in data-intensive research.</p></li>
+<li><p><a class="reference external" href="http://proquest.safaribooksonline.com/book/programming/python/9781491957653">Python for Data Analysis, 2nd Edition</a>, by  Wes McKinney, creator of Pandas. <a class="reference external" href="https://github.com/wesm/pydata-book">Companion Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://github.com/TomAugspurger/effective-pandas">Effective Pandas</a>, a book by Tom Augspurger, core Pandas developer.</p></li>
+<li><p>And we’ll use these Earth Science resources for our domain focus:</p>
+<ul>
+<li><p>Ryan Abernathey’s <a class="reference external" href="https://github.com/rabernat/research_computing">research computing for Earth Sciences</a>.</p></li>
+<li><p>Brain Rose’s <a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook/home.html">Climate Laboratory</a>.</p></li>
+<li><p>Lisa Tauxe’s <a class="reference external" href="https://nbviewer.org/github/ltauxe/Python-for-Earth-Science-Students/blob/master/_TableOfContents.ipynb">Python for Earth Science Students</a></p></li>
+</ul>
+</li>
+<li><p>Git and git workflows</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/berkeley-scf/tutorial-git-basics/blob/master/git-intro.md">Introduction to Git</a>.</p></li>
+<li><p><a class="reference external" href="http://gitimmersion.com">Immersion course</a></p></li>
+<li><p><a class="reference external" href="https://book.git-scm.com">git-scm guide</a></p></li>
+<li><p><a class="reference external" href="http://statlab.github.io/permute/dev/index.html">Statlab development git workflow</a></p></li>
+</ul>
+</li>
+<li><p>Continuous integration</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/actions">GitHub actions</a></p></li>
+</ul>
+</li>
+<li><p>Miscellaneous computing tutorials</p>
+<ul>
+<li><p><a class="reference external" href="http://statistics.berkeley.edu/computing/training/tutorials">Berkeley Statistical Computing Facility tutorials</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="other-bibliography">
+<h2>Other bibliography<a class="headerlink" href="#other-bibliography" title="Permalink to this headline">¶</a></h2>
+<p>Above are a list of books and websites mostly focusing on computational skills, and this is a list of all the bibliography we’ll refer to in the course. Some of these will become assigned readings, while others are available for your reference.</p>
+<div class="section" id="plos-ten-simple-rules">
+<h3>PLOS Ten Simple Rules<a class="headerlink" href="#plos-ten-simple-rules" title="Permalink to this headline">¶</a></h3>
+<p>The PLOS <a class="reference external" href="https://collections.plos.org/collection/ten-simple-rules/">Ten Simple Rules</a> collection has many short, valuable papers full of relevant, practical advice in this space. A few that stand out, though many (if not most) are worth your time, are <em>“Ten simple rules for …”</em>:</p>
+<p><strong>Computational research</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1005412">making research software more robust</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1007007">writing and sharing computational analyses in Jupyter Notebooks</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1003506">Effective Computational Research</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1003285">Reproducible Computational Research</a>.</p></li>
+</ul>
+<p><strong>Open Source Software and Open Science</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1004947">Taking Advantage of Git and GitHub</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1002802">the Open Development of Scientific Software</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1006561">documenting scientific software</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1007296">helping newcomers become contributors to open projects</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1003244">Cultivating Open Science and Collaborative R&amp;D</a>.</p></li>
+</ul>
+<p><strong>Data Management</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1003542">the Care and Feeding of Scientific Data</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1005097">Digital Data Storage</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1005399">responsible big data research</a>.</p></li>
+</ul>
+<p><strong>The art of research</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1004961">Effective Statistical Practice</a>.</p></li>
+<li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.0030213">Doing Your Best Research, According to Hamming</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="national-academies-reports">
+<h3>National Academies Reports<a class="headerlink" href="#national-academies-reports" title="Permalink to this headline">¶</a></h3>
+<p>These are key reports produced by the National Academies of Science, Engineering and Medicine. They were created by teams of world experts in the field, and inform policy in multiple areas:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nationalacademies.org/our-work/reproducibility-and-replicability-in-science">Reproducibility and Replicability in Science, 2018</a>. The previous link contains multiple resources on this topic, including overview videos, from a large effort comissioned by the National Academies of Science, Engineering and Medicine. For reading, <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK547537">this NCBI link has both HTML and PDF download options</a>.</p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK350344">Statistical Challenges in Assessing and Fostering the Reproducibility of Scientific Results, 2016</a>.</p></li>
+<li><p><a class="reference external" href="https://www.nap.edu/catalog/25217/open-source-software-policy-options-for-nasa-earth-and-space-sciences">Open Source Software Policy Options for NASA Earth and Space Sciences, 2018</a>.</p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK525417">Open Science by Design, Realizing a Vision for 21st Century Research (2018)</a>.</p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK575034">Developing a Toolkit for Fostering Open Science Practices, 2021</a></p></li>
+</ul>
+</div>
+<div class="section" id="other-general-references-on-reproduciblity-and-open-science">
+<h3>Other general references on reproduciblity and open science<a class="headerlink" href="#other-general-references-on-reproduciblity-and-open-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://berkeley-stat159-f17.github.io/stat159-f17/_static/ref/millman-perez.pdf">Millman and Pérez 2014, Developing open source scientific practice</a>.</p></li>
+<li><p>Keith Baggerly and the Potti &amp; Nevins Cancer Scandal:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=W5sZTNPMQRM">2012, 60 minutes segment about Duke Clinical Trials</a> (also <a class="reference external" href="https://vimeo.com/165142857">available on vimeo</a>).</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=8QJfNS7XXwA">2018, The Importance of Reproducible Research in High-Throughput Biology, talk at UW</a>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://lorenabarba.com/blog/barbagroup-reproducibility-syllabus">Barba 2016, Top-10 Readings in Reproducibility</a>, a syllabus on reproducible research by Prof. Lorena Barba. Of particular interest from Barba is the <a class="reference external" href="https://lorenabarba.com/gallery/reproducibility-pi-manifesto/">Barba 2012, Reproducibility PI Manifesto</a>, with <a class="reference external" href="https://figshare.com/articles/presentation/Reproducibility_PI_Manifesto/104539/1">slides available here</a>, as well as</p>
+<ul>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1802.03311">Barba 2018, Terminologies for Reproducible Research</a></p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/8012284">Mesnard and Barba 2017, Reproducible and Replicable Computational Fluid Dynamics: It’s Harder Than You Think</a>.</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/8842605">Mesnard and Barba 2020, Reproducible Workflow on a Public Cloud for Computational Fluid Dynamics</a>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1210.0530">Wilson et al, 2012 - Best Practices for Scientific Computing</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1301.7064">Turk 2013, How to Scale a Code in the Human Dimension</a></p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9387490">Granger and Pérez 2021, Jupyter: Thinking and Storytelling With Code and Data</a>.</p></li>
+<li><p><a class="reference external" href="https://ideas.repec.org/a/eee/jbrese/v88y2018icp428-436.html">Vicente-Saenz et al, 2018, Open Science now: A systematic literature review for an integrated definition</a></p></li>
+<li><p><a class="reference external" href="https://ieeexplore-ieee-org.libproxy.berkeley.edu/document/5719578">The Limits of Reproducibility in Numerical Simulation</a>.</p></li>
+<li><p><a class="reference external" href="http://www.practicereproducibleresearch.org">The Practice of Reproducible Research, Case Studies and Lessons from the Data-Intensive Sciences</a>. An online (and printed) book produced by Berkeley researchers.  It includes the excellent <a class="reference external" href="http://www.practicereproducibleresearch.org/case-studies/omesnard.html">Achieving Full Replication of our Own Published CFD Results, with Four Different Codes</a>.</p></li>
+<li><p><a class="reference external" href="https://royalsocietypublishing.org/toc/rsta/2021/379/2197">Reliability and reproducibility in computational science: implementing verification, validation and uncertainty quantification in silico</a>. A special issue of <em>Philosophical Transactions of the Royal Society A</em> dedicated to this topic, with multiple valuable articles, of which the following are just a few:</p>
+<ul>
+<li><p><a class="reference external" href="https://royalsocietypublishing.org/doi/10.1098/rsta.2020.0068">Clementi and Barba 2021, Reproducible validation and replication studies in nanoscale physics</a>.</p></li>
+<li><p><a class="reference external" href="https://royalsocietypublishing.org/doi/10.1098/rsta.2020.0210">Gundersen 2021, The fundamental principles of reproducibility</a>.</p></li>
+<li><p><a class="reference external" href="https://royalsocietypublishing.org/doi/10.1098/rsta.2020.0069">Krafczyk et al. 2021, Learning from reproducing computational results: introducing three principles and the Reproduction Package</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="reproducibility-and-earth-climate-science">
+<h3>Reproducibility and earth/climate science<a class="headerlink" href="#reproducibility-and-earth-climate-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>One of the National Academies reports above commissioned a paper by Bush et al. (2020) titled <a class="reference external" href="https://hdsr.mitpress.mit.edu/pub/dijwtzza/release/1">Perspectives on Data Reproducibility and Replicability in Paleoclimate and Climate Science</a>.</p></li>
+<li><p><a class="reference external" href="https://eos.org/opinions/improving-reproducibility-in-earth-science-research">Liu et al. 2019, improving reproducibility in Earth science research</a>.</p></li>
+<li><p><a class="reference external" href="https://www.nature.com/articles/s43247-020-00085-4">Geyer et al. 2021, Limits of reproducibility and hydrodynamic noise in atmospheric regional modelling</a>.</p></li>
+<li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12">Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science</a>.</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2102.08791">Hoffimann et al. 2021, Geostatistical Learning: Challenges and Opportunities</a></p></li>
+<li><p><a class="reference external" href="https://www.essoar.org/doi/10.1002/essoar.10506344.2">Gentemann et al. 2021, Science Storms the Cloud</a>.</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9354557">Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="terms-related-to-reproducibility">
+<h3>Terms related to reproducibility<a class="headerlink" href="#terms-related-to-reproducibility" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>reproducibility</p></li>
+<li><p>replicability</p></li>
+<li><p>repeatability</p></li>
+<li><p>computational reproducibility</p></li>
+<li><p>“preproducibility”</p></li>
+</ul>
+</div>
+<div class="section" id="reproducibility-and-the-philosophy-of-science">
+<h3>Reproducibility and the Philosophy of Science<a class="headerlink" href="#reproducibility-and-the-philosophy-of-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>the role of replication in science</p></li>
+<li><p>“virtual witnessing” and the role(s) of scientific publishing</p></li>
+</ul>
+</div>
+<div class="section" id="obstacles-to-reproducibility">
+<h3>Obstacles to reproducibility<a class="headerlink" href="#obstacles-to-reproducibility" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>data availability</p>
+<ul>
+<li><p>data</p></li>
+<li><p>data format</p></li>
+<li><p>data dictionary</p></li>
+<li><p>data cleaning and munging</p></li>
+<li><p>data pre-processing</p></li>
+</ul>
+</li>
+<li><p>reliance on proprietary software</p></li>
+<li><p>analysis</p>
+<ul>
+<li><p>breadcrumbs / description</p></li>
+<li><p>actual code</p></li>
+<li><p>description and what was done are often different</p></li>
+<li><p>scripting analyses is key–but not enough</p></li>
+<li><p>software versions, libraries, compilers, environments, hardware can matter</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="obstacles-to-replicability">
+<h3>Obstacles to replicability<a class="headerlink" href="#obstacles-to-replicability" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>lack of preproducibility: what was done?</p></li>
+<li><p>“researcher degrees of freedom”</p>
+<ul>
+<li><p>what was considered but not tried, or tried and discarded?</p></li>
+<li><p>choice of hypotheses, P-hacking</p></li>
+<li><p>choice of data subsets</p></li>
+<li><p>choice of transformations</p></li>
+<li><p>choice of models</p></li>
+<li><p>choice of estimators</p>
+<ul>
+<li><p>if Bayesian, choice of prior</p></li>
+<li><p>if frequentist, what method and why?</p></li>
+<li><p>constraints?</p></li>
+</ul>
+</li>
+<li><p>choice of measures of uncertainty</p>
+<ul>
+<li><p>nonparametric / model-based / parametric / asymptotic</p></li>
+<li><p>local / global</p></li>
+<li><p>selective inference, P-hacking, cherry-picking, “garden of forking paths”</p></li>
+<li><p>hypothesis tests: what is the full null? What does it have to do with reality?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>“file-drawer effect”</p>
+<ul>
+<li><p>small <span class="math notranslate nohighlight">\(n\)</span> studies</p></li>
+</ul>
+</li>
+<li><p>ignoring multiplicity &amp; multiple testing (including selective inference)</p></li>
+<li><p>intrinsic variability</p></li>
+<li><p>sensitivity to “influential” observations</p></li>
+<li><p>appropriate level of abstraction</p></li>
+</ul>
+</div>
+<div class="section" id="obstacles-to-good-science-and-applied-statistics">
+<h3>Obstacles to good science and applied Statistics<a class="headerlink" href="#obstacles-to-good-science-and-applied-statistics" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>confirmation bias</p></li>
+<li><p>Foundational issues; misinterpretations of probability and uncertainty</p>
+<ul>
+<li><p>Interpretation of probability</p>
+<ul>
+<li><p>prior probabilities</p></li>
+</ul>
+</li>
+<li><p>Types of uncertainty</p>
+<ul>
+<li><p>Epistemic and aleatory uncertainty</p></li>
+<li><p>constraints versus priors</p></li>
+</ul>
+</li>
+<li><p>Bayesian and frequentist measures of uncertainty</p></li>
+<li><p>Duality between minimax and Bayes estimation</p></li>
+<li><p>models versus response schedules</p></li>
+</ul>
+</li>
+<li><p>model mania</p>
+<ul>
+<li><p>correlation (even really strong correlation) is not causation</p></li>
+<li><p>fit does not imply correctness</p></li>
+<li><p>familiarity does not imply appropriateness (Fallacies do not cease to be fallacies because they become fashions. —G.K. Chesterton)</p></li>
+<li><p>Statistical practice as superstition</p></li>
+</ul>
+</li>
+<li><p>ritualization of Statistics, cargo-cult science</p></li>
+<li><p>bad incentive structure in academia</p></li>
+</ul>
+</div>
+<div class="section" id="weaponizing-reproducible-open-science">
+<h3>Weaponizing reproducible/open science<a class="headerlink" href="#weaponizing-reproducible-open-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>https://int.nyt.com/data/documenttools/transparency-rule/d1fb06c8db2b3d4a/full.pdf</p></li>
+<li><p>https://www.nytimes.com/2021/01/04/climate/trump-epa-science.html</p></li>
+</ul>
+</div>
+<div class="section" id="key-ideas-tools-from-software-engineering-that-can-help-improve-science">
+<h3>Key ideas/tools from software engineering that can help improve science<a class="headerlink" href="#key-ideas-tools-from-software-engineering-that-can-help-improve-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>revision/version control</p></li>
+<li><p>documentation, documentation, documentation</p></li>
+<li><p>modularity and abstraction</p></li>
+<li><p>scripted analyses and automation</p></li>
+<li><p>unit tests, regression tests, coverage tests, continuous integration</p></li>
+<li><p>code review</p></li>
+<li><p>pair programming</p></li>
+<li><p>consistency: APIs, calling signatures, object-oriented code</p></li>
+<li><p>separating data, computation, presentation</p></li>
+</ul>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="schedule.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Statistics 159/259: Weekly Plan</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez and Facundo Sapienza<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
