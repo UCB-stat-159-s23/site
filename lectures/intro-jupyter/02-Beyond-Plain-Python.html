@@ -1373,7 +1373,7 @@ The following magic functions are currently available:
 <p>It’s best practice to use the operator in all cases, since it makes it more explicit when you are calling the shell</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="o">!</span>ls 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="o">!</span>ls<span class="w"> </span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;files this directory:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
 </pre></div>
@@ -1389,14 +1389,14 @@ The following magic functions are currently available:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$files</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$files</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="o">{</span>files<span class="o">[</span><span class="m">0</span><span class="o">]</span>.upper<span class="o">()}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="o">{</span>files<span class="o">[</span><span class="m">0</span><span class="o">]</span>.upper<span class="o">()}</span>
 </pre></div>
 </div>
 </div>
@@ -1407,7 +1407,7 @@ The following magic functions are currently available:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ipynb&#39;</span><span class="p">):</span>
-        <span class="o">!</span><span class="nb">echo</span> <span class="o">{</span><span class="s2">&quot;%02d&quot;</span> % i<span class="o">}</span> - <span class="s2">&quot;{os.path.splitext(f)[0]}&quot;</span>
+        <span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;%02d&quot;</span><span class="w"> </span>%<span class="w"> </span>i<span class="o">}</span><span class="w"> </span>-<span class="w"> </span><span class="s2">&quot;{os.path.splitext(f)[0]}&quot;</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1486,7 +1486,7 @@ df -h
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat test.txt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>test.txt
 </pre></div>
 </div>
 </div>
@@ -1667,8 +1667,8 @@ df -h
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%perl</span>
-<span class="nv">@months</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;July&quot;</span><span class="p">,</span> <span class="s">&quot;August&quot;</span><span class="p">,</span> <span class="s">&quot;September&quot;</span><span class="p">);</span>
-<span class="k">print</span> <span class="nv">$months</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nv">@months</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;July&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;August&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;September&quot;</span><span class="p">);</span>
+<span class="k">print</span><span class="w"> </span><span class="nv">$months</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>

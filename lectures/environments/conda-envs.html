@@ -411,7 +411,7 @@
 <div class="section" id="storing-your-environments-in-a-persistent-location">
 <h2>Storing your environments in a persistent location<a class="headerlink" href="#storing-your-environments-in-a-persistent-location" title="Permalink to this headline">¶</a></h2>
 <p>The first step to create new environments you can access later is to put them in a persistent location. You should create a folder for all your new environments, I recommend using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nv">$HOME</span>/envs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nv">$HOME</span>/envs
 </pre></div>
 </div>
 <p>so that from now on, all new environments you create will live in <code class="docutils literal notranslate"><span class="pre">~/envs</span></code>. To tell conda that this is where you want to use your environments, create a file named <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> in your home directory (or edit it if it’s there already)</p>
@@ -429,10 +429,10 @@
 <div class="section" id="creating-a-new-environment-in-that-location">
 <h2>Creating a new environment in that location<a class="headerlink" href="#creating-a-new-environment-in-that-location" title="Permalink to this headline">¶</a></h2>
 <p>Next, you will define the packages you want to install in your environment by using a file called <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> such as this one (you can find more details in the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually">documentation</a>):</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytestenv</span><span class="w"></span>
-<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.9</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tqdm=4.62.3</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytestenv</span>
+<span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.9</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tqdm=4.62.3</span>
 </pre></div>
 </div>
 <p>This file defines an environment with only Python 3.9 and the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> package installed in it. Once you have this file, you can create this environment with the command:</p>
@@ -440,12 +440,12 @@
 </pre></div>
 </div>
 <p>After it runs through the installation process, you should be able to see it listed along with the system-wide environments with the command <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">env</span> <span class="pre">list</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> <span class="o">(</span>main<span class="o">)</span>jupyter-fernando-2eperez<span class="o">[</span>environments<span class="o">]</span>&gt; mamba env list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span><span class="w"> </span><span class="o">(</span>main<span class="o">)</span>jupyter-fernando-2eperez<span class="o">[</span>environments<span class="o">]</span>&gt;<span class="w"> </span>mamba<span class="w"> </span>env<span class="w"> </span>list
 <span class="c1"># conda environments:</span>
 <span class="c1">#</span>
-mytestenv                /home/jovyan/envs/mytestenv
-base                  *  /srv/conda
-notebook                 /srv/conda/envs/notebook
+mytestenv<span class="w">                </span>/home/jovyan/envs/mytestenv
+base<span class="w">                  </span>*<span class="w">  </span>/srv/conda
+notebook<span class="w">                 </span>/srv/conda/envs/notebook
 </pre></div>
 </div>
 <p>You can now use it by typing  <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">mytestenv</span></code>, and stop using it with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>.</p>
@@ -459,7 +459,7 @@ notebook                 /srv/conda/envs/notebook
 <p>While you can then install new packages in the environment at the command line by using <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span> <span class="pre">&lt;package-name&gt;</span></code>, you should always record which packages you mean to install in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file so you can reproduce later the same environment or share it with colleagues.</p>
 <p>For your homework projects, the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file should obviously go into the git repository, so that every team member (and your instructors) can also create the environment in the same fashion.</p>
 <p>If you have new packages listed in your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file (because you edited it or changes were made to it by a colleague and you got these changes over git, for example), you can apply these updates with this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba env update --file environment.yml --prune
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--file<span class="w"> </span>environment.yml<span class="w"> </span>--prune
 </pre></div>
 </div>
 <p>(the <code class="docutils literal notranslate"><span class="pre">--prune</span></code> option removes packages that may have been deleted from the file, if any, and is not strictly necessary though recommended to keep your environment in sync with the specification in the file).</p>
@@ -468,11 +468,11 @@ notebook                 /srv/conda/envs/notebook
 <h2>Using an environment in your notebooks<a class="headerlink" href="#using-an-environment-in-your-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>So far, our simple <code class="docutils literal notranslate"><span class="pre">mytestenv</span></code> environment can only be used at the command-line, but it will not be available for your notebooks. For that to work, you need to complete two additional steps.</p>
 <p>First, you must install in this environment the <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> package. The following <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file would give you a kernel you can use in the Hub (albeit with only the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> package, obviously):</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytestenv</span><span class="w"></span>
-<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipykernel=6.7.0</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.9</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tqdm=4.62.3</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytestenv</span>
+<span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipykernel=6.7.0</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.9</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tqdm=4.62.3</span>
 </pre></div>
 </div>
 <p>Second, you need to let Jupyter know that you want to use this environment’s kernel, by installing the environment’s ipykernel into Jupyter:</p>

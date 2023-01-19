@@ -954,12 +954,12 @@ information stored as computer files.</strong>”</p>
 <div class="section" id="first-things-first-git-must-be-configured-before-first-use">
 <h2>First things first: git must be configured before first use<a class="headerlink" href="#first-things-first-git-must-be-configured-before-first-use" title="Permalink to this headline">¶</a></h2>
 <p>The minimal amount of configuration for git to work without pestering you is to tell it who you are. You should run a version of these commands in your shell:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;Fernando Perez&quot;</span>
-git config --global user.email <span class="s2">&quot;Fernando.Perez@berkeley.edu&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Fernando Perez&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;Fernando.Perez@berkeley.edu&quot;</span>
 </pre></div>
 </div>
 <p>And while we’re at it, we also turn on the use of color, which is very useful</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global color.ui <span class="s2">&quot;auto&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span><span class="s2">&quot;auto&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="convenient-credentials-management">
@@ -968,7 +968,7 @@ git config --global user.email <span class="s2">&quot;Fernando.Perez@berkeley.ed
 <p>For general users, Github offers in its help pages instructions on how to configure the credentials helper for <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Mac OSX</a>, <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Windows</a> and <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux">Linux</a>.</p>
 <p>But in this document we will focus on configuring the <a class="reference external" href="https://github.com/yuvipanda/github-app-user-auth">github app for JupyterHub</a> developed by Berkeley’s Yuvi Panda. Our JupyterHub already has this app pre-installed, which makes it very convenient to push and pull securely from selected repositories.</p>
 <p>You will need to run this command, which adds the credentials information to the file <code class="docutils literal notranslate"><span class="pre">~/.gitconfig.local</span></code>, which we load from <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> to store local information that may be different across systems (since we’ll be managing the global <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> file through a fairly generic public git repository):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config -f <span class="nv">$HOME</span>/.gitconfig.local credential.helper <span class="s2">&quot;store --file=/tmp/github-app-git-credentials&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>-f<span class="w"> </span><span class="nv">$HOME</span>/.gitconfig.local<span class="w"> </span>credential.helper<span class="w"> </span><span class="s2">&quot;store --file=/tmp/github-app-git-credentials&quot;</span>
 </pre></div>
 </div>
 <p>And then, follow these steps, which you’ll need to do again each time you log into the Hub and want to push/pull to/from GitHub:</p>

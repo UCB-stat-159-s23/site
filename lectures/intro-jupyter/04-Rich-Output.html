@@ -620,7 +620,7 @@
 <span class="g g-Whitespace">   </span><span class="mi">1348</span> <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
 
 <span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:1285,</span> in <span class="ni">HTTPConnection.request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1284</span> <span class="sd">&quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1284</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;</span>
 <span class="ne">-&gt; </span><span class="mi">1285</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="p">)</span>
 
 <span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:1331,</span> in <span class="ni">HTTPConnection._send_request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
@@ -702,7 +702,7 @@
 <span class="g g-Whitespace">    </span><span class="mi">328</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_data</span><span class="p">()</span>
 
 <span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/display.py:987,</span> in <span class="ni">Image.reload</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">985</span> <span class="sd">&quot;&quot;&quot;Reload the raw data from file or URL.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">985</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Reload the raw data from file or URL.&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">986</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">987</span>     <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">988</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">retina</span><span class="p">:</span>
@@ -981,7 +981,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%javascript</span>
 
-<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1011,7 +1011,7 @@ alert("hi");
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span>
-<span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\begin</span><span class="si">{eqnarray}</span><span class="s2"></span>
+<span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\begin</span><span class="si">{eqnarray}</span>
 <span class="s2">\nabla \times \vec{\mathbf</span><span class="si">{B}</span><span class="s2">} -\, \frac1c\, \frac{\partial\vec{\mathbf</span><span class="si">{E}</span><span class="s2">}}{\partial t} &amp; = \frac{4\pi}</span><span class="si">{c}</span><span class="s2">\vec{\mathbf</span><span class="si">{j}</span><span class="s2">} \\</span>
 <span class="s2">\nabla \cdot \vec{\mathbf</span><span class="si">{E}</span><span class="s2">} &amp; = 4 \pi \rho \\</span>
 <span class="s2">\nabla \times \vec{\mathbf</span><span class="si">{E}</span><span class="s2">}\, +\, \frac1c\, \frac{\partial\vec{\mathbf</span><span class="si">{B}</span><span class="s2">}}{\partial t} &amp; = \vec{\mathbf</span><span class="si">{0}</span><span class="s2">} \\</span>

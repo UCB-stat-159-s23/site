@@ -344,12 +344,12 @@
 <li><p>Getting this to work on the hub?</p></li>
 </ul>
 <p>We need to run sphinx manually. These are the key commands for your reference:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book config sphinx .
-sphinx-build  . _build/html -D <span class="nv">html_baseurl</span><span class="o">=</span><span class="si">${</span><span class="nv">JUPYTERHUB_SERVICE_PREFIX</span><span class="si">}</span>/proxy/absolute/8000
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>config<span class="w"> </span>sphinx<span class="w"> </span>.
+sphinx-build<span class="w">  </span>.<span class="w"> </span>_build/html<span class="w"> </span>-D<span class="w"> </span><span class="nv">html_baseurl</span><span class="o">=</span><span class="si">${</span><span class="nv">JUPYTERHUB_SERVICE_PREFIX</span><span class="si">}</span>/proxy/absolute/8000
 </pre></div>
 </div>
 <p>Then we can view the code with (in another terminal), going to the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder and running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m http.server
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>http.server
 </pre></div>
 </div>
 <p>and then heading to this URL:</p>
