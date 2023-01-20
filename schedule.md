@@ -4,7 +4,7 @@
 
 Below is our current plan for the course. **This is not a contract:** it is a _plan_, and it may change substantially as the semester unfolds, especially given extra uncertainties due to COVID-19.
 
-The table of contents on the left pane has links to lectures and labs. The following are live executable links that use the [nbgitpuller](https://jupyterhub.github.io/nbgitpuller) service to give you a current copy from git of the given content, ready to be run in the Spring 2022 Berkeley hub. You can use these links in order to run the content conveniently without manual git work.
+The table of contents on the left pane has links to lectures and labs. The following are live executable links that use the [nbgitpuller](https://jupyterhub.github.io/nbgitpuller) service to give you a current copy from git of the given content, ready to be run in the Spring 2023 Berkeley hub. You can use these links in order to run the content conveniently without manual git work.
 
 
 ## Lectures
@@ -27,21 +27,7 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 
 ## Live links for labs on the Berkeley DataHub
 
-* [Lab 01](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab01).
-
-* [Lab 02](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab02).
-
-* [Lab 03](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab03%2Flab03.ipynb&branch=main).
-
-* [Lab 04](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab04%2Flab04.ipynb&branch=main).
-
-* [Lab 05](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab05%2Flab05.ipynb&branch=main).
-
-* [Lab 06](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab06%2Flab06.ipynb&branch=main). 
-
-* [Lab 07](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab07%2Flab07.ipynb&branch=main).
-
-* [Lab 08](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab08%2Flab08.ipynb&branch=main).
+* Jan 20. [Lab 01](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s23%2Fsite.git&urlpath=lab%2Ftree%2Fsite.git%2Flab%2Flab00%2Flab00.ipynb&branch=main).
 
 
 ## Assigned Readings

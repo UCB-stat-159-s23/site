@@ -1,4 +1,4 @@
-# Statistics 159/259, Spring 2022 Course Summary
+# Statistics 159/259, Spring 2023 Course Summary
 
 ## Overview
 
