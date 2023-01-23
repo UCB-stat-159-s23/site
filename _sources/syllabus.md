@@ -105,7 +105,7 @@ to your private repository within the Berkeley [GitHub organization for the clas
 
  - These will be posted on the course website under Assigned Readings. For each paper/reading in the weekly list, you should submit a summary paragraph and idea highlight paragraph. You will submit your reading assignments in bCourses.
 
- - Reading assignments will be due every Monday at 9pm. No later reading assignments will be accepted unless there is a medical exception. In that case, you will need to submit in Piazza a private note to the instructors with a medical proof showing that you are unable to complete the assignment. 
+ - Reading assignments will be due every Wednesday at 9pm (Exception: the first one will be due _Thursday Jan 26_). No later reading assignments will be accepted unless there is a medical exception. In that case, you will need to submit in Ed a private note to the instructors with a medical proof showing that you are unable to complete the assignment. 
 
 - You can drop two readings without need of justification. Notice that this applies to INDIVIDUAL readings. For example, if the weekly reading consists of 4 papers, you can drop a maximum of two of them. If you drop two readings in one week, you cannot drop any other one without penalty. 
 
