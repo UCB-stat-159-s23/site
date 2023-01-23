@@ -63,7 +63,7 @@ will be provided, but not all topics required to do the homework will be covered
     - lectures will focus on theory, philosophy of science, foundations of statistics, scientific applications, software engineering, code reviews and group discussion.
     - lab will focus on computing, software tools, workflow, and collaboration
 
-For each assigned reading, you will submit a brief, 2 paragraph report by 21:00 on the Monday it is due. The first paragraph should summarize the reading. The second paragraph should briefly explore something that interested you (e.g., you may wish to focus on one aspect of the paper in more depth, you may wish to discuss something in the reading that you disagree with).  During lecture, we will draw upon your reports for some group discussion.
+For each assigned reading, you will submit a brief, 2 paragraph report by Wednesday at 9pm (Exception: the first one will be due _Thursday Jan 26_). The first paragraph should summarize the reading. The second paragraph should briefly explore something that interested you (e.g., you may wish to focus on one aspect of the paper in more depth, you may wish to discuss something in the reading that you disagree with).  During lecture, we will draw upon your reports for some group discussion.
 
 ### Office hours
 + Perez: Wednesday, 10-11AM, 419 Evans Hall. I will normally also keep an open [Zoom session](https://berkeley.zoom.us/j/91957788039?pwd=WE5UMGdUWGp0bFVUUXFFSS9DblhEUT09Meeting) for those needing to join remotely for Covid or other reasons.
