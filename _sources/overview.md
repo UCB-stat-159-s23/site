@@ -8,7 +8,7 @@ More details can be found [in the syllabus](syllabus).
 
 ## Key Resources
 
-+ Communication: [class Piazza](https://piazza.com/class/kykqjx3dgbt406).
++ Communication: [class Ed forum](https://edstem.org/us/courses/35870/discussion).
 
 + Lectures will be recorded and posted in the Kaltura system (visible via bCourses), but attendance is mandatory. (Much of the pedagogical value of the class is in participating in discussions and code reviews).
 
@@ -16,9 +16,18 @@ More details can be found [in the syllabus](syllabus).
 
 + Computing resources
     - We will use Jupyter notebooks. We will start with hosted notebooks on our [Stat 159 JupyterHub](https://stat159.datahub.berkeley.edu). Later in the term, we will discuss installing Jupyter on your own device. The JupyterHub server will have all the packages you need pre-installed.
-    - The sources for class notes and most other materials are available [on github](https://github.com/UCB-stat-159-s22/site), with a rendered version [here](https://ucb-stat-159-s22.github.io/site).
-    - Assignments should be submitted by pull request to your private repositories using the [GitHub Clasroom](https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom).
-    - Whenever you need to work with GitHub, remember to activate GitHub authentication from the JupyterHub, by running the command `github-app-user-auth` at a terminal and following the instructions. If once authenticated you can't push to a given repo, it may be that you forgot to add that repo/org to your setup of the authentication app, go [here](https://github.com/apps/stat159-berkeley-datahub-access) to configure the app's permissions.
+    - The sources for class notes and most other materials are available [on github](https://github.com/UCB-stat-159-s23/site), with a rendered version [here](https://ucb-stat-159-s23.github.io/site).
+    - Assignments should be submitted by pull request to your private repositories using the [GitHub Clasroom](https://classroom.github.com/classrooms/106109551-ucb-stat-159-s23-classroom).
+    - Whenever you need to work with GitHub, remember to activate GitHub authentication from the JupyterHub. The most convenient way to do this is to keep a notebook with just one cell like this:
+    
+```python
+import gh_scoped_creds
+%ghscopedcreds
+```
+    
+You can also authenticate by running the command `gh-scoped-creds` at a terminal and following the instructions. If once authenticated you can't push to a given repo, it may be that you forgot to add that repo/org to your setup of the authentication app, go [here](https://github.com/apps/stat159-berkeley-datahub-access) to configure the app's permissions.
+
+For your convenience, there is a notebook titled `GHAUTH.ipynb` in the `shared` folder, which does this. You can copy it to your home directory to use it further.
 
 + **A note on the Berkeley Library EZProxy:** Some of the resources listed here are scientific articles available only behind journal paywalls. If you haven't already, you should configure your web browser to use the campus [library EZProxy](https://guides.lib.berkeley.edu/ezproxy) so you can access them even if you are working from an off-campus network.
 
@@ -160,122 +169,3 @@ These are key reports produced by the National Academies of Science, Engineering
 - [Gentemann et al. 2021, Science Storms the Cloud](https://www.essoar.org/doi/10.1002/essoar.10506344.2).
 
 - [Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/document/9354557).
-
-
-## Concepts
-
-### Terms related to reproducibility
-
-+ reproducibility
-
-+ replicability 
-
-+ repeatability
-
-+ computational reproducibility
-
-+ "preproducibility"
-
-### Reproducibility and the Philosophy of Science
-
-+ the role of replication in science
-
-+ "virtual witnessing" and the role(s) of scientific publishing
-
-### Obstacles to reproducibility
-
-+ data availability
-    - data
-    - data format
-    - data dictionary
-    - data cleaning and munging
-    - data pre-processing
-
-+ reliance on proprietary software
-
-+ analysis 
-    - breadcrumbs / description
-    - actual code
-    - description and what was done are often different
-    - scripting analyses is key--but not enough
-    - software versions, libraries, compilers, environments, hardware can matter
-
-### Obstacles to replicability
-
-+ lack of preproducibility: what was done?
-
-+ "researcher degrees of freedom"
-    - what was considered but not tried, or tried and discarded?
-    - choice of hypotheses, P-hacking
-    - choice of data subsets
-    - choice of transformations
-    - choice of models
-    - choice of estimators
-        + if Bayesian, choice of prior
-        + if frequentist, what method and why?
-        + constraints?
-    - choice of measures of uncertainty
-        + nonparametric / model-based / parametric / asymptotic
-        + local / global
-        + selective inference, P-hacking, cherry-picking, "garden of forking paths"
-        + hypothesis tests: what is the full null? What does it have to do with reality?
-        
-+ "file-drawer effect"
-    - small $n$ studies
-    
-+ ignoring multiplicity & multiple testing (including selective inference)
-
-+ intrinsic variability
-
-+ sensitivity to "influential" observations
-
-+ appropriate level of abstraction
-
-### Obstacles to good science and applied Statistics
-
-+ confirmation bias
-    
-+ Foundational issues; misinterpretations of probability and uncertainty
-    - Interpretation of probability
-        + prior probabilities 
-    - Types of uncertainty
-        + Epistemic and aleatory uncertainty
-        + constraints versus priors
-    - Bayesian and frequentist measures of uncertainty
-    - Duality between minimax and Bayes estimation
-    - models versus response schedules
-
-+ model mania
-    - correlation (even really strong correlation) is not causation
-    - fit does not imply correctness
-    - familiarity does not imply appropriateness (Fallacies do not cease to be fallacies because they become fashions. —G.K. Chesterton)
-    - Statistical practice as superstition
-
-+ ritualization of Statistics, cargo-cult science
-
-+ bad incentive structure in academia
-
-### Weaponizing reproducible/open science
-
-+ https://int.nyt.com/data/documenttools/transparency-rule/d1fb06c8db2b3d4a/full.pdf
-+ https://www.nytimes.com/2021/01/04/climate/trump-epa-science.html
-
-### Key ideas/tools from software engineering that can help improve science
-
-+ revision/version control
-
-+ documentation, documentation, documentation
-
-+ modularity and abstraction
-
-+ scripted analyses and automation
-
-+ unit tests, regression tests, coverage tests, continuous integration
-
-+ code review
-
-+ pair programming
-
-+ consistency: APIs, calling signatures, object-oriented code
-
-+ separating data, computation, presentation
