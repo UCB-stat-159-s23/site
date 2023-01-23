@@ -1,6 +1,6 @@
 # Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
 
-## [Fernando Pérez](http://fperez.org), Department of Statistics, UC Berkeley
+## [Fernando Pérez](https://statistics.berkeley.edu/people/fernando-perez), Department of Statistics, UC Berkeley
 
 ## Overview
 
@@ -60,7 +60,7 @@ numpy, scipy, matplotlib, pandas, and scikit; git; GitHub; GitHub actions;
 Docker; LaTeX,
 Markdown, pandoc)
 + Willingness to learn some statistical methodology by reading on one's own (materials and links
-will be provided, but not all topics required to do the homework will be covered in lecture)
+will be provided, but not all topics required to do the homework will be covered in lecture).
 
 ### Format and assessment
 + 3 hours of lecture and 2 hours of lab per week 
@@ -70,7 +70,7 @@ will be provided, but not all topics required to do the homework will be covered
 For each assigned reading, you will submit a brief, 2 paragraph report by 21:00 on the Monday it is due. The first paragraph should summarize the reading. The second paragraph should briefly explore something that interested you (e.g., you may wish to focus on one aspect of the paper in more depth, you may wish to discuss something in the reading that you disagree with).  During lecture, we will draw upon your reports for some group discussion.
 
 ### Office hours
-+ Perez: Thursday, 11AM-12PM ([Zoom link](https://berkeley.zoom.us/j/95468568274?pwd=M3BTaTZhVnNQKzZwTXZSdjZ2VEgwUT09)). These may move into 419 Evans after February, depending on how conditions evolve.
++ Perez: Wednesday, 10-11AM, 419 Evans Hall. I will normally also keep an open [Zoom session](https://berkeley.zoom.us/j/91957788039?pwd=WE5UMGdUWGp0bFVUUXFFSS9DblhEUT09Meeting) for those needing to join remotely for Covid or other reasons.
 
 ### Graduate Student Instructor
 + [Facu Sapienza](mailto:fsapienza@berkeley.edu)
@@ -79,22 +79,21 @@ For each assigned reading, you will submit a brief, 2 paragraph report by 21:00 
 
 ### Communication
 
-Please use the [course Piazza](https://piazza.com/class/kykqjx3dgbt406) for questions about course material and logistics.
+Please use the [course Ed](https://edstem.org/us/courses/35870/discussion/) for questions about course material and logistics.
 For personal matters (illness, accommodations, etc.) that should remain private, please make a private Piazza post that only the instructor and GSI will see. You may obviously email one of us privately if you need, but in general we'll be able to more efficiently handle class communications if they stay on Piazza.
 
 During the work week, we expect to be able to reply to Piazza messages and email within 24 hours. On weekends, we might need longer.
 
 ### Grading
 
-The course is *not* graded on a curve. 
-It is possible for every student to make an A.
+The course is *not* graded on a curve. It is possible for every student to make an A.
 We encourage you to focus on mastering the material, not on your grade.
 The weight of each assignment will be announced with the assignment; the overall grade structure will be:
 
 + 85%: from approximately 8 computational assignments, some individual and some collaborative.
 + 15%: reading assignments (weekly, on average).
 
-In case of medical exception, submit in Piazza a private note to the instructors with a medical proof showing that you are unable to complete the assignment. We will grant extra 48hrs to the reading assignment/homework to be submitted, unless more time is required.
+In case of medical exception, submit on Ed a private note to the instructors with a medical proof showing that you are unable to complete the assignment. We will grant extra 48hrs to the reading assignment/homework to be submitted, unless more time is required.
 
 
 #### Homework assignments 
@@ -103,8 +102,7 @@ In case of medical exception, submit in Piazza a private note to the instructors
  - We will accept late homework assignments until 24hrs after the deadline of the homework. However, in those cases a 25% penalty will be applied to the final score. 
  - For group homework projects, you will include a statement in your repository acknowledging the contribution of each team member. Unless there is a major, unfair imbalance in the amount of work done by each team member, the same grade will be assigned to all team members.
  - _Submitting assignments:_ Submit written assignments by making a pull request
-to your private repository within the Berkeley GitHub organization for the class,
-https://github.berkeley.edu/stat-159-s22, using the [GitHub Classroom](https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom) (you will practice all this, don't worry).
+to your private repository within the Berkeley [GitHub organization for the class](https://github.berkeley.edu/stat-159-s23), using the [GitHub Classroom](https://classroom.github.com/classrooms/106109551-ucb-stat-159-s23-classroom) (you will practice all this, don't worry).
 
 
 #### Reading assignments 
