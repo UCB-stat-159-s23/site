@@ -19,11 +19,7 @@ to group projects.
 There will not be a midterm or final exam, but there will be a videorecorded
 final presentation of group work.
 
-**The COVID-19 pandemic introduces quite a bit of uncertainty into timelines; this document reflects our intentions but it is not a "contract" we can promise to follow. Circumstances may require us to change plans.
-Regardless, your learning is our primary focus, and we hope you will find the course interesting and valuable.**
-
 _Note:_ This course is inspired by, and based on, previous editions taught by myself as well as Professor Philip Stark, from UC Berkeley's Statistics Department.
-
 
 **Course Objectives:** At the completion of this course, students will:
 
