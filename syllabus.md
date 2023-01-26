@@ -70,7 +70,7 @@ For each assigned reading, you will submit a brief, 2 paragraph report by Wednes
 
 ### Graduate Student Instructor
 + [Facu Sapienza](mailto:fsapienza@berkeley.edu)
-+ Labs: Friday 9AM-11AM & 12AM-2PM (334 Evans Hall).  
++ Labs: Friday 9AM-11AM & 12AM-2PM (340 Evans Hall).  
 + Office hours: Tuesdays 1PM-2PM & Thursdays 2:30PM-3:30PM (428 Evans Hall).
 
 ### Communication
