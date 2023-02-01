@@ -3,7 +3,9 @@ root: overview
 parts:
 - caption: Overview
   chapters:
-  - file: schedule
+  - file: overview/overview.md
+  - file: overview/schedule.md
+  - file: overview/ra.md
 - caption: Syllabus
   chapters:
   - file: syllabus
