@@ -1,43 +1,6 @@
-# Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+# Syllabus
 
-## [Fernando Pérez](https://statistics.berkeley.edu/people/fernando-perez), Department of Statistics, UC Berkeley
-
-## Overview
-
-This course teaches "the why and how" of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today's research environment.  We will interleave practical topics in software engineering and statistical computing with broader discussions on elements of the
-philosophy of science and the foundations of statistics.
-
-From a domain perspective, we will use this course as an opportunity to learn about modern questions in one of today's most challenging problems for humanity: that of climate change and environmental damage to our planet. We will see how the tools and practices we learn in this course can contribute to tackling these problems.  We will also visit examples from other fields, including biomedical research, to broaden our perspective.
-
-We will rely on the Scientific Python and Jupyter ecosystems, but the core ideas presented here can be equally implemented with tools in Julia, R, or any other programming language.
-
-Consistent class participation is crucial: we will be discussing subtle substantive, technical, and philosophical issues and reviewing code during class. Even though we plan to record the lectures, if you cannot attend the lectures synchronously, please do *not* take the course.
-
-There will be roughly eight homeworks/projects, some individual and some collaborative in groups of 3-4.
-You will be asked to review your own contributions and each others contributions
-to group projects.
-There will not be a midterm or final exam, but there will be a videorecorded
-final presentation of group work.
-
-_Note:_ This course is inspired by, and based on, previous editions taught by myself as well as Professor Philip Stark, from UC Berkeley's Statistics Department.
-
-**Course Objectives:** At the completion of this course, students will:
-
-1.  understand the issues regarding reproducible research in modern
-    scientific practice, including the definitions of key concepts and
-    the different challenges that exist across disciplines
-
-2.  understand the computational and statistical issues involved with
-    reproducibility
-
-3.  be proficient at the Unix commandline
-
-4.  be proficient at version control with Git
-
-5.  be able to write documents in Markdown or LaTeX (including using
-    pandoc)
-
-6.  be familiar with scientific computing in Python
+**Statistics 159/259: Reproducible and Collaborative Statistical Data Science**
 
 
 ## Textbook
