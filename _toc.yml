@@ -1,12 +1,12 @@
 format: jb-book
-root: overview
+root: overview/overview
 parts:
 - caption: Overview
   chapters:
-  - file: schedule
-- caption: Syllabus
-  chapters:
-  - file: syllabus
+  - file: overview/schedule
+  - file: overview/ra
+  - file: overview/syllabus
+  - file: overview/references
 - caption: Lectures
   chapters:
   - file: lectures/intro-git/Git-Tutorial

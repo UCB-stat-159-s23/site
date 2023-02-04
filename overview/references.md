@@ -1,38 +1,4 @@
-# Statistics 159/259, Spring 2023 Course Summary
-
-## Overview
-
-This course teaches “the why and how” of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment. We will interleave practical topics in software engineering and statistical computing with broader discussions on elements of the philosophy of science and the foundations of statistics.
-
-More details (including grading and other policies) can be found [in the syllabus](syllabus).
-
-## Key Resources
-
-+ Communication: [class Ed forum](https://edstem.org/us/courses/35870/discussion).
-
-+ Lectures will be recorded and posted in the Kaltura system (visible via bCourses), but attendance is mandatory. (Much of the pedagogical value of the class is in participating in discussions and code reviews).
-
-+ Course readings that are not easy to find free on the web or through the UC Berkeley Library will be posted to bCourses.
-
-+ Computing resources
-    - We will use Jupyter notebooks. We will start with hosted notebooks on our [Stat 159 JupyterHub](https://stat159.datahub.berkeley.edu). Later in the term, we will discuss installing Jupyter on your own device. The JupyterHub server will have all the packages you need pre-installed.
-    - The sources for class notes and most other materials are available [on github](https://github.com/UCB-stat-159-s23/site), with a rendered version [here](https://ucb-stat-159-s23.github.io/site).
-    - Assignments should be submitted by pull request to your private repositories using the [GitHub Clasroom](https://classroom.github.com/classrooms/106109551-ucb-stat-159-s23-classroom).
-    - Whenever you need to work with GitHub, remember to activate GitHub authentication from the JupyterHub. The most convenient way to do this is to keep a notebook with just one cell like this:
-    
-```python
-import gh_scoped_creds
-%ghscopedcreds
-```
-    
-You can also authenticate by running the command `gh-scoped-creds` at a terminal and following the instructions. If once authenticated you can't push to a given repo, it may be that you forgot to add that repo/org to your setup of the authentication app, go [here](https://github.com/apps/stat159-berkeley-datahub-access) to configure the app's permissions.
-
-For your convenience, there is a notebook titled `GHAUTH.ipynb` in the `shared` folder, which does this. You can copy it to your home directory to use it further.
-
-+ **A note on the Berkeley Library EZProxy:** Some of the resources listed here are scientific articles available only behind journal paywalls. If you haven't already, you should configure your web browser to use the campus [library EZProxy](https://guides.lib.berkeley.edu/ezproxy) so you can access them even if you are working from an off-campus network.
-
-
-## Textbook and supporting materials
+# Textbook and Supporting Materials
 
 While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: [Research software engineering in Python](https://merely-useful.tech/py-rse).  We will complement it with these other scientific python resources:
 
@@ -169,3 +135,4 @@ These are key reports produced by the National Academies of Science, Engineering
 - [Gentemann et al. 2021, Science Storms the Cloud](https://www.essoar.org/doi/10.1002/essoar.10506344.2).
 
 - [Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/document/9354557).
+
