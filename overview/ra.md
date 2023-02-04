@@ -20,7 +20,7 @@ Each paragraph per reading assignment gives 1 point (a total of 2 per reading). 
 
 * #3, due Feb 8, 2023: Core concepts and The Reinhart and Rogoff Controversy
     - [Barba 2018, Terminologies for Reproducible Research](https://arxiv.org/abs/1802.03311)
-    - [The Reinhart and Rogoff Controversy: A Summing Up](https://www.newyorker.com/news/john-cassidy/the-reinhart-and-rogoff-controversy-a-summing-up)
+    - The Reinhart and Rogoff Controversy. Read the article in [The Conversation](https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646) and the [report article](http://peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf) with the critique to the original paper. For these two articles, you just need to write two paragraphs instead of four. 
 
 
 Future reading assignments
