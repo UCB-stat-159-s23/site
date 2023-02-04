@@ -1,10 +1,10 @@
 # Reading Assignments
 
-Every week, each student is ask to read and discuss a series of reading assignments. The topics of the reading assignments include reproducibitity in science, open source practices, and applications to climate science, between others. 
+Every week, each student is asked to read and discuss a series of reading assignments. The topics of the reading assignments include reproducibitity in science, open source practices, and applications to climate science, among others. 
 
-You have to submit a total of two paragraphs per each separate article. The first is a summary paragraph and the second must highlight an important idea of the reading. This last one can be focused in something that catched your attention and you would like to expand a little bit more. You are more than welcome to orient this second paragraph into something related to your own research or area of interest. A good lenght for each one of the paragraphs is between 80 and 120 words
+You have to submit a total of two paragraphs per each separate article. The first is a summary paragraph and the second must highlight an important idea of the reading. This last one can be focused in something that caught your attention and you would like to expand a little bit more. You are more than welcome to orient this second paragraph into something related to your own research or area of interest. A good length for each one of the paragraphs is between 80 and 120 words.
 
-You will submit your reading assignments in bCourses. Reading assignments will be due every Wednesday at 9pm (Exception: the first one will be due _Thursday Jan 26_). No later reading assignments will be accepted unless there is a medical exception. In that case, you will need to submit in Ed a private note to the instructors with a medical proof showing that you are unable to complete the assignment. 
+You will submit your reading assignments in bCourses. Reading assignments will be due every Wednesday at 9pm (Exception: the first one will be due _Thursday Jan 26_). No late reading assignments will be accepted unless there is a medical situation or other documented major emergency. In that case, you will need to submit in Ed a private note to the instructors with a supporting evidence showing that you are unable to complete the assignment. 
 
 You can drop two readings without need of justification. Notice that this applies to INDIVIDUAL readings. For example, if the weekly reading consists of 4 papers, you can drop a maximum of two of them. If you drop two readings in one week, you cannot drop any other one without penalty. 
 

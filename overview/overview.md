@@ -2,7 +2,7 @@
 
 **Instructor**: [Fernando Pérez](https://statistics.berkeley.edu/people/fernando-perez), Department of Statistics, UC Berkeley
 
-**Teacher Assistant**: [Facundo Sapienza](https://statistics.berkeley.edu/people/facu-sapienza)
+**Teaching Assistant**: [Facundo Sapienza](https://statistics.berkeley.edu/people/facu-sapienza)
 
 **Reader**: Isaac Sloan
 
