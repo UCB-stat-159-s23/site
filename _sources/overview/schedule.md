@@ -10,7 +10,7 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 
 1. Jan 23. Logistics and intro to Git.
 2. Jan 30. Git and GitHub
-3. Feb 6. Introduction to Jupyter project 
+3. Feb 6. Introduction to Jupyter project: [Slides](https://docs.google.com/presentation/d/1fNEEKqpErO7SZ87dptniosZjOgXn3Tau4JFAAIka8bE/edit#slide=id.p1) for today's class and [I don't like notebooks by Joel Grus](https://www.youtube.com/watch?v=7jiPeIFXb6U) talk.
 4. Feb 13. Environments and virtual machines
 5. Feb 20. NO LECTURE 
 
