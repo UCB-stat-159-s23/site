@@ -1,1 +1,453 @@
-<meta http-equiv="Refresh" content="0; url=overview/overview.html" />
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics 159/259, Spring 2023 Course Summary &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Weekly Plan" href="overview/schedule.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Statistics 159/259, Spring 2023 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview/schedule.html">
+   Weekly Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview/ra.html">
+   Reading Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview/references.html">
+   Textbook and Supporting Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/01-Intro-Jupyter.html">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/intro-jupyter/05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/West_Coast_HeatWave_Basic.html">
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/climate-data.html">
+   Climate, oceans and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/environments/conda-envs.html">
+   A quick guide to conda environments on our JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/matplotlib_beyond_basics.html">
+   Matplotlib: Beyond the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/documentation.html">
+   Documentation, JupyterBook and Github Pages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/data-serialization.html">
+   Data Serialization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/intro/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab00/lab00.html">
+   Lab Session 0 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab01/lab01.html">
+   Lab Session 1: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab/lab02/lab02.html">
+   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-resources">
+   Key Resources
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistics 159/259, Spring 2023 Course Summary</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-resources">
+   Key Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="statistics-159-259-spring-2023-course-summary">
+<h1>Statistics 159/259, Spring 2023 Course Summary<a class="headerlink" href="#statistics-159-259-spring-2023-course-summary" title="Permalink to this headline">¶</a></h1>
+<p><strong>Instructor</strong>: <a class="reference external" href="https://statistics.berkeley.edu/people/fernando-perez">Fernando Pérez</a>, Department of Statistics, UC Berkeley</p>
+<p><strong>Teaching Assistant</strong>: <a class="reference external" href="https://statistics.berkeley.edu/people/facu-sapienza">Facundo Sapienza</a></p>
+<p><strong>Reader</strong>: Isaac Sloan</p>
+<p>This course teaches <em>the why and how</em> of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment.  We will interleave practical topics in software engineering and statistical computing with broader discussions on elements of the
+philosophy of science and the foundations of statistics.</p>
+<p>From a domain perspective, we will use this course as an opportunity to learn about modern questions in one of today’s most challenging problems for humanity: that of climate change and environmental damage to our planet. We will see how the tools and practices we learn in this course can contribute to tackling these problems.  We will also visit examples from other fields, including biomedical research, to broaden our perspective.</p>
+<p>We will rely on the Scientific Python and Jupyter ecosystems, but the core ideas presented here can be equally implemented with tools in Julia, R, or any other programming language.</p>
+<p>Consistent class participation is crucial: we will be discussing subtle substantive, technical, and philosophical issues and reviewing code during class. Even though we plan to record the lectures, if you cannot attend the lectures synchronously, please do <em>not</em> take the course.</p>
+<p>There will be roughly eight homeworks/projects, some individual and some collaborative in groups of 3-4.
+You will be asked to review your own contributions and each others contributions
+to group projects.
+There will not be a midterm or final exam, but there will be a videorecorded
+final presentation of group work.</p>
+<p><em>Note:</em> This course is inspired by, and based on, previous editions taught by myself as well as Professor Philip Stark, from UC Berkeley’s Statistics Department.</p>
+<p><strong>Course Objectives:</strong> At the completion of this course, students will:</p>
+<ol class="simple">
+<li><p>understand the issues regarding reproducible research in modern
+scientific practice, including the definitions of key concepts and
+the different challenges that exist across disciplines</p></li>
+<li><p>understand the computational and statistical issues involved with
+reproducibility</p></li>
+<li><p>be proficient at the Unix commandline</p></li>
+<li><p>be proficient at version control with Git</p></li>
+<li><p>be able to write documents in Markdown or LaTeX (including using
+pandoc)</p></li>
+<li><p>be familiar with scientific computing in Python</p></li>
+</ol>
+<div class="section" id="key-resources">
+<h2>Key Resources<a class="headerlink" href="#key-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Communication: <a class="reference external" href="https://edstem.org/us/courses/35870/discussion">class Ed forum</a>.</p></li>
+<li><p>Lectures will be recorded and posted in the Kaltura system (visible via bCourses), but attendance is mandatory. (Much of the pedagogical value of the class is in participating in discussions and code reviews).</p></li>
+<li><p>Course readings that are not easy to find free on the web or through the UC Berkeley Library will be posted to bCourses.</p></li>
+<li><p>Computing resources</p>
+<ul>
+<li><p>We will use Jupyter notebooks. We will start with hosted notebooks on our <a class="reference external" href="https://stat159.datahub.berkeley.edu">Stat 159 JupyterHub</a>. Later in the term, we will discuss installing Jupyter on your own device. The JupyterHub server will have all the packages you need pre-installed.</p></li>
+<li><p>The sources for class notes and most other materials are available <a class="reference external" href="https://github.com/UCB-stat-159-s23/site">on github</a>, with a rendered version <a class="reference external" href="https://ucb-stat-159-s23.github.io/site">here</a>.</p></li>
+<li><p>Assignments should be submitted by pull request to your private repositories using the <a class="reference external" href="https://classroom.github.com/classrooms/106109551-ucb-stat-159-s23-classroom">GitHub Clasroom</a>.</p></li>
+<li><p>Whenever you need to work with GitHub, remember to activate GitHub authentication from the JupyterHub. The most convenient way to do this is to keep a notebook with just one cell like this:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gh_scoped_creds</span>
+<span class="o">%</span><span class="n">ghscopedcreds</span>
+</pre></div>
+</div>
+<p>You can also authenticate by running the command <code class="docutils literal notranslate"><span class="pre">gh-scoped-creds</span></code> at a terminal and following the instructions. If once authenticated you can’t push to a given repo, it may be that you forgot to add that repo/org to your setup of the authentication app, go <a class="reference external" href="https://github.com/apps/stat159-berkeley-datahub-access">here</a> to configure the app’s permissions.</p>
+<p>For your convenience, there is a notebook titled <code class="docutils literal notranslate"><span class="pre">GHAUTH.ipynb</span></code> in the <code class="docutils literal notranslate"><span class="pre">shared</span></code> folder, which does this. You can copy it to your home directory to use it further.</p>
+<ul class="simple">
+<li><p><strong>A note on the Berkeley Library EZProxy:</strong> Some of the resources listed here are scientific articles available only behind journal paywalls. If you haven’t already, you should configure your web browser to use the campus <a class="reference external" href="https://guides.lib.berkeley.edu/ezproxy">library EZProxy</a> so you can access them even if you are working from an off-campus network.</p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="overview/schedule.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Weekly Plan</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez and Facundo Sapienza<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
