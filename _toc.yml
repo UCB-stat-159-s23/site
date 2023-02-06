@@ -1,5 +1,5 @@
 format: jb-book
-root: overview/overview
+root: index
 parts:
 - caption: Overview
   chapters:
