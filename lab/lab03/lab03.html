@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Session 3: GitHub Continued, Pull Requests &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Lab Session 2: Dotfiles, Branches, Conflics and GitHub" href="../lab02/lab02.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Statistics 159/259, Spring 2023 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/schedule.html">
+   Weekly Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/ra.html">
+   Reading Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/references.html">
+   Textbook and Supporting Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/01-Intro-Jupyter.html">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/West_Coast_HeatWave_Basic.html">
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/climate-data.html">
+   Climate, oceans and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/environments/conda-envs.html">
+   A quick guide to conda environments on our JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/matplotlib_beyond_basics.html">
+   Matplotlib: Beyond the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/documentation.html">
+   Documentation, JupyterBook and Github Pages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/data-serialization.html">
+   Data Serialization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab00/lab00.html">
+   Lab Session 0 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab01/lab01.html">
+   Lab Session 1: Git &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab02/lab02.html">
+   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab Session 3: GitHub Continued, Pull Requests
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lab/lab03/lab03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lab/lab03/lab03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaborating-on-github-with-a-small-team">
+   1. Collaborating on GitHub with a small team
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-synchronization">
+     1.1  Simple Synchronization
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-with-conflicts">
+     1.2 GitHub with conflicts
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-from-github">
+     1.3 Working from GitHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reconstructing-past-versions">
+   2. Reconstructing past versions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restoring-old-versions">
+     2.1. Restoring old versions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recovering-deleted-files">
+     2.2. Recovering deleted files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forks-and-pull-requests">
+   3. Forks and Pull Requests
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra">
+   4. Extra
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab Session 3: GitHub Continued, Pull Requests</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaborating-on-github-with-a-small-team">
+   1. Collaborating on GitHub with a small team
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-synchronization">
+     1.1  Simple Synchronization
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-with-conflicts">
+     1.2 GitHub with conflicts
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-from-github">
+     1.3 Working from GitHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reconstructing-past-versions">
+   2. Reconstructing past versions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restoring-old-versions">
+     2.1. Restoring old versions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recovering-deleted-files">
+     2.2. Recovering deleted files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forks-and-pull-requests">
+   3. Forks and Pull Requests
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra">
+   4. Extra
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-session-3-github-continued-pull-requests">
+<h1>Lab Session 3: GitHub Continued, Pull Requests<a class="headerlink" href="#lab-session-3-github-continued-pull-requests" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>Friday 02-10-2023, 9AM-11AM &amp; 12AM-2PM</p>
+<p>Instructor: <a class="reference external" href="https://statistics.berkeley.edu/people/facu-sapienza">Facundo Sapienza</a></p>
+</div></blockquote>
+<p>We encourage you to work in all the following exercises with a partner. The exercises with the <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end are exercises for which you will need to work with someone else.</p>
+<div class="section" id="collaborating-on-github-with-a-small-team">
+<h2>1. Collaborating on GitHub with a small team<a class="headerlink" href="#collaborating-on-github-with-a-small-team" title="Permalink to this headline">¶</a></h2>
+<p>We are going to set up a shared collaboration with one partner (the person sitting next to you).  This will show the basic workflow of collaborating on a project with a small team where everyone have write privileges to the same repository.</p>
+<p>We will have two people, let’s call them Alice and Bob, sharing a repository.  Alice will be the owner of the repository and she will give Bob write privileges.</p>
+<div class="section" id="simple-synchronization">
+<h3>1.1  Simple Synchronization <code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#simple-synchronization" title="Permalink to this headline">¶</a></h3>
+<p>We begin with a simple synchronization example, much like we just did in the previus lab, but now between <strong>two people</strong> instead of one person.</p>
+<ol class="simple">
+<li><p>Alice creates a new repository in GitHub with some basic text files on it.</p></li>
+<li><p>Bob clones Alice’s repository.</p></li>
+<li><p>Bob makes changes to a file and commits them locally.</p></li>
+<li><p>Bob pushes his changes to GitHub.</p></li>
+<li><p>Alice pulls Bob’s changes into her own repository.</p></li>
+</ol>
+<p>Next, we will have both making non-conflicting changes each, and commit them locally.  Then both try to push their changes:</p>
+<ol class="simple">
+<li><p>Alice adds a new file, <code class="docutils literal notranslate"><span class="pre">alice.txt</span></code> to the repo and commits.</p></li>
+<li><p>Add a tag to this stage of the repository. What is a <a class="reference external" href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-tag.html">tag</a> and how to make one? In which cases do you think it will be useful to use tags?</p></li>
+<li><p>Bob adds <code class="docutils literal notranslate"><span class="pre">bob.txt</span></code> and commits.</p></li>
+<li><p>Alice pushes to GitHub.</p></li>
+<li><p>Bob tries to push to GitHub.  What happens here?</p></li>
+</ol>
+<p>The problem is that Bob’s changes create a commit that conflicts with Alice’s, so git refuses to apply them.  It forces Bob to first do the merge on his machine, so that if there is a conflict in the merge, Bob deals with the conflict manually (git could try to do the merge on the server, but in that case if there’s a conflict, the server repository would be left in a conflicted state without a human to fix things up).  The solution is for Bob to first pull the changes.</p>
+<p>Next, let’s have Bob creating a new branch, commiting changes in that branch to GitHub and then Alice retrieving the new branch to her locar repository.</p>
+<ol class="simple">
+<li><p>In his local repository, Bob creates a new branch (see previous lab).</p></li>
+<li><p>Bob commits new changes to his branch and then try to push this changes to the remote repository in GitHub.</p></li>
+<li><p>Alice now pull the new branch from GitHub. Can Alice display Bob’s new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>? What happen when we see <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">--all</span></code>?.</p></li>
+</ol>
+</div>
+<div class="section" id="github-with-conflicts">
+<h3>1.2 GitHub with conflicts <code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#github-with-conflicts" title="Permalink to this headline">¶</a></h3>
+<p>Follow the same workflow than before, but now try to induce a conflict. In order to induce a conflict,</p>
+<ol class="simple">
+<li><p>Both Alice and Bob need to make changes in the same line of the text files and commit these changes.</p></li>
+<li><p>After commiting, one of them will push the changes to GitHub.</p></li>
+<li><p>Right after, Alice will try to pull and she will see the merging conflict happening. How to solve this? Just in the same way you solve branch merging conflicts last lecture!</p></li>
+</ol>
+</div>
+<div class="section" id="working-from-github">
+<h3>1.3 Working from GitHub<a class="headerlink" href="#working-from-github" title="Permalink to this headline">¶</a></h3>
+<p>So far we were using GitHub just to host our remote repository, but GitHub also allow us to permorm a lot of other operations that are useful at the moment of making quick changes, documenting issues or just viewing the state of our repository, including past versions.</p>
+<p>Explore a little bit your GitHub repository. Specifically,</p>
+<ol class="simple">
+<li><p>Modify a text file and commit these changes from GitHub.</p></li>
+<li><p>How to see different branches in GitHub? Are these the same you have in your local machine?</p></li>
+<li><p>Alice adds Bob as a colaborator in the repository. You will need to go to setting for this.</p></li>
+<li><p>Open a new issue and tag the other person in that issue.</p></li>
+<li><p>Review past versions of the repositories.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="reconstructing-past-versions">
+<h2>2. Reconstructing past versions<a class="headerlink" href="#reconstructing-past-versions" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we make accidental changes to some of the files in a repository, or maybe we just want to comeback to a previous version. In any case, it is easy to restore or even recover old versions of files that have been track in a commit message.</p>
+<p>For these next examples, we are going to use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command to restore past versions of a file. This can lead to some confussion, since this is the same command we use for changing branches. In a sense, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> does both the work of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>. You can do all the following exercises with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>.</p>
+<div class="section" id="restoring-old-versions">
+<h3>2.1. Restoring old versions<a class="headerlink" href="#restoring-old-versions" title="Permalink to this headline">¶</a></h3>
+<p>For this example, we are going to make modifications to one of the files in our repository and then recover some of the older versions.</p>
+<ol class="simple">
+<li><p>Make more than one change in the same file in your repository, for example you can use write some new text inside <code class="docutils literal notranslate"><span class="pre">text.txt</span></code>. With <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;...&quot;</span> <span class="pre">&gt;&gt;</span> <span class="pre">text.txt</span></code> you will print new lines at the end of <code class="docutils literal notranslate"><span class="pre">text.txt</span></code> (with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> you will just overwrite all the contents).</p></li>
+<li><p>Try to restore previous version of such file by using</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit&gt;<span class="w"> </span>&lt;filename&gt;
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>restore<span class="w"> </span>--source<span class="o">=</span>&lt;commit&gt;<span class="w"> </span>&lt;filename&gt;
+</pre></div>
+</div>
+<p>You will need to specify the stage at which you want to restore the file. You can do this by looking at the log of the repository (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">slog</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--all</span></code>). This is why commit messages are so important!</p>
+<p>Observation: you can also see old versions of your files directly on GitHub, in case you need to inspect previous versions of files.</p>
+</div>
+<div class="section" id="recovering-deleted-files">
+<h3>2.2. Recovering deleted files<a class="headerlink" href="#recovering-deleted-files" title="Permalink to this headline">¶</a></h3>
+<p>Now, let’s practice deleting and recovering an specific file</p>
+<ol class="simple">
+<li><p>Remove one of the files in your test repository. You can also just create a new file and remove it. To do so, use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">&lt;file</span> <span class="pre">name&gt;</span></code>. You can take a look to this <a class="reference external" href="https://www.atlassian.com/git/tutorials/undoing-changes/git-rm">link</a> to see some flags you can add to this command.</p></li>
+<li><p>If you haven’t commit your changes, you can recover the file just by coming back to the previous snapshot of the repository by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span></code></p></li>
+<li><p>Now, if you make a commit after removing the changes, you need to do a little bit more of work. Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">slog</span> <span class="pre">--</span> <span class="pre">&lt;filename&gt;</span></code> to see all the history associated to the file you removed and then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;commit&gt;</span> <span class="pre">--</span> <span class="pre">&lt;filename&gt;</span></code> to recover it.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="forks-and-pull-requests">
+<h2>3. Forks and Pull Requests <code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#forks-and-pull-requests" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes is is usuful to create a complete new copy of a repository and work on that before merging the new changes to the main repository. This is particularry useful in cases of packages, big projects or just when we want to experiment a little bit having the version control capabilities without adding this changes to the main repository. For these cases is when we want to use forks and then pull requests if we want to merge changes across repositoties (or inside the repository too).</p>
+<p>If you are not familiar with the concept of pull requests, take a look to the <a class="reference external" href="https://merely-useful.tech/py-rse/git-advanced.html#git-advanced-pull-requests">pull request chapter</a> in the course book. The idea of a pull request is to merge a branch for any given repository to a branch of another repository.</p>
+<p>Let’s practice this following where we stoped with Alice and Bob example.</p>
+<ol class="simple">
+<li><p>Bob forks Alice’s repositoty (<code class="docutils literal notranslate"><span class="pre">alice/test</span></code>) into his own GitHub account (<code class="docutils literal notranslate"><span class="pre">bob/test</span></code>). Take a look to <a class="reference external" href="https://merely-useful.tech/py-rse/git-advanced.html#git-advanced-fork">Using Other People’s Work</a>.</p></li>
+<li><p>Bob clones his repository into his local machine.</p></li>
+<li><p>Bob makes some changes and commit them.</p></li>
+<li><p>Bob pushes his changes to GitHub.</p></li>
+<li><p>Once in GitHub, Bob creates a pull request to merge his changes into <code class="docutils literal notranslate"><span class="pre">alice/test</span></code>. At the moment of doing this, add Alice as reviewer of the pull request.</p></li>
+<li><p>Now Alice needs to accept Bob chamges to the main repository.</p></li>
+</ol>
+<p>Repeat this but now change roles between Bob and Alice.</p>
+</div>
+<div class="section" id="extra">
+<h2>4. Extra<a class="headerlink" href="#extra" title="Permalink to this headline">¶</a></h2>
+<p>If you already finished all the previous tasks, you are welcome to explore some more useful git commands!</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-show.html">show</a></p></li>
+<li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-reflog.html">reflog</a></p></li>
+<li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html">rebase</a></p></li>
+<li><p><a class="reference external" href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-fetch.html">fetch</a></p></li>
+</ul>
+<p>Can you think in a situation where these commands may result useful? For example, instead of using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, can you do the same with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>? If so, what can be the advantage of doing such a thing?</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab/lab03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../lab02/lab02.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab Session 2: Dotfiles, Branches, Conflics and GitHub</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez and Facundo Sapienza<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
