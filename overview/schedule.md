@@ -17,6 +17,9 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 
 ## Live links for labs on the Berkeley DataHub
 
-* Jan 20. [Lab 00 - Intro Python and setup](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s23%2Fsite.git&urlpath=lab%2Ftree%2Fsite.git%2Flab%2Flab00%2Flab00.ipynb&branch=main).
-* Jan 27. [Lab 01 - Git and the Shell](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s23%2Fsite.git&urlpath=lab%2Ftree%2Fsite.git%2Flab%2Flab01%2Flab01.ipynb&branch=main)
-* 
+All the labs for the course can be found in the navitation bar on the left. Useful information about how to setup the labs in your JupyterHub sesssion can be found in the [introduction page](https://ucb-stat-159-s23.github.io/site/lab/intro/intro.html).
+
+* Jan 20. Lab 00 - Intro Python and setup.
+* Jan 27. Lab 01 - Git and the Shell
+* Feb 02. Lab 02 - Dotfiles, Braches, Conflicts and GitHub
+* Feb 09. Lab 03 - GitHub Continued, Pull Requests
