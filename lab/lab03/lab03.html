@@ -344,8 +344,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-from-github">
-     1.3 Working from GitHub
+    <a class="reference internal nav-link" href="#working-directly-in-github">
+     1.3 Working directly in GitHub
     </a>
    </li>
   </ul>
@@ -428,8 +428,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-from-github">
-     1.3 Working from GitHub
+    <a class="reference internal nav-link" href="#working-directly-in-github">
+     1.3 Working directly in GitHub
     </a>
    </li>
   </ul>
@@ -481,14 +481,14 @@
 <div><p>Friday 02-10-2023, 9AM-11AM &amp; 12AM-2PM</p>
 <p>Instructor: <a class="reference external" href="https://statistics.berkeley.edu/people/facu-sapienza">Facundo Sapienza</a></p>
 </div></blockquote>
-<p>We encourage you to work in all the following exercises with a partner. The exercises with the <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end are exercises for which you will need to work with someone else.</p>
+<p>We encourage you to work in the following exercises with a partner. The exercises with the <code class="docutils literal notranslate"><span class="pre">*</span></code> are meant to be for two persons.</p>
 <div class="section" id="collaborating-on-github-with-a-small-team">
 <h2>1. Collaborating on GitHub with a small team<a class="headerlink" href="#collaborating-on-github-with-a-small-team" title="Permalink to this headline">¶</a></h2>
 <p>We are going to set up a shared collaboration with one partner (the person sitting next to you).  This will show the basic workflow of collaborating on a project with a small team where everyone have write privileges to the same repository.</p>
 <p>We will have two people, let’s call them Alice and Bob, sharing a repository.  Alice will be the owner of the repository and she will give Bob write privileges.</p>
 <div class="section" id="simple-synchronization">
 <h3>1.1  Simple Synchronization <code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#simple-synchronization" title="Permalink to this headline">¶</a></h3>
-<p>We begin with a simple synchronization example, much like we just did in the previus lab, but now between <strong>two people</strong> instead of one person.</p>
+<p>We begin with a simple synchronization example, much like we just did in the previous lab, but now between <strong>two people</strong> instead of one person.</p>
 <ol class="simple">
 <li><p>Alice creates a new repository in GitHub with some basic text files on it.</p></li>
 <li><p>Bob clones Alice’s repository.</p></li>
@@ -498,14 +498,14 @@
 </ol>
 <p>Next, we will have both making non-conflicting changes each, and commit them locally.  Then both try to push their changes:</p>
 <ol class="simple">
-<li><p>Alice adds a new file, <code class="docutils literal notranslate"><span class="pre">alice.txt</span></code> to the repo and commits.</p></li>
-<li><p>Add a tag to this stage of the repository. What is a <a class="reference external" href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-tag.html">tag</a> and how to make one? In which cases do you think it will be useful to use tags?</p></li>
+<li><p>Alice adds a new file, <code class="docutils literal notranslate"><span class="pre">alice.txt</span></code> to the repository and commits.</p></li>
+<li><p>Add a tag to this stage of the repository. You can learn more about <a class="reference external" href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-tag.html">tag</a> here. In which cases do you think it will be useful to use tags?</p></li>
 <li><p>Bob adds <code class="docutils literal notranslate"><span class="pre">bob.txt</span></code> and commits.</p></li>
 <li><p>Alice pushes to GitHub.</p></li>
 <li><p>Bob tries to push to GitHub.  What happens here?</p></li>
 </ol>
-<p>The problem is that Bob’s changes create a commit that conflicts with Alice’s, so git refuses to apply them.  It forces Bob to first do the merge on his machine, so that if there is a conflict in the merge, Bob deals with the conflict manually (git could try to do the merge on the server, but in that case if there’s a conflict, the server repository would be left in a conflicted state without a human to fix things up).  The solution is for Bob to first pull the changes.</p>
-<p>Next, let’s have Bob creating a new branch, commiting changes in that branch to GitHub and then Alice retrieving the new branch to her locar repository.</p>
+<p>The problem is that Bob’s changes create a commit that conflicts with Alice’s, so GitHub refuses to apply the changes in the remote. This forces Bob to first merge in his machine. If there is a conflict in the merge, Bob needs to deal with the conflict manually (git could try to do the merge on the server, but in that case if there’s a conflict, the server repository would be left in a conflicted state without a human to fix things up).  The solution is for Bob to first pull the changes.</p>
+<p>Next, let’s have Bob creating a new branch, commiting changes in that branch to GitHub and then Alice retrieving the new branch to her local repository.</p>
 <ol class="simple">
 <li><p>In his local repository, Bob creates a new branch (see previous lab).</p></li>
 <li><p>Bob commits new changes to his branch and then try to push this changes to the remote repository in GitHub.</p></li>
@@ -518,17 +518,18 @@
 <ol class="simple">
 <li><p>Both Alice and Bob need to make changes in the same line of the text files and commit these changes.</p></li>
 <li><p>After commiting, one of them will push the changes to GitHub.</p></li>
-<li><p>Right after, Alice will try to pull and she will see the merging conflict happening. How to solve this? Just in the same way you solve branch merging conflicts last lecture!</p></li>
+<li><p>Right after, Alice will try to pull and she will see the merging conflict happening. How to solve this? Just in the same way you solve branch merging conflicts last lecture!
+Are you tired of solving the issues during the merge? You can always do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--abort</span></code> and try to avoid the merge conflict before it happens.</p></li>
 </ol>
 </div>
-<div class="section" id="working-from-github">
-<h3>1.3 Working from GitHub<a class="headerlink" href="#working-from-github" title="Permalink to this headline">¶</a></h3>
-<p>So far we were using GitHub just to host our remote repository, but GitHub also allow us to permorm a lot of other operations that are useful at the moment of making quick changes, documenting issues or just viewing the state of our repository, including past versions.</p>
+<div class="section" id="working-directly-in-github">
+<h3>1.3 Working directly in GitHub<a class="headerlink" href="#working-directly-in-github" title="Permalink to this headline">¶</a></h3>
+<p>So far we were using GitHub just to host our remote repository, but GitHub also allow us to make operations like quick changes, documenting issues or just viewing the state of our repository, including past versions.</p>
 <p>Explore a little bit your GitHub repository. Specifically,</p>
 <ol class="simple">
 <li><p>Modify a text file and commit these changes from GitHub.</p></li>
 <li><p>How to see different branches in GitHub? Are these the same you have in your local machine?</p></li>
-<li><p>Alice adds Bob as a colaborator in the repository. You will need to go to setting for this.</p></li>
+<li><p>Alice adds Bob as a collaborator in the repository. You will need to go to setting for this.</p></li>
 <li><p>Open a new issue and tag the other person in that issue.</p></li>
 <li><p>Review past versions of the repositories.</p></li>
 </ol>
@@ -537,7 +538,7 @@
 <div class="section" id="reconstructing-past-versions">
 <h2>2. Reconstructing past versions<a class="headerlink" href="#reconstructing-past-versions" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes we make accidental changes to some of the files in a repository, or maybe we just want to comeback to a previous version. In any case, it is easy to restore or even recover old versions of files that have been track in a commit message.</p>
-<p>For these next examples, we are going to use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command to restore past versions of a file. This can lead to some confussion, since this is the same command we use for changing branches. In a sense, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> does both the work of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>. You can do all the following exercises with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>.</p>
+<p>For these next examples, we are going to use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command to restore past versions of a file. This can lead to some confusion, since this is the same command we use for changing branches. In a sense, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> does both the work of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>. You can do all the following exercises with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>.</p>
 <div class="section" id="restoring-old-versions">
 <h3>2.1. Restoring old versions<a class="headerlink" href="#restoring-old-versions" title="Permalink to this headline">¶</a></h3>
 <p>For this example, we are going to make modifications to one of the files in our repository and then recover some of the older versions.</p>
@@ -567,16 +568,16 @@
 </div>
 <div class="section" id="forks-and-pull-requests">
 <h2>3. Forks and Pull Requests <code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#forks-and-pull-requests" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes is is usuful to create a complete new copy of a repository and work on that before merging the new changes to the main repository. This is particularry useful in cases of packages, big projects or just when we want to experiment a little bit having the version control capabilities without adding this changes to the main repository. For these cases is when we want to use forks and then pull requests if we want to merge changes across repositoties (or inside the repository too).</p>
+<p>Sometimes is is useful to create a complete new copy of a repository and work on that before merging the new changes to the main repository. This is particularly when working with packages, big projects or just when we want to experiment a little bit having the version control capabilities without adding changes to the main repository. For these cases is when we want to use forks and then pull requests if we want to merge changes across repositories (or inside the repository too).</p>
 <p>If you are not familiar with the concept of pull requests, take a look to the <a class="reference external" href="https://merely-useful.tech/py-rse/git-advanced.html#git-advanced-pull-requests">pull request chapter</a> in the course book. The idea of a pull request is to merge a branch for any given repository to a branch of another repository.</p>
-<p>Let’s practice this following where we stoped with Alice and Bob example.</p>
+<p>Let’s practice this following where we stopped with Alice and Bob example.</p>
 <ol class="simple">
-<li><p>Bob forks Alice’s repositoty (<code class="docutils literal notranslate"><span class="pre">alice/test</span></code>) into his own GitHub account (<code class="docutils literal notranslate"><span class="pre">bob/test</span></code>). Take a look to <a class="reference external" href="https://merely-useful.tech/py-rse/git-advanced.html#git-advanced-fork">Using Other People’s Work</a>.</p></li>
+<li><p>Bob forks Alice’s repository (<code class="docutils literal notranslate"><span class="pre">alice/test</span></code>) into his own GitHub account (<code class="docutils literal notranslate"><span class="pre">bob/test</span></code>). Take a look to <a class="reference external" href="https://merely-useful.tech/py-rse/git-advanced.html#git-advanced-fork">Using Other People’s Work</a>.</p></li>
 <li><p>Bob clones his repository into his local machine.</p></li>
 <li><p>Bob makes some changes and commit them.</p></li>
 <li><p>Bob pushes his changes to GitHub.</p></li>
 <li><p>Once in GitHub, Bob creates a pull request to merge his changes into <code class="docutils literal notranslate"><span class="pre">alice/test</span></code>. At the moment of doing this, add Alice as reviewer of the pull request.</p></li>
-<li><p>Now Alice needs to accept Bob chamges to the main repository.</p></li>
+<li><p>Now Alice needs to accept Bob changes to the main repository.</p></li>
 </ol>
 <p>Repeat this but now change roles between Bob and Alice.</p>
 </div>
