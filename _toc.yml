@@ -11,9 +11,12 @@ parts:
   chapters:
   - file: lectures/intro-git/Git-Tutorial
   - file: lectures/intro-git/intro
-		  sections:
-			  - file: lecture/intro-git/configuration
-			  - file: lecture/intro-git/local
+    sections:
+    - file: lectures/intro-git/configuration
+    - file: lectures/intro-git/local
+    - file: lectures/intro-git/branch
+    - file: lectures/intro-git/remote
+    - file: lectures/intro-git/conflict
   - file: lectures/intro-git/git-visuals
   - file: lectures/intro-jupyter/Index
   - file: lectures/intro-jupyter/01-Intro-Jupyter
