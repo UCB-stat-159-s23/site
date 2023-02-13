@@ -901,16 +901,16 @@ information stored as computer files.</strong>”</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha1</span>
 
-<span class="c1"># Our first commit</span>
-<span class="n">data1</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;This is the start of my paper.&#39;</span>
-<span class="n">meta1</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;date: 1/1/17&#39;</span>
-<span class="n">hash1</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">(</span><span class="n">data1</span> <span class="o">+</span> <span class="n">meta1</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hash:&#39;</span><span class="p">,</span> <span class="n">hash1</span><span class="p">)</span>
+<span class="c1"># Our second commit</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;This is the start of my paper.&#39;</span>
+<span class="n">meta2</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;date: 1/1/23&#39;</span>
+<span class="n">hash2</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">(</span><span class="n">data2</span> <span class="o">+</span> <span class="n">meta2</span> <span class="o">+</span> <span class="n">hash1</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hash:&#39;</span><span class="p">,</span> <span class="n">hash2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hash: 3b32905baabd5ff22b3832c892078f78f5e5bd3b
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hash: 427e22e7f448fc0776f0eeae9008e392a37c022b
 </pre></div>
 </div>
 </div>
@@ -923,11 +923,6 @@ information stored as computer files.</strong>”</p>
 <span class="c1"># Note we add the parent hash here!</span>
 <span class="n">hash2</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">(</span><span class="n">data2</span> <span class="o">+</span> <span class="n">meta2</span> <span class="o">+</span> <span class="n">hash1</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hash:&#39;</span><span class="p">,</span> <span class="n">hash2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hash: 1c12d2aad51d5fc33e5b83a03b8787dfadde92a4
 </pre></div>
 </div>
 </div>
@@ -975,7 +970,7 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: git [-v | --version] [-h | --help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
            [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
            [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
            [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
@@ -1032,22 +1027,12 @@ See &#39;git help git&#39; for an overview of the system.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/fperez/teach/stat159/2022sp/site/lectures/intro-git&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 rm -rf test
 git init test
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/fperez/teach/stat159/2022sp/site/lectures/intro-git/test/.git/
 </pre></div>
 </div>
 </div>
@@ -1079,14 +1064,6 @@ ls -la
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 0
-drwxr-xr-x  3 fperez  wavelet   96 Jan 25 23:50 .
-drwxr-xr-x  6 fperez  wavelet  192 Jan 25 23:50 ..
-drwxr-xr-x  9 fperez  wavelet  288 Jan 25 23:50 .git
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1094,18 +1071,6 @@ drwxr-xr-x  9 fperez  wavelet  288 Jan 25 23:50 .git
 cd test
 
 ls -l .git
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 24
--rw-r--r--   1 fperez  wavelet   21 Jan 25 23:50 HEAD
--rw-r--r--   1 fperez  wavelet  137 Jan 25 23:50 config
--rw-r--r--   1 fperez  wavelet   73 Jan 25 23:50 description
-drwxr-xr-x  15 fperez  wavelet  480 Jan 25 23:50 hooks
-drwxr-xr-x   3 fperez  wavelet   96 Jan 25 23:50 info
-drwxr-xr-x   4 fperez  wavelet  128 Jan 25 23:50 objects
-drwxr-xr-x   4 fperez  wavelet  128 Jan 25 23:50 refs
 </pre></div>
 </div>
 </div>
@@ -1144,17 +1109,6 @@ git status
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-
-No commits yet
-
-Changes to be committed:
-  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
-	new file:   file1.txt
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="git-commit-permanently-record-our-changes-in-git-s-database">
@@ -1169,13 +1123,6 @@ git commit -a -m&quot;This is our first commit&quot;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) a3ee476] This is our first commit
- 1 file changed, 1 insertion(+)
- create mode 100644 file1.txt
-</pre></div>
-</div>
-</div>
 </div>
 <p>In the commit above, we  used the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag to specify a message at the command line.  If we don’t do that, git will open the editor we specified in our configuration above and require that we enter a message.  By default, git refuses to record changes that don’t have a message to go along with them (though you can obviously ‘cheat’ by using an empty or meaningless string: git only tries to facilitate best practices, it’s not your nanny).</p>
 </div>
@@ -1187,15 +1134,6 @@ git commit -a -m&quot;This is our first commit&quot;
 cd test
 
 git log
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit a3ee47693d62d3be0e10cf25e2df2274263c32b8
-Author: Fernando Pérez &lt;fernando.perez@berkeley.edu&gt;
-Date:   Tue Jan 25 23:50:14 2022 -0800
-
-    This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1221,17 +1159,6 @@ echo &quot;And now some more text...&quot; &gt;&gt; file1.txt
 cd test
 
 git diff
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diff --git a/file1.txt b/file1.txt
-index ce645c7..4baa979 100644
---- a/file1.txt
-+++ b/file1.txt
-@@ -1 +1,2 @@
- My first bit of text
-+And now some more text...
 </pre></div>
 </div>
 </div>
@@ -1271,12 +1198,6 @@ git commit -a -m&quot;I have made great progress on this critical matter.&quot;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 963d786] I have made great progress on this critical matter.
- 1 file changed, 1 insertion(+)
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="git-log-revisited">
@@ -1291,21 +1212,6 @@ git log
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 963d78694d2b4e10d8b2fea40181760314186e21
-Author: Fernando Pérez &lt;fernando.perez@berkeley.edu&gt;
-Date:   Tue Jan 25 23:50:23 2022 -0800
-
-    I have made great progress on this critical matter.
-
-commit a3ee47693d62d3be0e10cf25e2df2274263c32b8
-Author: Fernando Pérez &lt;fernando.perez@berkeley.edu&gt;
-Date:   Tue Jan 25 23:50:14 2022 -0800
-
-    This is our first commit
-</pre></div>
-</div>
-</div>
 </div>
 <p>Sometimes it’s handy to see a very summarized version of the log:</p>
 <div class="cell docutils container">
@@ -1314,12 +1220,6 @@ Date:   Tue Jan 25 23:50:14 2022 -0800
 cd test
 
 git log --oneline --topo-order --graph
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1338,12 +1238,6 @@ git slog
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="git-mv-and-rm-moving-and-removing-files">
@@ -1359,14 +1253,6 @@ git status
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-Changes to be committed:
-  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
-	renamed:    file1.txt -&gt; file-newname.txt
-</pre></div>
-</div>
-</div>
 </div>
 <p>Note that these changes must be committed too, to become permanent!  In git’s world, until something hasn’t been committed, it isn’t permanently recorded anywhere.</p>
 <div class="cell docutils container">
@@ -1377,17 +1263,6 @@ cd test
 git commit -a -m&quot;I like this new name better&quot;
 echo &quot;Let&#39;s look at the log again:&quot;
 git slog
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main ae5580b] I like this new name better
- 1 file changed, 0 insertions(+), 0 deletions(-)
- rename file1.txt =&gt; file-newname.txt (100%)
-Let&#39;s look at the log again:
-* ae5580b I like this new name better
-* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1426,26 +1301,14 @@ ls
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-nothing to commit, working tree clean
-file-newname.txt
-</pre></div>
 </div>
-</div>
-</div>
-<p>We are now going to try two different routes of development: on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch we will add one file and on the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> branch, which we will create, we will add a different one.  We will then merge the experimental branch into <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+<p>We are now going to try two different routes of development: on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch we will add one file and on the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> branch, which we will create, we will add a different one.  We will then merge the experimental branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd test
 
 git switch -c experiment
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to a new branch &#39;experiment&#39;
 </pre></div>
 </div>
 </div>
@@ -1462,17 +1325,6 @@ git slog
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[experiment b71b77a] Trying something new
- 1 file changed, 1 insertion(+)
- create mode 100644 experiment.txt
-* b71b77a Trying something new
-* ae5580b I like this new name better
-* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1481,16 +1333,6 @@ cd test
 
 git switch main
 git slog
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* ae5580b I like this new name better
-* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1506,16 +1348,6 @@ git slog
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main eddded5] The mainline keeps moving
- 1 file changed, 1 insertion(+)
-* eddded5 The mainline keeps moving
-* ae5580b I like this new name better
-* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
-</pre></div>
-</div>
-</div>
 </div>
 <p>By default, all variations of the git <code class="docutils literal notranslate"><span class="pre">log</span></code> commands only show the currently active branch.  If we want to see <em>all</em> branches, we can ask for them with the <code class="docutils literal notranslate"><span class="pre">--all</span></code> flag:</p>
 <div class="cell docutils container">
@@ -1524,16 +1356,6 @@ git slog
 cd test
 
 git slog --all
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* eddded5 The mainline keeps moving
-| * b71b77a Trying something new
-|/  
-* ae5580b I like this new name better
-* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1548,11 +1370,6 @@ ls
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file-newname.txt
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1561,22 +1378,6 @@ cd test
 
 git merge experiment
 git slog
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge made by the &#39;ort&#39; strategy.
- experiment.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 experiment.txt
-*   e752aa4 Merge branch &#39;experiment&#39;
-|\  
-| * b71b77a Trying something new
-* | eddded5 The mainline keeps moving
-|/  
-* ae5580b I like this new name better
-* 963d786 I have made great progress on this critical matter.
-* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1597,13 +1398,6 @@ git remote -v
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>experiment.txt
-file-newname.txt
-Let&#39;s see if we have any remote repositories here:
-</pre></div>
-</div>
-</div>
 </div>
 <p>Since the above cell didn’t produce any output after the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> call, it means we have no remote repositories configured.  We will now proceed to do so.  Once logged into GitHub, go to the <a class="reference external" href="https://github.com/new">new repository page</a> and make a repository called <code class="docutils literal notranslate"><span class="pre">test</span></code>.  Do <strong>not</strong> check the box that says <code class="docutils literal notranslate"><span class="pre">Initialize</span> <span class="pre">this</span> <span class="pre">repository</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">README</span></code>, since we already have an existing repository here.  That option is useful when you’re starting first at Github and don’t have a repo made already on a local computer.</p>
 <p>We can now follow the instructions from the next page:</p>
@@ -1618,16 +1412,6 @@ git push -u origin main
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: remote origin already exists.
-To https://github.com/fperez/test.git
- * [new branch]      main -&gt; main
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>branch &#39;main&#39; set up to track &#39;origin/main&#39;.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s see the remote situation again:</p>
 <div class="cell docutils container">
@@ -1636,12 +1420,6 @@ To https://github.com/fperez/test.git
 cd test
 
 git remote -v
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>origin	https://github.com/fperez/test.git (fetch)
-origin	https://github.com/fperez/test.git (push)
 </pre></div>
 </div>
 </div>
@@ -1660,16 +1438,6 @@ git remote -v
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;test2&#39;...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fperez/teach/stat159/2022sp/site/lectures/intro-git/test2
-origin	https://github.com/fperez/test.git (fetch)
-origin	https://github.com/fperez/test.git (push)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s now make some changes in one ‘computer’ and synchronize them on the second.</p>
 <div class="cell docutils container">
@@ -1679,12 +1447,6 @@ cd test2  # working on computer #2
 
 echo &quot;More new content on my experiment&quot; &gt;&gt; experiment.txt
 git commit -a -m&quot;More work, on machine #2&quot;
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 2320847] More work, on machine #2
- 1 file changed, 1 insertion(+)
 </pre></div>
 </div>
 </div>
@@ -1699,12 +1461,6 @@ git push
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To https://github.com/fperez/test.git
-   e752aa4..2320847  main -&gt; main
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now let’s fetch that work from machine #1:</p>
 <div class="cell docutils container">
@@ -1713,18 +1469,6 @@ git push
 cd test
 
 git pull
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From https://github.com/fperez/test
-   e752aa4..2320847  main       -&gt; origin/main
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating e752aa4..2320847
-Fast-forward
- experiment.txt | 1 +
- 1 file changed, 1 insertion(+)
 </pre></div>
 </div>
 </div>
@@ -1744,15 +1488,6 @@ git commit -a -m&quot;Changes in the trouble branch&quot;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[trouble c480fb4] Changes in the trouble branch
- 1 file changed, 1 insertion(+)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;trouble&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>And now we go back to the master branch, where we change the <em>same</em> file:</p>
 <div class="cell docutils container">
@@ -1763,16 +1498,6 @@ cd test
 git switch main
 echo &quot;More work on the master branch...&quot; &gt;&gt; experiment.txt
 git commit -a -m&quot;Mainline work&quot;
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your branch is up-to-date with &#39;origin/master&#39;.
-[master a8694ad] Mainline work
- 1 file changed, 1 insertion(+)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;master&#39;
 </pre></div>
 </div>
 </div>
@@ -1787,13 +1512,6 @@ git merge trouble
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Auto-merging experiment.txt
-CONFLICT (content): Merge conflict in experiment.txt
-Automatic merge failed; fix conflicts and then commit the result.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s see what git has put into our file:</p>
 <div class="cell docutils container">
@@ -1802,17 +1520,6 @@ Automatic merge failed; fix conflicts and then commit the result.
 cd test
 
 cat experiment.txt
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some crazy idea
-More new content on my experiment
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-More work on the master branch...
-=======
-This is going to be a problem...
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; trouble
 </pre></div>
 </div>
 </div>
@@ -1827,14 +1534,6 @@ cat experiment.txt
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some crazy idea
-More new content on my experiment
-More work on the master branch...
-This is going to be a problem...
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s then make our new commit:</p>
 <div class="cell docutils container">
@@ -1844,25 +1543,6 @@ cd test
 
 git commit -a -m&quot;Completed merge of trouble, fixing conflicts along the way&quot;
 git slog
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master 28e0c56] Completed merge of trouble, fixing conflicts along the way
-*   28e0c56 Completed merge of trouble, fixing conflicts along the way
-|\  
-| * c480fb4 Changes in the trouble branch
-* | a8694ad Mainline work
-|/  
-* 94c7438 More work, on machine #2
-*   27b0ec9 Merge branch &#39;experiment&#39;
-|\  
-| * 2cba531 Trying something new
-* | ff8b2ec The mainline keeps moving
-|/  
-* 005d8e2 I like this new name better
-* e819b08 I have made great progress on this critical matter.
-* 1f299f3 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1951,16 +1631,6 @@ how you would go about building a version control system with a little story. By
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/U8GBXvdmHT4"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 </div>
 <div class="section" id="a-few-useful-tips-for-common-tasks">
