@@ -26,19 +26,21 @@ Each paragraph per reading assignment gives 1 point (a total of 2 per reading). 
     - [The Limits of Reproducibility in Numerical Simulation](https://ieeexplore-ieee-org.libproxy.berkeley.edu/document/5719578).
     - [Mesnard and Barba 2017, Reproducible and Replicable Computational Fluid Dynamics: It’s Harder Than You Think](https://ieeexplore.ieee.org/document/8012284).
 
-* #5. due Feb 22, 2023: Jupyter in Computational Research
+* #5, due Feb 22, 2023: Jupyter in Computational Research
     - [Granger and Pérez 2021, Jupyter: Thinking and Storytelling With Code and Data](https://ieeexplore.ieee.org/document/9387490).
     - [Using Jupyter for Reproducible Scientific Workflows](https://ieeexplore.ieee.org/document/9325550).
     - [Jupyter in Computational Science](https://ieeexplore.ieee.org/document/9387474).
     - [Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks](http://dx.plos.org/10.1371/journal.pcbi.1007007).
 	
 
-Future reading assignments
-
-* Earth and Climate Science in the Cloud
+* #6, due Mar 1, 2023: Earth and Climate Science in the Cloud
     - [Perspectives on Data Reproducibility and Replicability in Paleoclimate and Climate Science](https://hdsr.mitpress.mit.edu/pub/dijwtzza/release/1).
     - [Gentemann et al. 2021, Science Storms the Cloud](https://www.essoar.org/doi/10.1002/essoar.10506344.2).
-    - Gentemann et al. "[Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave.](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039)".  For this paper, start thinking about reproducibility issues with it. The lead author, [Dr. Chelle Gentemann](https://twitter.com/ChelleGentemann), will be our guest lecturer on Feb 23, and she will discuss aspects of this work. Later we will follow up with a reproducibility attempt around this paper.
+    - Gentemann et al. "[Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave.](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039)".  For this paper, start thinking about reproducibility issues with it. The lead author, [Dr. Chelle Gentemann](https://twitter.com/ChelleGentemann), will be our guest lecturer on March 6th, and she will discuss aspects of this work. Later we will follow up with a reproducibility attempt around this paper.
+
+
+Future reading assignments
+
 
 
 * Foundational classics
