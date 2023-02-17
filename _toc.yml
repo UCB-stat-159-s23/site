@@ -4,25 +4,35 @@ parts:
 - caption: Overview
   chapters:
   - file: overview/schedule
-  - file: overview/ra
   - file: overview/syllabus
+  - file: overview/homework
+  - file: overview/ra
   - file: overview/references
 - caption: Lectures
   chapters:
-  - file: lectures/intro-git/Git-Tutorial
-  - file: lectures/intro-git/git-visuals
+  - file: lectures/intro-git/intro
+    sections:
+    - file: lectures/intro-git/configuration
+    - file: lectures/intro-git/local
+    - file: lectures/intro-git/branch
+    - file: lectures/intro-git/remote
+    - file: lectures/intro-git/conflict
+    - file: lectures/intro-git/git-visuals
   - file: lectures/intro-jupyter/Index
-  - file: lectures/intro-jupyter/01-Intro-Jupyter
-  - file: lectures/intro-jupyter/02-Beyond-Plain-Python
-  - file: lectures/intro-jupyter/03-Custom-Display-Logic
-  - file: lectures/intro-jupyter/04-Rich-Output
-  - file: lectures/intro-jupyter/05-widgets-interact
-  - file: lectures/West_Coast_HeatWave_Basic
-  - file: lectures/climate-data
-  - file: lectures/environments/conda-envs
-  - file: lectures/matplotlib_beyond_basics
-  - file: lectures/documentation
-  - file: lectures/data-serialization
+    sections:
+    - file: lectures/intro-jupyter/01-Intro-Jupyter
+    - file: lectures/intro-jupyter/02-Beyond-Plain-Python
+    - file: lectures/intro-jupyter/03-Custom-Display-Logic
+#    - file: lectures/intro-jupyter/04-Rich-Output
+#    - file: lectures/intro-jupyter/05-widgets-interact
+  - file: lectures/modularity/modularity
+  - file: lectures/environments/environments
+#  - file: lectures/West_Coast_HeatWave_Basic
+#  - file: lectures/climate-data
+#  - file: lectures/environments/conda-envs
+#  - file: lectures/matplotlib_beyond_basics
+#  - file: lectures/documentation
+#  - file: lectures/data-serialization
 - caption: Labs
   chapters:
   - file: lab/intro/intro.ipynb
@@ -30,3 +40,7 @@ parts:
   - file: lab/lab01/lab01.ipynb
   - file: lab/lab02/lab02.ipynb
   - file: lab/lab03/lab03.ipynb
+- caption: Appendix
+  chapters:
+  - file: appendix/rtc
+  - file: appendix/contribute
