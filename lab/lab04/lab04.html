@@ -478,35 +478,40 @@
 <div><p>Friday 02-17-2023, 9AM-11AM &amp; 12AM-2PM</p>
 <p>Instructor: <a class="reference external" href="https://statistics.berkeley.edu/people/facu-sapienza">Facundo Sapienza</a></p>
 </div></blockquote>
-<p>Inside the notebook <code class="docutils literal notranslate"><span class="pre">Erasthostenes.ipynb</span></code> (lacated in this same folder) there is a non-very well writen piece of code for calculating all prime numbers smaller than a certain number. We are going to work around the contents of this notebook and organize it so it looks like a decent project: better code, better documetation, and more reproducible.</p>
+<p>Inside the notebook <code class="docutils literal notranslate"><span class="pre">Erasthostenes.ipynb</span></code> (located in this same folder in the <code class="docutils literal notranslate"><span class="pre">site</span></code> repository) there is a non-very well written piece of code for calculating all prime numbers until a certain number. We are going to work with the contents of this notebook and re-organize it so it looks like a decent project: better code, better documentation, and more reproducible.</p>
+<p>Useful links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/modularity/modularity.html">Lecture on modularity</a></p></li>
+<li><p><a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/environments/environments.html">Lecture on environments</a></p></li>
+</ul>
 <div class="section" id="modularization">
 <h2>1. Modularization<a class="headerlink" href="#modularization" title="Permalink to this headline">¶</a></h2>
-<p>First things first: be sure you can run all the code inside <code class="docutils literal notranslate"><span class="pre">Erasthostenes.ipynb</span></code>.
+<p>First things first: be sure you can run all the code inside <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code>.
 After being sure the code runs, we are going to start with some re-organization of the code inside <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code>.</p>
 <a class="reference internal image-reference" href="https://www.onlinemathlearning.com/image-files/sieve-prime.jpg"><img alt="eratosthenes" src="https://www.onlinemathlearning.com/image-files/sieve-prime.jpg" style="width: 400px;" /></a>
 <div class="section" id="reorganization">
 <h3>1.1. Reorganization<a class="headerlink" href="#reorganization" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>The first thing you will do is to create two separate functions for the sieve of Eratosthenes algorithms. These are the first things you will see inside the notebook. Think what are the arguments for such functions.</p></li>
-<li><p>Now, these two functions do the same but they have different implementations. Most likely, they also have the same arguments and outputs. Create a new funcion <code class="docutils literal notranslate"><span class="pre">get_primes</span></code> that you call to run both methods.</p></li>
-<li><p>Move these three functions to a separate script called <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>. Remember to import the necesary libraries inside <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>.</p></li>
+<li><p>Now, these two functions do the same but they have different implementations. Most likely, they also have the same arguments and outputs. Create a new function <code class="docutils literal notranslate"><span class="pre">get_primes</span></code> that you call to run both methods.</p></li>
+<li><p>Move these three functions to a separate script called <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>. Remember to import the necessary libraries inside <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>.</p></li>
 <li><p>Import all this function into the notebook using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in the first cell of the notebook.</p></li>
 <li><p>In the section <em>Long Run: proportion of prime numbers</em> there is a long run of exactly the same code than before but inside a for loop, so we can evaluate the proportion of prime numbers as we increase the search window. Make a new function called <code class="docutils literal notranslate"><span class="pre">proportion_primes</span></code> that does this.</p></li>
-<li><p>You function look good, but now let’s add some documentation to them. Add a <code class="docutils literal notranslate"><span class="pre">docstring</span></code> to these function. How can you access the docstrings from the notebook? Remember that you can import the scripts using the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">imp;</span> <span class="pre">imp.import(&quot;sieve.py&quot;)</span></code> in case you want the changes to be reflected after the import.</p></li>
+<li><p>You function look good, but now let’s add some documentation to them. Add a <code class="docutils literal notranslate"><span class="pre">docstring</span></code> to them. How can you access the docstrings from the notebook? Remember that you can import the scripts using the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">imp;</span> <span class="pre">imp.import(&quot;sieve.py&quot;)</span></code> in case you want the changes to be reflected after the import.</p></li>
 <li><p>Be sure you can run these functions from the notebook <em>after you move the code to the scripts (no remains in the notebook)</em> and <em>after you have restarted your kernel</em>.</p></li>
 </ol>
 </div>
 <div class="section" id="modules">
 <h3>1.2. Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li><p>Now, after you know the previuos import statement is working, move to <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code> to a new foldel called <code class="docutils literal notranslate"><span class="pre">sieve-tools</span></code>.</p></li>
-<li><p>Inside the folder, create an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file with the requiered contents so you can do the import from the notebook. Now, you should be able to do the import in the notebook by doing</p></li>
+<li><p>Now, after you know the previous import statement are working, move to <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code> to a new folder called <code class="docutils literal notranslate"><span class="pre">sieve-tools</span></code>.</p></li>
+<li><p>Inside the folder, create an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file with the required contents so you can do the import from the notebook. Now, you should be able to do the import in the notebook by doing</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sieve</span><span class="o">-</span><span class="n">tools</span> <span class="kn">import</span> <span class="nn">sieve</span>
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>Each one of the files inside <code class="docutils literal notranslate"><span class="pre">sieve-tools</span></code> is called a module of the library. Now, continue your cleaning of <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code> by moving all the code required for ploting to a new module called <code class="docutils literal notranslate"><span class="pre">plots</span></code>. Update <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to make the imports of this new module. By the end of the day, you should be able to generate the plots from the notebook using something like</p></li>
+<li><p>Each one of the files inside <code class="docutils literal notranslate"><span class="pre">sieve-tools</span></code> is called a module. Now, continue your cleaning of <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code> by moving all the plotting code required to a new module called <code class="docutils literal notranslate"><span class="pre">plots</span></code>. Update <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to make the imports of this new module. By the end of the day, you should be able to generate the plots from the notebook using something like</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sieve</span><span class="p">(</span><span class="o">....</span> <span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -535,7 +540,7 @@ After being sure the code runs, we are going to start with some re-organization 
 <p><em>image taken from <a class="reference external" href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a></em></p>
 <div class="section" id="create-environment-for-a-project">
 <h3>3.1. Create environment for a project<a class="headerlink" href="#create-environment-for-a-project" title="Permalink to this headline">¶</a></h3>
-<p>There are different ways how you can create a new conda environment. For reproducibility, the best practice is to share an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file that includes all the required packages and then create the environmnet from it. In order to start with this, we are going to start by creating a fresh environmnet that then we are going to export and share.</p>
+<p>There are different ways how you can create a new conda environment. For reproducibility, the best practice is to share an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file that includes all the required packages and then create the environment from it. In order to start with this, we are going to start by creating a fresh environment that then we are going to export and share.</p>
 <ol class="simple">
 <li><p>First that all, create a new folder in your home directory called <code class="docutils literal notranslate"><span class="pre">envs</span></code>. You can do this from the terminal</p></li>
 </ol>
@@ -551,14 +556,14 @@ After being sure the code runs, we are going to start with some re-organization 
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>In the terminal, let’s create a new environment called <code class="docutils literal notranslate"><span class="pre">test_env</span></code> with an specific Python version. It may take a few seconds until it creates the new environmet.</p></li>
+<li><p>In the terminal, let’s create a new environment called <code class="docutils literal notranslate"><span class="pre">test_env</span></code> with an specific Python version. It may take a few seconds until it creates the new environment.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>In the terminal, do <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> to see the list of all the environments you have installed. Activate the new environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code>.</p></li>
-<li><p>At this point, you can run code from this environment just from the terminal. Our next step is to make this environment available from the notebook. Take a look to the <a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/environments/environments.html">Using an environment in your notebooks</a>. In order for this to work, first you need to install the <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> package. You can do this with the follwing command</p></li>
+<li><p>At this point, you can run code from this environment just from the terminal. Our next step is to make this environment available from the notebook. Take a look to the <a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/environments/environments.html">Using an environment in your notebooks</a>. In order for this to work, first you need to install the <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> package. You can do this with the following command</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
 </pre></div>
@@ -572,13 +577,13 @@ After being sure the code runs, we are going to start with some re-organization 
 <p>After doing this, the environment should be visible from the notebook. Go to the upper right corner of your notebook and change the kernel. It may be necessary to restart your server in order to make this changes visible.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>What just happened? You have created a new virtual environmnet in your machine. Where is it? Go inside the <code class="docutils literal notranslate"><span class="pre">envs</span></code> folder and see what is there. This is where you conda environments live. If you delete this folders, the environment disapear.</p>
+<p>What just happened? You have created a new virtual environment in your machine. Where is it? Go inside the <code class="docutils literal notranslate"><span class="pre">envs</span></code> folder and see what is there. This is where you conda environments live. If you delete this folders, the environment disappear.</p>
 </div>
 </div>
 <div class="section" id="growing-and-exporting">
 <h3>3.2. Growing and exporting<a class="headerlink" href="#growing-and-exporting" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li><p>Now that the environment is working and running from the notebook <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code>, do the required installations so the code runs. So far, nothing really has being installed in your repository. You will need to install basic packages like <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. You can use <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install packages, but we recommend you to use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> when possible.</p></li>
+<li><p>Now that the environment is working and running from the notebook <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code>, do the required installations so the code runs. So far, nothing really has being installed in your environment. You will need to install basic packages like <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. You can use <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install packages, but we recommend you to use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> when possible.</p></li>
 <li><p>Once you environment has all the required dependencies, export them to a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file. The <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span></code> shows you the contents that should go to the configuration file. We recommend you to use the following syntax at the moment of exporting an environment.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--from-history<span class="w"> </span>&gt;<span class="w"> </span>environment.yml
@@ -587,7 +592,7 @@ After being sure the code runs, we are going to start with some re-organization 
 <ol class="simple">
 <li><p>Now check what is inside <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. Push this file to your repository.</p></li>
 </ol>
-<p>These is the list of commands that you most likely will be using all time when working with conda environmnets:</p>
+<p>These is the list of commands that you most likely will be using all time when working with conda environments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code></p></li>
@@ -600,14 +605,14 @@ After being sure the code runs, we are going to start with some re-organization 
 <p>Now, we are going to launch the code into the cloud so everyone can run it! We are going to use <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/">Binder</a> for this. Doing this is surprisingly simple.</p>
 <a class="reference internal image-reference" href="https://miro.medium.com/max/471/1*cWQj_YdmY_p14eh628N_Kg.png"><img alt="binder" src="https://miro.medium.com/max/471/1*cWQj_YdmY_p14eh628N_Kg.png" style="width: 300px;" /></a>
 <ol class="simple">
-<li><p>Go to <a class="reference external" href="https://mybinder.org">mybinder.org</a> and enter the information of the repositoroty. Then just enter <code class="docutils literal notranslate"><span class="pre">Launch</span></code>! In order for this to work, be sure that</p>
+<li><p>Go to <a class="reference external" href="https://mybinder.org">mybinder.org</a> and enter the information of the repository. Then just enter <code class="docutils literal notranslate"><span class="pre">Launch</span></code>! In order for this to work, be sure that</p>
 <ol class="simple">
-<li><p>The environment file needs to be especified under the name <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. Be sure your GitHub repository contains that file.</p></li>
+<li><p>The environment file needs to be specified under the name <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. Be sure your GitHub repository contains that file.</p></li>
 <li><p>Be sure your repository is public.</p></li>
 </ol>
 </li>
-<li><p>If everything is in order, this will launch the JupyterLab interfase you are already using for this course. Check that the code runs here too and that all the required packages are installed in this new server. Now you can see how <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/tutorials/reproducibility.html">Binder helps ensure reproducibility</a>.</p></li>
-<li><p>Binder allows you to create a badge and link that will launch the virtual machine everytime you click on it. See how to do this and add this badge to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p></li>
+<li><p>If everything is in order, this will launch the JupyterLab interface you are already using for this course. Check that the code runs here too and that all the required packages are installed in this new server. Now you can see how <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/tutorials/reproducibility.html">Binder helps ensure reproducibility</a>.</p></li>
+<li><p>Binder allows you to create a badge and link that will launch the virtual machine every time you click on it. See how to do this and add this badge to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p></li>
 </ol>
 </div>
 </div>
