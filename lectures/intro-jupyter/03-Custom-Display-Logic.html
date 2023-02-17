@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Rich Output" href="04-Rich-Output.html" />
+    <link rel="next" title="Modularity" href="../modularity/modularity.html" />
     <link rel="prev" title="IPython: beyond plain Python" href="02-Beyond-Plain-Python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -110,13 +110,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/ra.html">
-   Reading Assignments
+  <a class="reference internal" href="../../overview/syllabus.html">
+   Syllabus
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/syllabus.html">
-   Syllabus
+  <a class="reference internal" href="../../overview/homework.html">
+   Homeworks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/ra.html">
+   Reading Assignments
   </a>
  </li>
  <li class="toctree-l1">
@@ -131,74 +136,83 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro-git/Git-Tutorial.html">
-   An interactive Git Tutorial: the tool you didn’t know you needed
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../intro-git/intro.html">
+   Git
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/configuration.html">
+     Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/local.html">
+     Local, single-user, linear workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/branch.html">
+     Local user, branching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/remote.html">
+     Remotes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/conflict.html">
+     Conflict management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/git-visuals.html">
+     Git Visuals
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro-git/git-visuals.html">
-   Git Visuals
-  </a>
- </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Index.html">
    An overview of Jupyter tools
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-Intro-Jupyter.html">
+     A quick, practical intro to the Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-Beyond-Plain-Python.html">
+     IPython: beyond plain Python
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Custom Display Logic
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Intro-Jupyter.html">
-   A quick, practical intro to the Jupyter Notebook
+  <a class="reference internal" href="../modularity/modularity.html">
+   Modularity
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-Beyond-Plain-Python.html">
-   IPython: beyond plain Python
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Custom Display Logic
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-Rich-Output.html">
-   Rich Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-widgets-interact.html">
-   Widgets without writing widgets: interact
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../West_Coast_HeatWave_Basic.html">
-   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../climate-data.html">
-   Climate, oceans and data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../environments/conda-envs.html">
-   A quick guide to conda environments on our JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../matplotlib_beyond_basics.html">
-   Matplotlib: Beyond the basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../documentation.html">
-   Documentation, JupyterBook and Github Pages
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-serialization.html">
-   Data Serialization
+  <a class="reference internal" href="../environments/environments.html">
+   Environments
   </a>
  </li>
 </ul>
@@ -231,6 +245,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../lab/lab03/lab03.html">
    Lab Session 3: GitHub Continued, Pull Requests
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/rtc.html">
+   Real time collaboration (RTC)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/contribute.html">
+   Contribute
   </a>
  </li>
 </ul>
@@ -404,7 +435,7 @@
 <h1>Custom Display Logic<a class="headerlink" href="#custom-display-logic" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>As described in the <a class="reference internal" href="04-Rich-Output.html"><span class="doc std std-doc">Rich Output</span></a> tutorial, the IPython display system can display rich representations of objects in the following formats:</p>
+<p>As described in the <span class="xref myst">Rich Output</span> tutorial, the IPython display system can display rich representations of objects in the following formats:</p>
 <ul class="simple">
 <li><p>JavaScript</p></li>
 <li><p>HTML</p></li>
@@ -854,10 +885,10 @@ for_type_by_name(type_module, type_name, func=None) method of IPython.core.forma
             <p class="prev-next-title">IPython: beyond plain Python</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04-Rich-Output.html" title="next page">
+    <a class='right-next' id="next-link" href="../modularity/modularity.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Rich Output</p>
+        <p class="prev-next-title">Modularity</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

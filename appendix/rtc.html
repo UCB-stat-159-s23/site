@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weekly Plan &#8212; Collaborative and Reproducible Data Science</title>
+    <title>Real time collaboration (RTC) &#8212; Collaborative and Reproducible Data Science</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Syllabus" href="syllabus.html" />
-    <link rel="prev" title="Statistics 159/259, Spring 2023 Course Summary" href="../index.html" />
+    <link rel="next" title="Contribute" href="contribute.html" />
+    <link rel="prev" title="Lab Session 3: GitHub Continued, Pull Requests" href="../lab/lab03/lab03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,29 +101,29 @@
   Overview
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/schedule.html">
    Weekly Plan
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="syllabus.html">
+  <a class="reference internal" href="../overview/syllabus.html">
    Syllabus
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="homework.html">
+  <a class="reference internal" href="../overview/homework.html">
    Homeworks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ra.html">
+  <a class="reference internal" href="../overview/ra.html">
    Reading Assignments
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
+  <a class="reference internal" href="../overview/references.html">
    Textbook and Supporting Materials
   </a>
  </li>
@@ -251,14 +251,14 @@
   Appendix
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/rtc.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Real time collaboration (RTC)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/contribute.html">
+  <a class="reference internal" href="contribute.html">
    Contribute
   </a>
  </li>
@@ -303,9 +303,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/overview/schedule.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/appendix/rtc.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -323,24 +323,28 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/appendix/rtc.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#live-links-for-labs-on-the-berkeley-datahub">
-   Live links for labs on the Berkeley DataHub
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -348,51 +352,25 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Weekly Plan</h1>
+                <h1>Real time collaboration (RTC)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#live-links-for-labs-on-the-berkeley-datahub">
-   Live links for labs on the Berkeley DataHub
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="weekly-plan">
-<h1>Weekly Plan<a class="headerlink" href="#weekly-plan" title="Permalink to this headline">¶</a></h1>
-<p>Below is our current plan for the course. <strong>This is not a contract:</strong> it is a <em>plan</em>, and it may change substantially as the semester unfolds.</p>
-<p>The table of contents on the left pane has links to lectures and labs. The following are live executable links that use the <a class="reference external" href="https://jupyterhub.github.io/nbgitpuller">nbgitpuller</a> service to give you a current copy from git of the given content, ready to be run in the Spring 2023 Berkeley hub. You can use these links in order to run the content conveniently without manual git work.</p>
-<p>Note that all lecture videos are posted on the <a class="reference external" href="https://bcourses.berkeley.edu/courses/1523751/external_tools/78985">bCourses “Lectures” playlist for the course</a> (this link is accessible only to Berkeley personnel).</p>
-<ol class="simple">
-<li><p>Jan 23. Logistics and intro to Git.</p></li>
-<li><p>Jan 30. Git and GitHub</p></li>
-<li><p>Feb 6. Introduction to Jupyter project: <a class="reference external" href="https://docs.google.com/presentation/d/1fNEEKqpErO7SZ87dptniosZjOgXn3Tau4JFAAIka8bE/edit#slide=id.p1">Slides</a> for today’s class and <a class="reference external" href="https://www.youtube.com/watch?v=7jiPeIFXb6U">I don’t like notebooks by Joel Grus</a> talk.</p></li>
-<li><p>Feb 13. Environments and virtual machines</p></li>
-<li><p>Feb 20. NO LECTURE</p></li>
-</ol>
-<div class="section" id="live-links-for-labs-on-the-berkeley-datahub">
-<h2>Live links for labs on the Berkeley DataHub<a class="headerlink" href="#live-links-for-labs-on-the-berkeley-datahub" title="Permalink to this headline">¶</a></h2>
-<p>All the labs for the course can be found in the navitation bar on the left. Useful information about how to setup the labs in your JupyterHub sesssion can be found in the <a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lab/intro/intro.html">introduction page</a>.</p>
-<ul class="simple">
-<li><p>Jan 20. Lab 00 - Intro Python and setup.</p></li>
-<li><p>Jan 27. Lab 01 - Git and the Shell</p></li>
-<li><p>Feb 02. Lab 02 - Dotfiles, Braches, Conflicts and GitHub</p></li>
-<li><p>Feb 09. Lab 03 - GitHub Continued, Pull Requests</p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="real-time-collaboration-rtc">
+<h1>Real time collaboration (RTC)<a class="headerlink" href="#real-time-collaboration-rtc" title="Permalink to this headline">¶</a></h1>
+<p>Currently we have enable real time collaboration in our <a class="reference external" href="https://stat159.datahub.berkeley.edu/user">JupyterHub</a>. How does this works? We can have more than one people working inside the same Hub session.</p>
+<p>In order to share code with someone else, you need to copy the link under the <code class="docutils literal notranslate"><span class="pre">Share</span> <span class="pre">&gt;</span> <span class="pre">Share</span> <span class="pre">Jupyter</span> <span class="pre">Server</span> <span class="pre">Link</span></code> tab on the top of JupyterLab and share it with your collaborator. This person will then have access to your Hub session. Notice that both users will show up under the same username (the owner of the server session).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful with whom you share your link, since that person will have access to all your Hub session.</p>
+<p>If you want to close the access to your server without shouting down your machine, go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Hub</span> <span class="pre">Control</span> <span class="pre">Panel</span></code> and click on the tab <code class="docutils literal notranslate"><span class="pre">Token</span></code>. You will here see the token you are using to share your server session. By cliclikng <code class="docutils literal notranslate"><span class="pre">revoke</span></code>, this will cancel the link.</p>
 </div>
 </div>
 
@@ -409,7 +387,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./overview"
+            path: "./appendix"
         },
         predefinedOutput: true
     }
@@ -421,17 +399,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../lab/lab03/lab03.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Statistics 159/259, Spring 2023 Course Summary</p>
+            <p class="prev-next-title">Lab Session 3: GitHub Continued, Pull Requests</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="syllabus.html" title="next page">
+    <a class='right-next' id="next-link" href="contribute.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Syllabus</p>
+        <p class="prev-next-title">Contribute</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

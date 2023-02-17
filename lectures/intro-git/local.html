@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local, single-user, linear workflow &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Local user, branching" href="branch.html" />
+    <link rel="prev" title="Configuration" href="configuration.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Statistics 159/259, Spring 2023 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/schedule.html">
+   Weekly Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/homework.html">
+   Homeworks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/ra.html">
+   Reading Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/references.html">
+   Textbook and Supporting Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Git
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="configuration.html">
+     Configuration
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Local, single-user, linear workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="branch.html">
+     Local user, branching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="remote.html">
+     Remotes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conflict.html">
+     Conflict management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git-visuals.html">
+     Git Visuals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-jupyter/01-Intro-Jupyter.html">
+     A quick, practical intro to the Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-jupyter/02-Beyond-Plain-Python.html">
+     IPython: beyond plain Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-jupyter/03-Custom-Display-Logic.html">
+     Custom Display Logic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modularity/modularity.html">
+   Modularity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../environments/environments.html">
+   Environments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/intro/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab00/lab00.html">
+   Lab Session 0 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
+   Lab Session 1: Git &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
+   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab03/lab03.html">
+   Lab Session 3: GitHub Continued, Pull Requests
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/rtc.html">
+   Real time collaboration (RTC)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/contribute.html">
+   Contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/intro-git/local.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-git/local.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directed-acyclic-graphs-dag">
+   Directed Acyclic Graphs (DAG)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#locals">
+   Locals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apendix">
+   Apendix
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Local, single-user, linear workflow</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directed-acyclic-graphs-dag">
+   Directed Acyclic Graphs (DAG)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#locals">
+   Locals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apendix">
+   Apendix
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="local-single-user-linear-workflow">
+<h1>Local, single-user, linear workflow<a class="headerlink" href="#local-single-user-linear-workflow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="directed-acyclic-graphs-dag">
+<h2>Directed Acyclic Graphs (DAG)<a class="headerlink" href="#directed-acyclic-graphs-dag" title="Permalink to this headline">¶</a></h2>
+<p>The fundamental unit of information in git is what is called a <em>commit</em>. A commit is a snapshot of a work at a point in time. Now, for version control systems we don’t want to have just one snapshot of our work, but instead we want many of them. Furthermore, instead of a linear sequence of snapshots we may imagine having multiple lines or branches of snapshots including different versions of our project. These commits are then organized in a directed acyclic graph, as the one shown in the following picture.</p>
+<!-- offline: 
+![](images/commit_anatomy.png)
+
+<img src="https://raw.github.com/fperez/reprosw/master/fig/commit_anatomy.png">
+-->
+<p><img alt="" src="../../_images/commit_anatomy.png" /></p>
+<p>Credit: ProGit book, by Scott Chacon, CC License.</p>
+<p>We identify each node (commit) with a hash, a fingerprint of the content of each commit and its parent. It is important the fact that the hash include information of the parent node, since this allow us to keep the check the structural consistency of the DAG.</p>
+<p>Let’s create a first hash:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha1</span>
+
+<span class="c1"># Our first commit</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;This is the start of my paper.&#39;</span>
+<span class="n">meta1</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;date: 1/1/17&#39;</span>
+<span class="n">hash1</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">(</span><span class="n">data1</span> <span class="o">+</span> <span class="n">meta1</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hash:&#39;</span><span class="p">,</span> <span class="n">hash1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hash: 3b32905baabd5ff22b3832c892078f78f5e5bd3b
+</pre></div>
+</div>
+</div>
+</div>
+<p>Every small change we make on the previous text with result in a full change of the associated hash code. Notice also how in the next hash we have included the information of the parent node.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;Some more text in my paper...&#39;</span>
+<span class="n">meta2</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;date: 1/2/1&#39;</span>
+<span class="c1"># Note we add the parent hash here!</span>
+<span class="n">hash2</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">(</span><span class="n">data2</span> <span class="o">+</span> <span class="n">meta2</span> <span class="o">+</span> <span class="n">hash1</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hash:&#39;</span><span class="p">,</span> <span class="n">hash2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hash: 1c12d2aad51d5fc33e5b83a03b8787dfadde92a4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="locals">
+<h2>Locals<a class="headerlink" href="#locals" title="Permalink to this headline">¶</a></h2>
+<p>Type <code class="docutils literal notranslate"><span class="pre">git</span></code> to see a full list of all the <em>core</em> commands.  We’ll now go through most of these via small practical exercises:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: git [-v | --version] [-h | --help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
+           [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
+           [--super-prefix=&lt;path&gt;] [--config-env=&lt;name&gt;=&lt;envvar&gt;]
+           &lt;command&gt; [&lt;args&gt;]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+&#39;git help -a&#39; and &#39;git help -g&#39; list available subcommands and some
+concept guides. See &#39;git help &lt;command&gt;&#39; or &#39;git help &lt;concept&gt;&#39;
+to read about a specific subcommand or concept.
+See &#39;git help git&#39; for an overview of the system.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can execute commands in bash from a Jupyter notebook by adding the <code class="docutils literal notranslate"><span class="pre">!</span></code> in front. You can also add the magic <code class="docutils literal notranslate"><span class="pre">%%bash</span></code> at the top of the cell to indicate that all the code in the cell must be executed in the shell.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If well you can do most of the following git operations from a notebook, we actually recommend you to execute this commands directly from the shell.</p>
+</div>
+<p>First we create an empty folder and then we initialize it as a git repository. From your terminal, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p>Let’s see what git just did. Move inside to this folder and use the listing function to show all the files and directories inside the test repository <code class="docutils literal notranslate"><span class="pre">test</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>
+ls<span class="w"> </span>-la
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>What makes <code class="docutils literal notranslate"><span class="pre">test</span></code> a repository? If you pay attention to what is inside the folder, you will see an especial folder called <code class="docutils literal notranslate"><span class="pre">.git</span></code>. Here is where all the information that git is using to version control your files belongs. If you delete this folder, then your repository will pass to be a simple folder with no version control capabilities.</p>
+</div>
+<p>Now let’s edit our first file in the test directory with a text editor. We can also create a new text file with the next command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;My first bit of text&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+<p>The first step we have to do in order to version control this new file, we need to <strong>add</strong> it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+<p>We can now ask git about what happened with <code class="docutils literal notranslate"><span class="pre">status</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>The next step is to <strong>commit</strong> our changes to permanently record our changes in git’s database. For now, we are <em>always</em> going to call <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> either with the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option <em>or</em> with specific filenames (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">file1</span> <span class="pre">file2...</span></code>).  This delays the discussion of an aspect of git called the <em>index</em> (often referred to also as the <em>staging area</em>) that we will cover later.  Most everyday work in regular scientific practice doesn’t require understanding the extra moving parts that the index involves, so on a first round we’ll bypass it.  Later on we will discuss how to use it to achieve more fine-grained control of what and how git records our actions.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="s2">&quot;This is our first commit&quot;</span>
+</pre></div>
+</div>
+<p>In the commit above, we  used the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag to specify a message at the command line.  If we don’t do that, git will open the editor we specified in our configuration above and require that we enter a message.  By default, git refuses to record changes that don’t have a message to go along with them (though you can obviously ‘cheat’ by using an empty or meaningless string: git only tries to facilitate best practices, it’s not your nanny).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> to see what has been commited so far</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
+</pre></div>
+</div>
+<p>Sometimes it’s handy to see a very summarized version of the log:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--topo-order<span class="w"> </span>--graph
+</pre></div>
+</div>
+<p>Git supports <em>aliases:</em> new names given to command combinations. Let’s make this handy shortlog an alias, so we only have to type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">slog</span></code> and see this compact log:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.slog<span class="w"> </span><span class="s2">&quot;log --oneline --topo-order --graph&quot;</span>
+</pre></div>
+</div>
+<p>and now we can use this new alias to print a short version of the commit history</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>slog
+</pre></div>
+</div>
+</div>
+<p>Let’s do a little bit more work… Again, in practice you’ll be editing the files by hand, here we do it via shell commands for the sake of automation (and therefore the reproducibility of this tutorial!)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;And now some more text...&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+<p>And now we ask git what is different</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff
+</pre></div>
+</div>
+<p>The format of the output above is well explained in detail in <a class="reference external" href="https://stackoverflow.com/questions/2529441/how-to-read-the-output-from-git-diff">this Stack Overflow post</a>.  But we can provide a brief summary here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">--</span><span class="n">git</span> <span class="n">a</span><span class="o">/</span><span class="n">file1</span><span class="o">.</span><span class="n">txt</span> <span class="n">b</span><span class="o">/</span><span class="n">file1</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This tells us which files changed overall, with ‘a’ representing the old path and ‘b’ the new one (in this case it’s the same file, though if a file had been renamed it would be different).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="n">ce645c7</span><span class="o">.</span><span class="mf">.4</span><span class="n">baa979</span> <span class="mi">100644</span>
+</pre></div>
+</div>
+<p>These are hashes of the file at the two stages, needed by git itself for other operations with the diff output.</p>
+<p>The next block shows the actual changes. The first two lines show which paths are being compared (in this case the same file, <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">a</span><span class="o">/</span><span class="n">file1</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">+++</span> <span class="n">b</span><span class="o">/</span><span class="n">file1</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>The next line indicates where the changes happened. The format is <code class="docutils literal notranslate"><span class="pre">&#64;&#64;</span> <span class="pre">from-file-range</span> <span class="pre">to-file-range</span> <span class="pre">&#64;&#64;</span></code>, where there’s one more <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> character than there’s parents to the file comparison (git can handle multi-way diff/merges), adn the file range format is <code class="docutils literal notranslate"><span class="pre">-/+&lt;start</span> <span class="pre">line&gt;,&lt;#</span> <span class="pre">of</span> <span class="pre">lines&gt;</span></code>, with <code class="docutils literal notranslate"><span class="pre">-</span></code> for the <code class="docutils literal notranslate"><span class="pre">from-file</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code> for the <code class="docutils literal notranslate"><span class="pre">to-file</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">@@</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="o">@@</span>
+</pre></div>
+</div>
+<p>Lines prepended with <code class="docutils literal notranslate"><span class="pre">-</span></code> correspond to deletions (none in this case), and lines with <code class="docutils literal notranslate"><span class="pre">+</span></code> to additions. A few lines around deletions/additions are shown for context:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">My</span> <span class="n">first</span> <span class="n">bit</span> <span class="n">of</span> <span class="n">text</span>
+<span class="o">+</span><span class="n">And</span> <span class="n">now</span> <span class="n">some</span> <span class="n">more</span> <span class="n">text</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>And for now on, the circle of virtue just repeats: work, commit, work, commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="s2">&quot;I have made great progress on this critical matter.&quot;</span>
+</pre></div>
+</div>
+<p>While <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is used to add files to the list git tracks, we must also tell it if we want their  names to change or for it to stop tracking them.  In familiar Unix fashion, the <code class="docutils literal notranslate"><span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">rm</span></code> git commands do precisely this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>mv<span class="w"> </span>file1.txt<span class="w"> </span>file-newname.txt
+git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>Note that these changes must be committed too, to become permanent!  In git’s world, until something hasn’t been committed, it isn’t permanently recorded anywhere.</p>
+</div>
+<div class="section" id="apendix">
+<h2>Apendix<a class="headerlink" href="#apendix" title="Permalink to this headline">¶</a></h2>
+<p>These is the sequence of all bash commands we have use in this tutorial in the right order.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init<span class="w"> </span><span class="nb">test</span><span class="w"> </span>
+...
+...
+...
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/intro-git"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="configuration.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Configuration</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="branch.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Local user, branching</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez and Facundo Sapienza<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
