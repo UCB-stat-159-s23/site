@@ -496,22 +496,32 @@ After being sure the code runs, we are going to start with some re-organization 
 <li><p>Now, these two functions do the same but they have different implementations. Most likely, they also have the same arguments and outputs. Create a new function <code class="docutils literal notranslate"><span class="pre">get_primes</span></code> that you call to run both methods.</p></li>
 <li><p>Move these three functions to a separate script called <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>. Remember to import the necessary libraries inside <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>.</p></li>
 <li><p>Import all this function into the notebook using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in the first cell of the notebook.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For now, every time you make a change in <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code> and a consequent <code class="docutils literal notranslate"><span class="pre">import</span></code> inside the notebook, you will have to restart the kernel first. This is because once imported, the iPython kernel reads that the script has been already loaded and it doesn’t look for differences in the new file. In general, it’s a good practice to restart your kernel once the counter starts increasing and after doing significant reorganization changes in the notebook, like we are doing here.</p>
+</div>
+<ol class="simple">
 <li><p>In the section <em>Long Run: proportion of prime numbers</em> there is a long run of exactly the same code than before but inside a for loop, so we can evaluate the proportion of prime numbers as we increase the search window. Make a new function called <code class="docutils literal notranslate"><span class="pre">proportion_primes</span></code> that does this.</p></li>
-<li><p>You function look good, but now let’s add some documentation to them. Add a <code class="docutils literal notranslate"><span class="pre">docstring</span></code> to them. How can you access the docstrings from the notebook? Remember that you can import the scripts using the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">imp;</span> <span class="pre">imp.import(&quot;sieve.py&quot;)</span></code> in case you want the changes to be reflected after the import.</p></li>
+<li><p>You function look good, but now let’s add some documentation to them. Add a <code class="docutils literal notranslate"><span class="pre">docstring</span></code> to them. How can you access the docstrings from the notebook?</p></li>
 <li><p>Be sure you can run these functions from the notebook <em>after you move the code to the scripts (no remains in the notebook)</em> and <em>after you have restarted your kernel</em>.</p></li>
 </ol>
 </div>
 <div class="section" id="modules">
 <h3>1.2. Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li><p>Now, after you know the previous import statement are working, move to <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code> to a new folder called <code class="docutils literal notranslate"><span class="pre">sieve-tools</span></code>.</p></li>
+<li><p>Now, after you know the previous import statement are working, move to <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code> to a new folder called <code class="docutils literal notranslate"><span class="pre">sievetools</span></code>.</p></li>
 <li><p>Inside the folder, create an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file with the required contents so you can do the import from the notebook. Now, you should be able to do the import in the notebook by doing</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sieve</span><span class="o">-</span><span class="n">tools</span> <span class="kn">import</span> <span class="nn">sieve</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sievetools</span> <span class="kn">import</span> <span class="n">sieve</span>
 </pre></div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Now that you have a proper module, you can import the scripts using the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">imp;</span> <span class="pre">imp.reload(&quot;sieve.py&quot;)</span></code> in case you want the changes to be reflected after the import.</p>
+</div>
 <ol class="simple">
-<li><p>Each one of the files inside <code class="docutils literal notranslate"><span class="pre">sieve-tools</span></code> is called a module. Now, continue your cleaning of <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code> by moving all the plotting code required to a new module called <code class="docutils literal notranslate"><span class="pre">plots</span></code>. Update <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to make the imports of this new module. By the end of the day, you should be able to generate the plots from the notebook using something like</p></li>
+<li><p>Each one of the files inside <code class="docutils literal notranslate"><span class="pre">sievetools</span></code> is called a module. Now, continue your cleaning of <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code> by moving all the plotting code required to a new module called <code class="docutils literal notranslate"><span class="pre">plots</span></code>. Update <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to make the imports of this new module. By the end of the day, you should be able to generate the plots from the notebook using something like</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sieve</span><span class="p">(</span><span class="o">....</span> <span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
