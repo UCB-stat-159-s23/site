@@ -23,3 +23,4 @@ All the labs for the course can be found in the navitation bar on the left. Usef
 * Jan 27. Lab 01 - Git and the Shell
 * Feb 02. Lab 02 - Dotfiles, Braches, Conflicts and GitHub
 * Feb 09. Lab 03 - GitHub Continued, Pull Requests
+* Feb 16. Lab 04 - Modularization, Environments, Binder
