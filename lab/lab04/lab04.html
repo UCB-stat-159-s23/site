@@ -573,11 +573,11 @@ After being sure the code runs, we are going to start with some re-organization 
 <ol class="simple">
 <li><p>In the terminal, let’s create a new environment called <code class="docutils literal notranslate"><span class="pre">test_env</span></code> with an specific Python version. It may take a few seconds until it creates the new environment.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;ENVIRONMENT<span class="w"> </span>NAME&gt;<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>In the terminal, do <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> to see the list of all the environments you have installed. Activate the new environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code>.</p></li>
+<li><p>In the terminal, do <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> to see the list of all the environments you have installed. Activate the new environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">&lt;ENVIRONMENT</span> <span class="pre">NAME&gt;</span></code>.</p></li>
 <li><p>At this point, you can run code from this environment just from the terminal. Our next step is to make this environment available from the notebook. Take a look to the <a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/environments/environments.html">Using an environment in your notebooks</a>. In order for this to work, first you need to install the <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> package. You can do this with the following command</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
