@@ -66,7 +66,6 @@ The PLOS [Ten Simple Rules](https://collections.plos.org/collection/ten-simple-r
 
 **The art of research**
 - [Effective Statistical Practice](http://dx.plos.org/10.1371/journal.pcbi.1004961).
-- [Doing Your Best Research, According to Hamming](http://dx.plos.org/10.1371/journal.pcbi.0030213).
 
 ### National Academies Reports
 
