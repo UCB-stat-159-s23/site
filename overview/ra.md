@@ -34,13 +34,16 @@ Each paragraph per reading assignment gives 1 point (a total of 2 per reading). 
 	
 
 * #6, due Mar 1, 2023: Earth and Climate Science in the Cloud
-    - Gentemann et al. 2016 "[Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave.](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039)".  For this paper, start thinking about reproducibility issues with it. The lead author, [Dr. Chelle Gentemann](https://twitter.com/ChelleGentemann), will be our guest lecturer on March 6th, and she will discuss aspects of this work. Later we will follow up with a reproducibility attempt around this paper.
-    - Gentemann et al. 2021, [Science Storms the Cloud](https://www.essoar.org/doi/10.1002/essoar.10506344.2).
+    - [Gentemann et al. 2016 "Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave.](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039)".  For this paper, start thinking about reproducibility issues with it. The lead author, [Dr. Chelle Gentemann](https://twitter.com/ChelleGentemann), will be our guest lecturer on March 6th, and she will discuss aspects of this work. Later we will follow up with a reproducibility attempt around this paper.
+    - [Gentemann et al. 2021, Science Storms the Cloud](https://www.essoar.org/doi/10.1002/essoar.10506344.2).
     - [Open Source Science: A Conversation with Leaders at NASA and UC Berkeley | Oct. 26, 2022](https://data.berkeley.edu/news/national-global-momentum-show-its-time-open-science-action-experts-say). For this assignment, we are asking you to summarize and comment on the ~1.5hrs long panel discussion. 
 
-
+* #7, due Mar 8, 2023: Cultivating good Programming Practices
+    - [Yukihiro Matsumoto, Treating Code as an Essay](https://vample.com/ebooks/OReilly.Beautiful.Code.Jun.2007.pdf). You can find the reading in Chapter 29 of the book Beautiful Code. 
+    - [Williams et al. 2000, Strengthening the Case for Pair Programming](http://sunnyday.mit.edu/16.355/williams.pdf).
+    
+    
 Future reading assignments
-
 
 
 * Foundational classics
