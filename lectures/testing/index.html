@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conflict management &#8212; Collaborative and Reproducible Data Science</title>
+    <title>Testing &#8212; Collaborative and Reproducible Data Science</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Git Visuals" href="git-visuals.html" />
-    <link rel="prev" title="Remotes" href="remote.html" />
+    <link rel="next" title="Building Blocks" href="building-blocks.html" />
+    <link rel="prev" title="Environments" href="../environments/environments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -134,43 +134,43 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../intro-git/intro.html">
    Git
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="configuration.html">
+    <a class="reference internal" href="../intro-git/configuration.html">
      Configuration
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="local.html">
+    <a class="reference internal" href="../intro-git/local.html">
      Local, single-user, linear workflow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="branch.html">
+    <a class="reference internal" href="../intro-git/branch.html">
      Local user, branching
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="remote.html">
+    <a class="reference internal" href="../intro-git/remote.html">
      Remotes
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/conflict.html">
      Conflict management
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="git-visuals.html">
+    <a class="reference internal" href="../intro-git/git-visuals.html">
      Git Visuals
     </a>
    </li>
@@ -213,23 +213,23 @@
    Environments
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../testing/index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Testing
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../testing/building-blocks.html">
+    <a class="reference internal" href="building-blocks.html">
      Building Blocks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../testing/workflow.html">
+    <a class="reference internal" href="workflow.html">
      Workflow and Automation
     </a>
    </li>
@@ -335,7 +335,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/intro-git/conflict.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/testing/index.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -360,7 +360,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-git/conflict.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/testing/index.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -384,7 +384,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Conflict management</h1>
+                <h1>Testing</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -395,37 +395,10 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="conflict-management">
-<h1>Conflict management<a class="headerlink" href="#conflict-management" title="Permalink to this headline">¶</a></h1>
-<p>While git is very good at merging, if two different branches modify the same file in the same location, it simply can’t decide which change should prevail.  At that point, human intervention is necessary to make the decision.  Git will help you by marking the location in the file that has a problem, but it’s up to you to resolve the conflict.  Let’s see how that works by intentionally creating a conflict.</p>
-<p>We start by creating a branch and making a change to our experiment file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>trouble
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is going to be a problem...&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>experiment.txt
-git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="s2">&quot;Changes in the trouble branch&quot;</span>
-</pre></div>
-</div>
-<p>And now we go back to the master branch, where we change the <em>same</em> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;More work on the master branch...&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>experiment.txt
-git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="s2">&quot;Mainline work&quot;</span>
-</pre></div>
-</div>
-<p>So now let’s see what happens if we try to merge the <code class="docutils literal notranslate"><span class="pre">trouble</span></code> branch into <code class="docutils literal notranslate"><span class="pre">master</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>trouble
-</pre></div>
-</div>
-<p>Let’s see what git has put into our file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>experiment.txt
-</pre></div>
-</div>
-<p>At this point, we go into the file with a text editor, decide which changes to keep, and make a new commit that records our decision.  I’ve now made the edits, in this case I decided that both pieces of text were useful, but integrated them with some changes. After, this we make our new commit</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="s2">&quot;Completed merge of trouble, fixing conflicts along the way&quot;</span>
-git<span class="w"> </span>slog
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>While it’s a good idea to understand the basics of fixing merge conflicts by hand, in some cases you may find the use of an automated tool useful.  Git supports multiple <a class="reference external" href="https://www.kernel.org/pub/software/scm/git/docs/git-mergetool.html">merge tools</a>: a merge tool is a piece of software that conforms to a basic interface and knows how to merge two files into a new one.  Since these are typically graphical tools, there are various to choose from for the different operating systems, and as long as they obey a basic command structure, git can work with any of them.</p>
+  <div class="section" id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+<p>We will first investigate the building blocks of testing and different types of test. Later, we will see how to set an automatic workflow for testing that we can use in our everyday projects.</p>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -442,7 +415,7 @@ git<span class="w"> </span>slog
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lectures/intro-git"
+            path: "./lectures/testing"
         },
         predefinedOutput: true
     }
@@ -454,17 +427,17 @@ git<span class="w"> </span>slog
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="remote.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../environments/environments.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Remotes</p>
+            <p class="prev-next-title">Environments</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="git-visuals.html" title="next page">
+    <a class='right-next' id="next-link" href="building-blocks.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Git Visuals</p>
+        <p class="prev-next-title">Building Blocks</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

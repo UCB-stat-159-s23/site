@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workflow and Automation &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction" href="../../lab/intro/intro.html" />
+    <link rel="prev" title="Building Blocks" href="building-blocks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Statistics 159/259, Spring 2023 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/schedule.html">
+   Weekly Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/homework.html">
+   Homeworks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/ra.html">
+   Reading Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/references.html">
+   Textbook and Supporting Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../intro-git/intro.html">
+   Git
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/configuration.html">
+     Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/local.html">
+     Local, single-user, linear workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/branch.html">
+     Local user, branching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/remote.html">
+     Remotes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/conflict.html">
+     Conflict management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-git/git-visuals.html">
+     Git Visuals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-jupyter/01-Intro-Jupyter.html">
+     A quick, practical intro to the Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-jupyter/02-Beyond-Plain-Python.html">
+     IPython: beyond plain Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../intro-jupyter/03-Custom-Display-Logic.html">
+     Custom Display Logic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modularity/modularity.html">
+   Modularity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../environments/environments.html">
+   Environments
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Testing
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="building-blocks.html">
+     Building Blocks
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Workflow and Automation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/intro/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab00/lab00.html">
+   Lab Session 0 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
+   Lab Session 1: Git &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
+   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab03/lab03.html">
+   Lab Session 3: GitHub Continued, Pull Requests
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab04/lab04.html">
+   Lab Session 4: Modularization, Environments, Binder
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/rtc.html">
+   Real time collaboration (RTC)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/local-installation.html">
+   Local Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/contribute.html">
+   Contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/testing/workflow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/testing/workflow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workflow and Automation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-test-automatically-with-pytest">
+   1. Running test automatically with PyTest
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-local-tests">
+     1.1. Running local tests
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-suite-for-an-installable-package">
+     1.2. Test suite for an installable package
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mytoy-repositoty">
+       1.2.1.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         mytoy
+        </span>
+       </code>
+       repositoty
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rearrganging-division">
+       1.2.2. Rearrganging
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         division
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-integration-with-github">
+   Continuous Integration with GitHub
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Workflow and Automation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workflow and Automation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-test-automatically-with-pytest">
+   1. Running test automatically with PyTest
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-local-tests">
+     1.1. Running local tests
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-suite-for-an-installable-package">
+     1.2. Test suite for an installable package
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mytoy-repositoty">
+       1.2.1.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         mytoy
+        </span>
+       </code>
+       repositoty
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rearrganging-division">
+       1.2.2. Rearrganging
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         division
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-integration-with-github">
+   Continuous Integration with GitHub
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="workflow-and-automation">
+<h1>Workflow and Automation<a class="headerlink" href="#workflow-and-automation" title="Permalink to this headline">¶</a></h1>
+<p>In the previous lecture we have introduced diferent types of test and how to diagnose our code. In this lecture, we will see how these tools get integrated in a continuous workflow that we can feed so we can perform our test periodically and automatically.</p>
+</div>
+<div class="section" id="running-test-automatically-with-pytest">
+<h1>1. Running test automatically with PyTest<a class="headerlink" href="#running-test-automatically-with-pytest" title="Permalink to this headline">¶</a></h1>
+<p>Let’s see how to automatically run our tests using a test runner. There are different test runners supported in Python, including <code class="docutils literal notranslate"><span class="pre">unittest</span></code>, <code class="docutils literal notranslate"><span class="pre">nose</span></code> and <code class="docutils literal notranslate"><span class="pre">pytest</span></code>. For the purposes of this lecture, we will cover just <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p>
+<p>Let’s comeback to our toy example for a small Python package. For this, we can use the contents in the repository <code class="docutils literal notranslate"><span class="pre">eratosthenes</span></code> located in the GitHub organization. You can also use for reference our <a class="reference external" href="https://github.com/fperez/mytoy">mytoy</a> package.</p>
+<div class="section" id="running-local-tests">
+<h2>1.1. Running local tests<a class="headerlink" href="#running-local-tests" title="Permalink to this headline">¶</a></h2>
+<p>Let’s now grab the code from our previous lecture on <a class="reference internal" href="building-blocks.html"><span class="doc std std-doc">Buiding Block</span></a> and move to two different python scripts, one called <code class="docutils literal notranslate"><span class="pre">division.py</span></code> that inclides the function <code class="docutils literal notranslate"><span class="pre">division()</span></code> and other one called <code class="docutils literal notranslate"><span class="pre">test_division.py</span></code> with some simple unit tests. Don’t forget to do the necessary imports! Remember that <code class="docutils literal notranslate"><span class="pre">test_division.py</span></code> needs to import the functions from <code class="docutils literal notranslate"><span class="pre">division.py</span></code>.</p>
+<p>Once this setup is correct, you can directly run the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> suite by typing <code class="docutils literal notranslate"><span class="pre">pystes</span></code>  in the terminal. This is how this should look like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd division_testing
+pytest
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
+platform linux -- Python 3.10.8, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/jovyan/myGH/stat159-site/lectures/testing/division_testing
+plugins: cov-4.0.0, notebook-0.6.1, anyio-3.6.2
+collected 3 items
+
+test_division.py <span class=" -Color -Color-Green">...                                                     [100%]</span>
+
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.22s ===============================</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to this to work, all tests must have names of the form <code class="docutils literal notranslate"><span class="pre">[Tt]est[-_]*</span></code>. We can also add more features to the test suite by adding new flags/arguments (see <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">-h</span></code>  for more instructions). For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd division_testing
+pytest -v
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
+platform linux -- Python 3.10.8, pytest-7.2.1, pluggy-1.0.0 -- /srv/conda/envs/notebook/bin/python3.1
+cachedir: .pytest_cache
+rootdir: /home/jovyan/myGH/stat159-site/lectures/testing/division_testing
+plugins: cov-4.0.0, notebook-0.6.1, anyio-3.6.2
+<span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
+
+test_division.py::test_float_division <span class=" -Color -Color-Green">PASSED                             [ 33%]</span>
+test_division.py::test_int_division <span class=" -Color -Color-Green">PASSED                               [ 66%]</span>
+test_division.py::test_neg_division <span class=" -Color -Color-Green">PASSED                               [100%]</span>
+
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.20s ===============================</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="test-suite-for-an-installable-package">
+<h2>1.2. Test suite for an installable package<a class="headerlink" href="#test-suite-for-an-installable-package" title="Permalink to this headline">¶</a></h2>
+<p>Projects and packages in Python usually are desing so you can run the tests by just running the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command from the source code. Let’s do this here with two different examples.</p>
+<div class="section" id="mytoy-repositoty">
+<h3>1.2.1. <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> repositoty<a class="headerlink" href="#mytoy-repositoty" title="Permalink to this headline">¶</a></h3>
+<p>In <a class="reference external" href="https://github.com/fperez/mytoy">fperez/mytoy</a> you will find a minimalistic version of a installable Python package. Let’s install it and test it! The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file has the explanation of how to run the test after you <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> the package.</p>
+</div>
+<div class="section" id="rearrganging-division">
+<h3>1.2.2. Rearrganging <code class="docutils literal notranslate"><span class="pre">division</span></code><a class="headerlink" href="#rearrganging-division" title="Permalink to this headline">¶</a></h3>
+<p>Let’s create a small local python module with our division example.</p>
+<p>Based on the example of the previus lecture, create two python scripts <code class="docutils literal notranslate"><span class="pre">division.py</span></code> and <code class="docutils literal notranslate"><span class="pre">test_division.py</span></code> that defines the division function and make some simple test with it. Now, create a small python package by rearranging these files in the following way.</p>
+<p>The first <code class="docutils literal notranslate"><span class="pre">__init__</span></code> have to include the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.</span> <span class="pre">division</span> <span class="pre">import</span> <span class="pre">*</span></code> in order to the module to be imported. The second <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> is just an empty file that we will use for now but we will get rid at some point. Inside <code class="docutils literal notranslate"><span class="pre">test_division</span></code>, you must have something like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test_division.py</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">division</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">test_float_division</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="mf">4.0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_int_division</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_neg_division</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">),</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once you have this setup, you can just run the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command from the terminal from the directory <code class="docutils literal notranslate"><span class="pre">division</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="continuous-integration-with-github">
+<h1>Continuous Integration with GitHub<a class="headerlink" href="#continuous-integration-with-github" title="Permalink to this headline">¶</a></h1>
+<p>At the moment testing our code, we would like to implement a workflow that automatically will run all our test after each change in our code. In a sense, it is particularly useful to have this tests run by GitHub everytime we push a new commit without the need of manually have to run all the tests each time. For this part, we are going to follow the GitHub documentation: <a class="reference external" href="https://carpentries-incubator.github.io/python-testing/">GitHub - Building and Testing Python</a>.</p>
+<p>In order to run these tests, we need to first specify in which environment we want to run our tests. This is a concept we already see before, and it is quite general: every time we want to run code, we need to be explicit about the environment!!! In order to do so, we create a <code class="docutils literal notranslate"><span class="pre">test_requirements.txt</span></code> file that has all the required dependencies for our test to work. Since <code class="docutils literal notranslate"><span class="pre">division</span></code> just uses <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, we can create a <code class="docutils literal notranslate"><span class="pre">test-requirements.txt</span></code> file with the following content</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>numpy==1.23
+</pre></div>
+</div>
+<p>After pushing this file to the root of our repository in GitHub, we need to set a new workflow with GitHub actions. We do this directly from GitHub by going to the top panel in <code class="docutils literal notranslate"><span class="pre">Actions</span></code> and then <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">workflows</span></code> and/or <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">up</span> <span class="pre">a</span> <span class="pre">workflow</span> <span class="pre">yourself</span></code>. This will open a tab that looks like this</p>
+<p><img alt="Screen Shot 2023-03-03 at 8.43.29 AM.png" src="lectures/testing/attachment:584b3e85-8da9-4714-a3c2-e5d17b8a18d4.png" /></p>
+<p>Now, this is where we specified the specific task we want to automate. We will call our workflow <code class="docutils literal notranslate"><span class="pre">test</span></code> and inside it we will include the following piece of code</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [&quot;3.9&quot;]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f test-requirements.txt ]; then pip install -r test-requirements.txt; fi
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Test with pytest
+        run: |
+          pytest
+</pre></div>
+</div>
+<p>Configuration <code class="docutils literal notranslate"><span class="pre">yml</span></code> files are in general difficult to write, but it is important that we can recognize some basic elements:</p>
+<ul class="simple">
+<li><p>Python version GitHub will use for the tests</p></li>
+<li><p>Operating system</p></li>
+<li><p>Installation of dependencies</p></li>
+<li><p>Execution of <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
+</ul>
+<p>After you have done this, next time you make a new push you will see a tab in <code class="docutils literal notranslate"><span class="pre">Action</span></code> that will show if your test had passed or not.</p>
+</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://carpentries-incubator.github.io/python-testing/">Carpentries - Python Testing and Continouos Integration</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/python-testing/">Real Python - Testing</a></p></li>
+<li><p><a class="reference external" href="https://carpentries-incubator.github.io/python-testing/">GitHub - Building and Testing Python</a></p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/testing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="building-blocks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Building Blocks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../lab/intro/intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez and Facundo Sapienza<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
