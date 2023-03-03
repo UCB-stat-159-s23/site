@@ -541,7 +541,7 @@
 </div>
 <div class="section" id="motivation">
 <h1>1. Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h1>
-<p>Let’s start by taking a look to some of the reason why continously testing our code is a good prectice that produce bette code and more reproducible too.</p>
+<p>Let’s start by taking a look to some of the reasons why continously testing our code is a good prectice that produce better code and more reproducible too.</p>
 <div class="section" id="chaotic-systems-and-numerical-precision">
 <h2>1.1.  Chaotic systems and numerical precision<a class="headerlink" href="#chaotic-systems-and-numerical-precision" title="Permalink to this headline">¶</a></h2>
 <p>We are going to play with the notebook <code class="docutils literal notranslate"><span class="pre">simple-numerical-chaos.ipynb</span></code>, <span class="xref myst">notebook</span> that you can find in this same directoy. Consider for example the following operation</p>
@@ -565,7 +565,8 @@ a + (b + c) = 1.0000000000000002
 <p class="admonition-title">Note</p>
 <p>A good reference for floating point arithmetics is <a class="reference external" href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>.</p>
 </div>
-<p>In Python, we can use a different standard for floting point numbers with the module <a class="reference external" href="https://docs.python.org/3/library/decimal.html">decimal</a>. This is particularly useful for real world cases where small number operations may be critical, for example when making tons of bank transactions.</p>
+<p>In Python, we can use a different standards for floting point numbers with the module <a class="reference external" href="https://docs.python.org/3/library/decimal.html">decimal</a>. This is particularly useful for real world
+cases where small number operations may be critical, for example when making tons of bank transactions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
@@ -603,20 +604,20 @@ in scientific computing.</p>
 </div>
 <div class="section" id="implementing-or-changing-features">
 <h2>1.2. Implementing or changing features<a class="headerlink" href="#implementing-or-changing-features" title="Permalink to this headline">¶</a></h2>
-<p>Testing also help us when we want to make significant changes in our code and we want to ensure that the functionallity of the code doesn’t go affected by these new changes. This cases include</p>
+<p>Testing also help us when we want to make significant changes in our code and we want to ensure that the functionallity of the code doesn’t go affected by these new changes. These cases include</p>
 <ul class="simple">
-<li><p>Adding a new funcition/feature that communicates with other existing pieces of code.</p></li>
+<li><p>Adding a new function/feature that communicates with other existing pieces of code.</p></li>
 <li><p>Making changes to the implementation of existing function, for example by changing the data types or the algorithm we use for certain operations</p></li>
-<li><p>Change the data we used to feed our code.</p></li>
+<li><p>Change the data we used to feed our code</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="types-of-tests">
 <h1>2. Types of tests<a class="headerlink" href="#types-of-tests" title="Permalink to this headline">¶</a></h1>
-<p>There are different classes of test that are desing to evaluate the correctness of our code at different levels and scales. In this course, we re goign to cover the following.</p>
+<p>There are different classes of test that evaluate the correctness of our code at different levels and scales. In this course, we re goign to cover the following tests:</p>
 <ul class="simple">
 <li><p>Assertions statements</p></li>
-<li><p>Exceptions statemens</p></li>
+<li><p>Exceptions statements</p></li>
 <li><p>Unit tests</p></li>
 <li><p>Regression tests</p></li>
 <li><p>Integration tests</p></li>
@@ -905,7 +906,7 @@ in scientific computing.</p>
 </div>
 <div class="section" id="unit-tests">
 <h2>2.3. Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
-<p>In previous section we were discussion about the importance of writting clean and modular code. Having small functions that perfom very specific task help us also to desing pipelines for testing those small units of code. That is the purpose of unit tests, to individually test the functions in our code.</p>
+<p>In previous section we were discussing about the importance of writting clean and modular code. Having small functions that perfom very specific tasks help us to desing pipelines for testing those small units of code. That is the purpose of unit tests, to individually test the functions in our code.</p>
 <p>The way of writing unit tests consist in defining function that will return an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement testing whenever the output matches the <em>true</em> answer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1016,7 +1017,7 @@ in scientific computing.</p>
 <p>Another example of a regression test happens after we found and fix a bug in our code. After detecting an error, we may want to include a test for this so we are sure that the bug doesn’t reapear in the future.</p>
 <div class="admonition-putting-all-this-into-practice admonition">
 <p class="admonition-title">Putting all this into practice</p>
-<p>We will write a series of different tests (including those in this lecture) during Lab05.</p>
+<p>We will write a series of different tests (including those in this lecture) during Lab where we will use our toy Eratosthenes project to create new tests.</p>
 </div>
 </div>
 </div>

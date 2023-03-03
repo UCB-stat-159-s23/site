@@ -523,12 +523,12 @@
                 
   <div class="section" id="workflow-and-automation">
 <h1>Workflow and Automation<a class="headerlink" href="#workflow-and-automation" title="Permalink to this headline">¶</a></h1>
-<p>In the previous lecture we have introduced diferent types of test and how to diagnose our code. In this lecture, we will see how these tools get integrated in a continuous workflow that we can feed so we can perform our test periodically and automatically.</p>
+<p>In the previous lecture we have introduced diferent types of tests and how to diagnose our code. In this lecture, we will see how these tools get integrated in a continuous workflow that we can be continuously feed so we can perform our tests both periodically and automatically.</p>
 </div>
 <div class="section" id="running-test-automatically-with-pytest">
 <h1>1. Running test automatically with PyTest<a class="headerlink" href="#running-test-automatically-with-pytest" title="Permalink to this headline">¶</a></h1>
 <p>Let’s see how to automatically run our tests using a test runner. There are different test runners supported in Python, including <code class="docutils literal notranslate"><span class="pre">unittest</span></code>, <code class="docutils literal notranslate"><span class="pre">nose</span></code> and <code class="docutils literal notranslate"><span class="pre">pytest</span></code>. For the purposes of this lecture, we will cover just <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p>
-<p>Let’s comeback to our toy example for a small Python package. For this, we can use the contents in the repository <code class="docutils literal notranslate"><span class="pre">eratosthenes</span></code> located in the GitHub organization. You can also use for reference our <a class="reference external" href="https://github.com/fperez/mytoy">mytoy</a> package.</p>
+<p>In this tutoral, we will comeback to our toy example for a small Python package. For this, we can use the contents in the repository <code class="docutils literal notranslate"><span class="pre">eratosthenes</span></code> located in the GitHub organization. You can also use for reference our <a class="reference external" href="https://github.com/fperez/mytoy">mytoy</a> package.</p>
 <div class="section" id="running-local-tests">
 <h2>1.1. Running local tests<a class="headerlink" href="#running-local-tests" title="Permalink to this headline">¶</a></h2>
 <p>Let’s now grab the code from our previous lecture on <a class="reference internal" href="building-blocks.html"><span class="doc std std-doc">Buiding Block</span></a> and move to two different python scripts, one called <code class="docutils literal notranslate"><span class="pre">division.py</span></code> that inclides the function <code class="docutils literal notranslate"><span class="pre">division()</span></code> and other one called <code class="docutils literal notranslate"><span class="pre">test_division.py</span></code> with some simple unit tests. Don’t forget to do the necessary imports! Remember that <code class="docutils literal notranslate"><span class="pre">test_division.py</span></code> needs to import the functions from <code class="docutils literal notranslate"><span class="pre">division.py</span></code>.</p>
@@ -544,13 +544,13 @@ pytest
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.10.8, pytest-7.2.1, pluggy-1.0.0
-rootdir: /home/jovyan/myGH/stat159-site/lectures/testing/division_testing
+rootdir: /home/jovyan/site/lectures/testing/division_testing
 plugins: cov-4.0.0, notebook-0.6.1, anyio-3.6.2
 collected 3 items
 
 test_division.py <span class=" -Color -Color-Green">...                                                     [100%]</span>
 
-<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.22s ===============================</span>
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.34s ===============================</span>
 </pre></div>
 </div>
 </div>
@@ -592,7 +592,7 @@ test_division.py::test_neg_division <span class=" -Color -Color-Green">PASSED   
 <div class="section" id="rearrganging-division">
 <h3>1.2.2. Rearrganging <code class="docutils literal notranslate"><span class="pre">division</span></code><a class="headerlink" href="#rearrganging-division" title="Permalink to this headline">¶</a></h3>
 <p>Let’s create a small local python module with our division example.</p>
-<p>Based on the example of the previus lecture, create two python scripts <code class="docutils literal notranslate"><span class="pre">division.py</span></code> and <code class="docutils literal notranslate"><span class="pre">test_division.py</span></code> that defines the division function and make some simple test with it. Now, create a small python package by rearranging these files in the following way.</p>
+<p>Based on the example of the previous lecture, create two python scripts <code class="docutils literal notranslate"><span class="pre">division.py</span></code> and <code class="docutils literal notranslate"><span class="pre">test_division.py</span></code> that define the division function and make some simple test with it. Now, create a small python package by rearranging these files in the following way.</p>
 <p>The first <code class="docutils literal notranslate"><span class="pre">__init__</span></code> have to include the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.</span> <span class="pre">division</span> <span class="pre">import</span> <span class="pre">*</span></code> in order to the module to be imported. The second <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> is just an empty file that we will use for now but we will get rid at some point. Inside <code class="docutils literal notranslate"><span class="pre">test_division</span></code>, you must have something like</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test_division.py</span>
 
