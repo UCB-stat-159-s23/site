@@ -27,6 +27,10 @@ parts:
 #    - file: lectures/intro-jupyter/05-widgets-interact
   - file: lectures/modularity/modularity
   - file: lectures/environments/environments
+  - file: lectures/testing/index
+    sections:
+    - file: lectures/testing/building-blocks
+    - file: lectures/testing/workflow 
 #  - file: lectures/West_Coast_HeatWave_Basic
 #  - file: lectures/climate-data
 #  - file: lectures/environments/conda-envs
