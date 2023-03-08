@@ -31,8 +31,10 @@ parts:
     sections:
     - file: lectures/testing/building-blocks
     - file: lectures/testing/workflow 
-#  - file: lectures/West_Coast_HeatWave_Basic
-#  - file: lectures/climate-data
+  - file: lectures/climate-xarray/index
+    sections:
+    - file: lectures/climate-xarray/climate-data
+    - file: lectures/climate-xarray/xarray
 #  - file: lectures/environments/conda-envs
 #  - file: lectures/matplotlib_beyond_basics
 #  - file: lectures/documentation
@@ -45,6 +47,8 @@ parts:
   - file: lab/lab02/lab02.ipynb
   - file: lab/lab03/lab03.ipynb
   - file: lab/lab04/lab04.ipynb
+  - file: lab/lab05/lab05.ipynb
+  - file: lab/lab06/lab06.ipynb
 - caption: Appendix
   chapters:
   - file: appendix/rtc
