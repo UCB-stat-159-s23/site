@@ -589,8 +589,8 @@
 </div>
 <div class="section" id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
-<p>Plot the yearly average temperature. That is, time series where the x-axis are the years and the y-axis is the averaged yearly temperature over all latitude and longitudes. Repeat this analysis separately for borh south and north hemispheres.</p>
-<p>Remember to weight the averages by longitude!!! We did this in class using the weigthed mean:</p>
+<p>Plot the yearly average temperature. That is, time series where the x-axis are the years and the y-axis is the averaged yearly temperature over all latitude and longitudes. Repeat this analysis separately for both south and north hemispheres.</p>
+<p>Remember to weight the averages by latitude!!! We did this in class using the weighted mean:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
@@ -628,7 +628,7 @@
 </div>
 <div class="section" id="exploring-snow-with-era-5">
 <h2>2. Exploring Snow with ERA 5<a class="headerlink" href="#exploring-snow-with-era-5" title="Permalink to this headline">¶</a></h2>
-<p>Now, we turn our attention to other questions - ERA5 a very rich and interesting dataset, and the lecture only scratched its surfac!</p>
+<p>Now, we turn our attention to other questions - ERA5 a very rich and interesting dataset, and the lecture only scratched its surface!</p>
 <p>We are going today to focus on just one more bit: we’ll take a look at the snow accumulation data for the northern and southern hemispheres.</p>
 <p>But you should see this as an invitation to keep learning from these data! Think of looking at other variables in the dataset. Is there annual cycle? trend? Some of the data might look very different than the air temperature - eg. precipitation which is either 0 or +. Can you use PDFs to look at changes in distributions over a region? at a point? Or talk about the data a little &amp; what you understand it is measuring? Are any of the data variables related to each other? Can you plot correlations between data?</p>
 <div class="cell docutils container">
