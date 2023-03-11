@@ -42,6 +42,11 @@ Each paragraph per reading assignment gives 1 point (a total of 2 per reading). 
     - [Yukihiro Matsumoto, Treating Code as an Essay](https://vample.com/ebooks/OReilly.Beautiful.Code.Jun.2007.pdf). You can find the reading in Chapter 29 of the book Beautiful Code. 
     - [Williams et al. 2000, Strengthening the Case for Pair Programming](http://sunnyday.mit.edu/16.355/williams.pdf).
     
+* #8, due Mar 16, 2023: Open Source Software and Open Science - these are four easy "ten simple rules for...":
+    - [Ten Simple Rules for the Open Development of Scientific Software](http://dx.plos.org/10.1371/journal.pcbi.1002802).
+    - [Ten simple rules for documenting scientific software](http://dx.plos.org/10.1371/journal.pcbi.1006561).
+    - [Ten simple rules for helping newcomers become contributors to open projects](http://dx.plos.org/10.1371/journal.pcbi.1007296).
+    - [Ten Simple Rules for Cultivating Open Science and Collaborative R&D](http://dx.plos.org/10.1371/journal.pcbi.1003244).
     
 Future reading assignments
 
@@ -49,13 +54,6 @@ Future reading assignments
 * Foundational classics
     - [Schwab, M., Karrenbach, N., Claerbout, J. (2000) Making scientific computations reproducible, Comp. Sci. Eng. 2(6):61–67, doi: 10.1109/5992.881708](https://ieeexplore.ieee.org/document/881708).
     - [Reproducible Research, by the Yale Law School Roundtable on Data and Code Sharing, Comp. Sci. Eng. 12(5): 8–13 (Sept.-Oct. 2010), doi:10.1109/mcse.2010.113](https://ieeexplore.ieee.org/document/5562471).
-
-
-* Open Source Software and Open Science - these are four easy "ten simple rules for...":
-    - [the Open Development of Scientific Software](http://dx.plos.org/10.1371/journal.pcbi.1002802).
-    - [documenting scientific software](http://dx.plos.org/10.1371/journal.pcbi.1006561).
-    - [helping newcomers become contributors to open projects](http://dx.plos.org/10.1371/journal.pcbi.1007296).
-    - [Cultivating Open Science and Collaborative R&D](http://dx.plos.org/10.1371/journal.pcbi.1003244).
 
 
 * Open Source and Open Science
