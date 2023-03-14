@@ -1,13 +1,10 @@
-#######################################################################################
-# A default configuration that will be loaded for all jupyter books
-# See the documentation for help and more options: 
-# https://jupyterbook.org/customize/config.html
+#############################################################################
+# JupyterBook settings
+# See: https://jupyterbook.org/en/stable/customize/config.html
 
-#######################################################################################
-# Book settings
 title                       : Collaborative and Reproducible Data Science  # The title of the book. Will be placed in the left navbar.
-author                      : Fernando Pérez and Facundo Sapienza # The author of the book
-copyright                   : "2022"  # Copyright year to be placed in the footer
+author                      : Fernando Pérez and Facundo Sapienza
+copyright                   : "2023"  # Goes in the footer
 logo                        : logo.png  # A path to the book logo
 
 execute:
@@ -18,26 +15,35 @@ execute:
 # in the TOC/nav tools.
 only_build_toc_files: false
 
-# TODO: the below should be disabled and instead the sphinx section activated
-# after we upgrade to j-book newer than 0.9.1 and its dependencies.  For now
-# this gives us the equivalent of html_images fixes, but without version
-# conflicts that currently arise from trying to use it.
-#parse:
-#  myst_extended_syntax: true
-
-# Sphinx section commented out for now as per above todo, will activate it
-# later. 
-
-bibtex_bibfiles: 
-  - references.bib
-
-sphinx:
-  config:
-    exclude_patterns:
-      - README.md
-    myst_enable_extensions: 
+# Enable some myst extensions beyond the default.
+parse:
+  myst_enable_extensions: 
     - amsmath
     - dollarmath
-    - html_image
     - html_admonition
+    - html_image
     - linkify
+    - colon_fence
+    - substitution
+    - tasklist
+
+# Add links to GitHub repo
+# For more info: https://jupyterbook.org/en/stable/basics/repository.html
+repository:
+  url    : https://github.com/UCB-stat-159-s23/site
+  branch : main
+
+html:
+  use_repository_button : true
+  use_issues_button     : true
+  announcement          : "" # A banner announcement at the top of the site.
+
+# Uncomment this later if bibliographic references are desired
+# See: https://jupyterbook.org/en/stable/tutorials/references.html
+
+# bibtex_bibfiles:
+#   - references.bib
+#
+# sphinx:
+#   config:
+#     bibtex_reference_style: author_year
