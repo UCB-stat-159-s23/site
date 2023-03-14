@@ -40,3 +40,4 @@ sphinx:
     - dollarmath
     - html_image
     - html_admonition
+    - linkfy
