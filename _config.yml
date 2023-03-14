@@ -13,7 +13,10 @@ logo                        : logo.png  # A path to the book logo
 execute:
   execute_notebooks: 'off'
 
-only_build_toc_files: true
+# Let's build everything - it takes a bit longer but lets us easily preview
+# files that are in draft/progress on the live site, without exposing them
+# in the TOC/nav tools.
+only_build_toc_files: false
 
 # TODO: the below should be disabled and instead the sphinx section activated
 # after we upgrade to j-book newer than 0.9.1 and its dependencies.  For now
