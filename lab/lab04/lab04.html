@@ -1,554 +1,444 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Lab Session 4: Modularization, Environments, Binder &#8212; Collaborative and Reproducible Data Science</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab04/lab04';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lab Session 5: Testing" href="../lab05/lab05.html" />
     <link rel="prev" title="Lab Session 3: GitHub Continued, Pull Requests" href="../lab03/lab03.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Statistics 159/259, Spring 2023 Course Summary
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Statistics 159/259, Spring 2023 Course Summary
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/schedule.html">
-   Weekly Plan
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/homework.html">
-   Homeworks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/ra.html">
-   Reading Assignments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/references.html">
-   Textbook and Supporting Materials
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Weekly Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/homework.html">Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/ra.html">Reading Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/references.html">Textbook and Supporting Materials</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Lectures
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/intro-git/intro.html">
-   Git
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/configuration.html">
-     Configuration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/local.html">
-     Local, single-user, linear workflow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/branch.html">
-     Local user, branching
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/remote.html">
-     Remotes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/conflict.html">
-     Conflict management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/git-visuals.html">
-     Git Visuals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/intro-jupyter/Index.html">
-   An overview of Jupyter tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-jupyter/01-Intro-Jupyter.html">
-     A quick, practical intro to the Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-jupyter/02-Beyond-Plain-Python.html">
-     IPython: beyond plain Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-jupyter/03-Custom-Display-Logic.html">
-     Custom Display Logic
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lectures/modularity/modularity.html">
-   Modularity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lectures/environments/environments.html">
-   Environments
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/testing/index.html">
-   Testing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/testing/building-blocks.html">
-     Building Blocks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/testing/workflow.html">
-     Workflow and Automation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/climate-xarray/index.html">
-   Climate and Xarray
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/climate-xarray/climate-data.html">
-     Climate, oceans and data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/climate-xarray/xarray.html">
-     Introduction to Xarray
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/intro-git/intro.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/local.html">Local, single-user, linear workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/branch.html">Local user, branching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/remote.html">Remotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/conflict.html">Conflict management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/git-visuals.html">Git Visuals</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Labs
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/intro-jupyter/Index.html">An overview of Jupyter tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-jupyter/01-Intro-Jupyter.html">A quick, practical intro to the Jupyter Notebook</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-jupyter/02-Beyond-Plain-Python.html">IPython: beyond plain Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-jupyter/03-Custom-Display-Logic.html">Custom Display Logic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/modularity/modularity.html">Modularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/environments/environments.html">Environments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/testing/index.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/testing/building-blocks.html">Building Blocks</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/testing/workflow.html">Workflow and Automation</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/climate-xarray/index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/climate-xarray/climate-data.html">Climate, oceans and data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/climate-xarray/xarray.html">Introduction to Xarray</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/intro.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab00/lab00.html">
-   Lab Session 0 - Introduction to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab01/lab01.html">
-   Lab Session 1: Git &amp; The Shell
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab02/lab02.html">
-   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab03/lab03.html">
-   Lab Session 3: GitHub Continued, Pull Requests
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Lab Session 4: Modularization, Environments, Binder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab05/lab05.html">
-   Lab Session 5: Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab06/lab06.html">
-   Lab Session 6: Climate data and xarray
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab00/lab00.html">Lab Session 0 - Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab01/lab01.html">Lab Session 1: Git &amp; The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab02/lab02.html">Lab Session 2: Dotfiles, Branches, Conflics and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab03/lab03.html">Lab Session 3: GitHub Continued, Pull Requests</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab Session 4: Modularization, Environments, Binder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab05/lab05.html">Lab Session 5: Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab06/lab06.html">Lab Session 6: Climate data and xarray</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/rtc.html">
-   Real time collaboration (RTC)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/local-installation.html">
-   Local Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/contribute.html">
-   Contribute
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/rtc.html">Real time collaboration (RTC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/local-installation.html">Local Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/contribute.html">Contribute</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lab/lab04/lab04.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/UCB-stat-159-s23/site"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flab/lab04/lab04.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flab/lab04/lab04.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/site/main?urlpath=tree/lab/lab04/lab04.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lab/lab04/lab04.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab Session 4: Modularization, Environments, Binder</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modularization">
-   1. Modularization
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reorganization">
-     1.1. Reorganization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     1.2. Modules
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#migrate-to-github">
-   2. Migrate to GitHub
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#environmnets">
-   3. Environmnets
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-environment-for-a-project">
-     3.1. Create environment for a project
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#growing-and-exporting">
-     3.2. Growing and exporting
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binder">
-     3.3. Binder
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modularization">1. Modularization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reorganization">1.1. Reorganization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">1.2. Modules</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migrate-to-github">2. Migrate to GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environmnets">3. Environmnets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-environment-for-a-project">3.1. Create environment for a project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#growing-and-exporting">3.2. Growing and exporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binder">3.3. Binder</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab Session 4: Modularization, Environments, Binder</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modularization">
-   1. Modularization
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reorganization">
-     1.1. Reorganization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     1.2. Modules
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#migrate-to-github">
-   2. Migrate to GitHub
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#environmnets">
-   3. Environmnets
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-environment-for-a-project">
-     3.1. Create environment for a project
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#growing-and-exporting">
-     3.2. Growing and exporting
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binder">
-     3.3. Binder
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-session-4-modularization-environments-binder">
-<h1>Lab Session 4: Modularization, Environments, Binder<a class="headerlink" href="#lab-session-4-modularization-environments-binder" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-session-4-modularization-environments-binder">
+<h1>Lab Session 4: Modularization, Environments, Binder<a class="headerlink" href="#lab-session-4-modularization-environments-binder" title="Permalink to this heading">#</a></h1>
 <blockquote>
 <div><p>Friday 02-17-2023, 9AM-11AM &amp; 12AM-2PM</p>
 <p>Instructor: <a class="reference external" href="https://statistics.berkeley.edu/people/facu-sapienza">Facundo Sapienza</a></p>
@@ -559,14 +449,14 @@
 <li><p><a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/modularity/modularity.html">Lecture on modularity</a></p></li>
 <li><p><a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/environments/environments.html">Lecture on environments</a></p></li>
 </ul>
-<div class="section" id="modularization">
-<h2>1. Modularization<a class="headerlink" href="#modularization" title="Permalink to this headline">¶</a></h2>
+<section id="modularization">
+<h2>1. Modularization<a class="headerlink" href="#modularization" title="Permalink to this heading">#</a></h2>
 <p>First things first: be sure you can run all the code inside <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code>.
 After being sure the code runs, we are going to start with some re-organization of the code inside <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code>.</p>
 <a class="reference internal image-reference" href="https://www.onlinemathlearning.com/image-files/sieve-prime.jpg"><img alt="eratosthenes" src="https://www.onlinemathlearning.com/image-files/sieve-prime.jpg" style="width: 400px;" /></a>
-<div class="section" id="reorganization">
-<h3>1.1. Reorganization<a class="headerlink" href="#reorganization" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+<section id="reorganization">
+<h3>1.1. Reorganization<a class="headerlink" href="#reorganization" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>The first thing you will do is to create two separate functions for the sieve of Eratosthenes algorithms. These are the first things you will see inside the notebook. Think what are the arguments for such functions.</p></li>
 <li><p>Now, these two functions do the same but they have different implementations. Most likely, they also have the same arguments and outputs. Create a new function <code class="docutils literal notranslate"><span class="pre">get_primes</span></code> that you call to run both methods.</p></li>
 <li><p>Move these three functions to a separate script called <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>. Remember to import the necessary libraries inside <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code>.</p></li>
@@ -576,15 +466,15 @@ After being sure the code runs, we are going to start with some re-organization 
 <p class="admonition-title">Warning</p>
 <p>For now, every time you make a change in <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code> and a consequent <code class="docutils literal notranslate"><span class="pre">import</span></code> inside the notebook, you will have to restart the kernel first. This is because once imported, the iPython kernel reads that the script has been already loaded and it doesn’t look for differences in the new file. In general, it’s a good practice to restart your kernel once the counter starts increasing and after doing significant reorganization changes in the notebook, like we are doing here.</p>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="5">
 <li><p>In the section <em>Long Run: proportion of prime numbers</em> there is a long run of exactly the same code than before but inside a for loop, so we can evaluate the proportion of prime numbers as we increase the search window. Make a new function called <code class="docutils literal notranslate"><span class="pre">proportion_primes</span></code> that does this.</p></li>
 <li><p>You function look good, but now let’s add some documentation to them. Add a <code class="docutils literal notranslate"><span class="pre">docstring</span></code> to them. How can you access the docstrings from the notebook?</p></li>
 <li><p>Be sure you can run these functions from the notebook <em>after you move the code to the scripts (no remains in the notebook)</em> and <em>after you have restarted your kernel</em>.</p></li>
 </ol>
-</div>
-<div class="section" id="modules">
-<h3>1.2. Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+</section>
+<section id="modules">
+<h3>1.2. Modules<a class="headerlink" href="#modules" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Now, after you know the previous import statement are working, move to <code class="docutils literal notranslate"><span class="pre">sieve.py</span></code> to a new folder called <code class="docutils literal notranslate"><span class="pre">sievetools</span></code>.</p></li>
 <li><p>Inside the folder, create an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file with the required contents so you can do the import from the notebook. Now, you should be able to do the import in the notebook by doing</p></li>
 </ol>
@@ -595,27 +485,27 @@ After being sure the code runs, we are going to start with some re-organization 
 <p class="admonition-title">Tip</p>
 <p>Now that you have a proper module, you can import the scripts using the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">imp;</span> <span class="pre">imp.reload(&quot;sieve.py&quot;)</span></code> in case you want the changes to be reflected after the import.</p>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p>Each one of the files inside <code class="docutils literal notranslate"><span class="pre">sievetools</span></code> is called a module. Now, continue your cleaning of <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code> by moving all the plotting code required to a new module called <code class="docutils literal notranslate"><span class="pre">plots</span></code>. Update <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to make the imports of this new module. By the end of the day, you should be able to generate the plots from the notebook using something like</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sieve</span><span class="p">(</span><span class="o">....</span> <span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="4">
 <li><p>[Extra] You can continue and do something similar for the code in the section <em>Performance</em>.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="migrate-to-github">
-<h2>2. Migrate to GitHub<a class="headerlink" href="#migrate-to-github" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="migrate-to-github">
+<h2>2. Migrate to GitHub<a class="headerlink" href="#migrate-to-github" title="Permalink to this heading">#</a></h2>
 <p>Let’s now create a project containing the previous piece of code and let’s version control it!</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Create a new public repository called <code class="docutils literal notranslate"><span class="pre">eratosthenes</span></code> where you will include all the contents for the Eratosthenes project you created before. You can create your repository first in local and then push it to GitHub or directly created in GitHub and then push your changes there. Also, you can create the repository in your personal GitHub account or also in the <a class="reference external" href="https://github.com/UCB-stat-159-s23">UCB-stat-159-s23</a> GitHub site, in which case please we ask you to add your username/teamname in front of the repository name (eg, <code class="docutils literal notranslate"><span class="pre">facusapienza21-eratosthenes</span></code>).</p></li>
 <li><p>Add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in the repository with a minimal explanation about the project.</p></li>
 </ol>
-</div>
-<div class="section" id="environmnets">
-<h2>3. Environmnets<a class="headerlink" href="#environmnets" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="environmnets">
+<h2>3. Environmnets<a class="headerlink" href="#environmnets" title="Permalink to this heading">#</a></h2>
 <p>In this section we are going to create a conda environment for this project. Two very useful resources for this section are</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/environments/environments.html">Lecture notes on environments</a>: Here is the information about what a conda environmnt is and how to manage them. Please take some time to go though it becuase you will need it!</p></li>
@@ -623,16 +513,16 @@ After being sure the code runs, we are going to start with some re-organization 
 </ul>
 <a class="reference internal image-reference" href="https://files.realpython.com/media/Python-Virtual-Environments_Watermarked.4c787192d42f.jpg"><img alt="conda" src="https://files.realpython.com/media/Python-Virtual-Environments_Watermarked.4c787192d42f.jpg" style="width: 400px;" /></a>
 <p><em>image taken from <a class="reference external" href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a></em></p>
-<div class="section" id="create-environment-for-a-project">
-<h3>3.1. Create environment for a project<a class="headerlink" href="#create-environment-for-a-project" title="Permalink to this headline">¶</a></h3>
+<section id="create-environment-for-a-project">
+<h3>3.1. Create environment for a project<a class="headerlink" href="#create-environment-for-a-project" title="Permalink to this heading">#</a></h3>
 <p>There are different ways how you can create a new conda environment. For reproducibility, the best practice is to share an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file that includes all the required packages and then create the environment from it. In order to start with this, we are going to start by creating a fresh environment that then we are going to export and share.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>First that all, create a new folder in your home directory called <code class="docutils literal notranslate"><span class="pre">envs</span></code>. You can do this from the terminal</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>envs
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="2">
 <li><p>Now, go to the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file (hidden) in your home directory and be sure that it includes a list of <code class="docutils literal notranslate"><span class="pre">envs_dirs</span></code> with the locations where you are going to install the conda environments. The <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file should include something like this</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">envs_dirs</span><span class="p">:</span>
@@ -640,20 +530,20 @@ After being sure the code runs, we are going to start with some re-organization 
   <span class="o">-</span> <span class="o">~/</span><span class="n">shared</span><span class="o">/</span><span class="n">envs</span> 
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p>In the terminal, let’s create a new environment called <code class="docutils literal notranslate"><span class="pre">test_env</span></code> with an specific Python version. It may take a few seconds until it creates the new environment.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;ENVIRONMENT<span class="w"> </span>NAME&gt;<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="4">
 <li><p>In the terminal, do <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> to see the list of all the environments you have installed. Activate the new environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">&lt;ENVIRONMENT</span> <span class="pre">NAME&gt;</span></code>.</p></li>
 <li><p>At this point, you can run code from this environment just from the terminal. Our next step is to make this environment available from the notebook. Take a look to the <a class="reference external" href="https://ucb-stat-159-s23.github.io/site/lectures/environments/environments.html">Using an environment in your notebooks</a>. In order for this to work, first you need to install the <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> package. You can do this with the following command</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="6">
 <li><p>After doing this, you need to let Jupyter know that you want to use this environment’s kernel, by installing the environment’s ipykernel into Jupyter:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>&lt;ENVIRONMENT<span class="w"> </span>NAME&gt;<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;IPython - &lt;NAME&gt;&quot;</span>
@@ -664,17 +554,17 @@ After being sure the code runs, we are going to start with some re-organization 
 <p class="admonition-title">Note</p>
 <p>What just happened? You have created a new virtual environment in your machine. Where is it? Go inside the <code class="docutils literal notranslate"><span class="pre">envs</span></code> folder and see what is there. This is where you conda environments live. If you delete this folders, the environment disappear.</p>
 </div>
-</div>
-<div class="section" id="growing-and-exporting">
-<h3>3.2. Growing and exporting<a class="headerlink" href="#growing-and-exporting" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+</section>
+<section id="growing-and-exporting">
+<h3>3.2. Growing and exporting<a class="headerlink" href="#growing-and-exporting" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Now that the environment is working and running from the notebook <code class="docutils literal notranslate"><span class="pre">Eratosthenes.ipynb</span></code>, do the required installations so the code runs. So far, nothing really has being installed in your environment. You will need to install basic packages like <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. You can use <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install packages, but we recommend you to use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> when possible.</p></li>
 <li><p>Once you environment has all the required dependencies, export them to a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file. The <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span></code> shows you the contents that should go to the configuration file. We recommend you to use the following syntax at the moment of exporting an environment.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--from-history<span class="w"> </span>&gt;<span class="w"> </span>environment.yml
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p>Now check what is inside <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. Push this file to your repository.</p></li>
 </ol>
 <p>These is the list of commands that you most likely will be using all time when working with conda environments:</p>
@@ -684,14 +574,14 @@ After being sure the code runs, we are going to start with some re-organization 
 <li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="binder">
-<h3>3.3. Binder<a class="headerlink" href="#binder" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="binder">
+<h3>3.3. Binder<a class="headerlink" href="#binder" title="Permalink to this heading">#</a></h3>
 <p>Now, we are going to launch the code into the cloud so everyone can run it! We are going to use <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/">Binder</a> for this. Doing this is surprisingly simple.</p>
 <a class="reference internal image-reference" href="https://miro.medium.com/max/471/1*cWQj_YdmY_p14eh628N_Kg.png"><img alt="binder" src="https://miro.medium.com/max/471/1*cWQj_YdmY_p14eh628N_Kg.png" style="width: 300px;" /></a>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Go to <a class="reference external" href="https://mybinder.org">mybinder.org</a> and enter the information of the repository. Then just enter <code class="docutils literal notranslate"><span class="pre">Launch</span></code>! In order for this to work, be sure that</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The environment file needs to be specified under the name <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. Be sure your GitHub repository contains that file.</p></li>
 <li><p>Be sure your repository is public.</p></li>
 </ol>
@@ -699,9 +589,9 @@ After being sure the code runs, we are going to start with some re-organization 
 <li><p>If everything is in order, this will launch the JupyterLab interface you are already using for this course. Check that the code runs here too and that all the required packages are installed in this new server. Now you can see how <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/tutorials/reproducibility.html">Binder helps ensure reproducibility</a>.</p></li>
 <li><p>Binder allows you to create a badge and link that will launch the virtual machine every time you click on it. See how to do this and add this badge to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -715,7 +605,7 @@ After being sure the code runs, we are going to start with some re-organization 
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./lab/lab04"
         },
         predefinedOutput: true
@@ -723,44 +613,110 @@ After being sure the code runs, we are going to start with some re-organization 
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../lab03/lab03.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab Session 3: GitHub Continued, Pull Requests</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lab03/lab03.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab Session 3: GitHub Continued, Pull Requests</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../lab05/lab05.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../lab05/lab05.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Lab Session 5: Testing</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Fernando Pérez and Facundo Sapienza<br/>
-    
-        &copy; Copyright 2023.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modularization">1. Modularization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reorganization">1.1. Reorganization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">1.2. Modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migrate-to-github">2. Migrate to GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environmnets">3. Environmnets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-environment-for-a-project">3.1. Create environment for a project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#growing-and-exporting">3.2. Growing and exporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binder">3.3. Binder</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fernando Pérez and Facundo Sapienza
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

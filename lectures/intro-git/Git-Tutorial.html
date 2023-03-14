@@ -1,930 +1,474 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>An interactive Git Tutorial: the tool you didn’t know you needed &#8212; Collaborative and Reproducible Data Science</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/intro-git/Git-Tutorial';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Statistics 159/259, Spring 2023 Course Summary
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Statistics 159/259, Spring 2023 Course Summary
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/schedule.html">
-   Weekly Plan
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/homework.html">
-   Homeworks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/ra.html">
-   Reading Assignments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/references.html">
-   Textbook and Supporting Materials
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Weekly Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/homework.html">Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/ra.html">Reading Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/references.html">Textbook and Supporting Materials</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Lectures
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
-   Git
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="configuration.html">
-     Configuration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="local.html">
-     Local, single-user, linear workflow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="branch.html">
-     Local user, branching
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="remote.html">
-     Remotes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="conflict.html">
-     Conflict management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="git-visuals.html">
-     Git Visuals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../intro-jupyter/Index.html">
-   An overview of Jupyter tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../intro-jupyter/01-Intro-Jupyter.html">
-     A quick, practical intro to the Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../intro-jupyter/02-Beyond-Plain-Python.html">
-     IPython: beyond plain Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../intro-jupyter/03-Custom-Display-Logic.html">
-     Custom Display Logic
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modularity/modularity.html">
-   Modularity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../environments/environments.html">
-   Environments
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../testing/index.html">
-   Testing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../testing/building-blocks.html">
-     Building Blocks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../testing/workflow.html">
-     Workflow and Automation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../climate-xarray/index.html">
-   Climate and Xarray
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../climate-xarray/climate-data.html">
-     Climate, oceans and data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../climate-xarray/xarray.html">
-     Introduction to Xarray
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local.html">Local, single-user, linear workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branch.html">Local user, branching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote.html">Remotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conflict.html">Conflict management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-visuals.html">Git Visuals</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Labs
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/intro/intro.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab00/lab00.html">
-   Lab Session 0 - Introduction to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab01/lab01.html">
-   Lab Session 1: Git &amp; The Shell
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab02/lab02.html">
-   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab03/lab03.html">
-   Lab Session 3: GitHub Continued, Pull Requests
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab04/lab04.html">
-   Lab Session 4: Modularization, Environments, Binder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab05/lab05.html">
-   Lab Session 5: Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab06/lab06.html">
-   Lab Session 6: Climate data and xarray
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intro-jupyter/Index.html">An overview of Jupyter tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro-jupyter/01-Intro-Jupyter.html">A quick, practical intro to the Jupyter Notebook</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../intro-jupyter/02-Beyond-Plain-Python.html">IPython: beyond plain Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-jupyter/03-Custom-Display-Logic.html">Custom Display Logic</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modularity/modularity.html">Modularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environments/environments.html">Environments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../testing/index.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../testing/building-blocks.html">Building Blocks</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../testing/workflow.html">Workflow and Automation</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../climate-xarray/index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../climate-xarray/climate-data.html">Climate, oceans and data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../climate-xarray/xarray.html">Introduction to Xarray</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/rtc.html">
-   Real time collaboration (RTC)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/local-installation.html">
-   Local Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/contribute.html">
-   Contribute
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/intro/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab00/lab00.html">Lab Session 0 - Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab01/lab01.html">Lab Session 1: Git &amp; The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab02/lab02.html">Lab Session 2: Dotfiles, Branches, Conflics and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab03/lab03.html">Lab Session 3: GitHub Continued, Pull Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab04/lab04.html">Lab Session 4: Modularization, Environments, Binder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab05/lab05.html">Lab Session 5: Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab06/lab06.html">Lab Session 6: Climate data and xarray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/rtc.html">Real time collaboration (RTC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/local-installation.html">Local Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/contribute.html">Contribute</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/intro-git/Git-Tutorial.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/UCB-stat-159-s23/site"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flectures/intro-git/Git-Tutorial.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flectures/intro-git/Git-Tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/site/main?urlpath=tree/lectures/intro-git/Git-Tutorial.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/intro-git/Git-Tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>An interactive Git Tutorial: the tool you didn’t know you needed</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-personal-workflows-to-open-collaboration">
-   From personal workflows to open collaboration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wikipedia">
-   Wikipedia
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-is-an-enabling-technology-use-version-control-for-everything">
-   Git is an enabling technology: Use version control for everything
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#teaching-courses-with-git">
-   Teaching courses with Git
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#annotated-history-of-each-student-s-worfklow-and-backup">
-   Annotated history of each student’s worfklow (and backup!)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-plan-for-this-tutorial">
-   The plan for this tutorial
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#very-high-level-picture-an-overview-of-key-concepts">
-   Very high level picture: an overview of key concepts
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-things-first-git-must-be-configured-before-first-use">
-   First things first: git must be configured before first use
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convenient-credentials-management">
-     Convenient credentials management
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stage-1-local-single-user-linear-workflow">
-   Stage 1: Local, single-user, linear workflow
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-init-create-an-empty-repository">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       init
-      </span>
-     </code>
-     : create an empty repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-add-tell-git-about-this-new-file">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       add
-      </span>
-     </code>
-     : tell git about this new file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-commit-permanently-record-our-changes-in-git-s-database">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       commit
-      </span>
-     </code>
-     : permanently record our changes in git’s database
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-log-what-has-been-committed-so-far">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       log
-      </span>
-     </code>
-     : what has been committed so far
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-diff-what-have-i-changed">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       diff
-      </span>
-     </code>
-     : what have I changed?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-cycle-of-git-virtue-work-commit-work-commit">
-     The cycle of git virtue: work, commit, work, commit, …
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-log-revisited">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       log
-      </span>
-     </code>
-     revisited
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-mv-and-rm-moving-and-removing-files">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       mv
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       rm
-      </span>
-     </code>
-     : moving and removing files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#local-user-branching">
-   Local user, branching
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-remotes-as-a-single-user">
-   Using remotes as a single user
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-important-aside-conflict-management">
-     An important aside: conflict management
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaborating-on-github-with-a-small-team">
-   Collaborating on github with a small team
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#full-contact-github-distributed-collaboration-with-large-teams">
-   Full-contact github: distributed collaboration with large teams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-useful-commands">
-   Other useful commands
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-resources">
-   Git resources
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introductory-materials">
-     Introductory materials
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#beyond-the-basics">
-     Beyond the basics
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-few-useful-tips-for-common-tasks">
-     A few useful tips for common tasks
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#better-shell-support">
-       Better shell support
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#embedding-git-information-in-latex-documents">
-       Embedding Git information in LaTeX documents
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#git-export">
-       git export
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-personal-workflows-to-open-collaboration">From personal workflows to open collaboration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wikipedia">Wikipedia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-is-an-enabling-technology-use-version-control-for-everything">Git is an enabling technology: Use version control for everything</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-courses-with-git">Teaching courses with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotated-history-of-each-student-s-worfklow-and-backup">Annotated history of each student’s worfklow (and backup!)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-plan-for-this-tutorial">The plan for this tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#very-high-level-picture-an-overview-of-key-concepts">Very high level picture: an overview of key concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-things-first-git-must-be-configured-before-first-use">First things first: git must be configured before first use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convenient-credentials-management">Convenient credentials management</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-local-single-user-linear-workflow">Stage 1: Local, single-user, linear workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-create-an-empty-repository"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>: create an empty repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-tell-git-about-this-new-file"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>: tell git about this new file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-permanently-record-our-changes-in-git-s-database"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>: permanently record our changes in git’s database</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-what-has-been-committed-so-far"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>: what has been committed so far</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-what-have-i-changed"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>: what have I changed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cycle-of-git-virtue-work-commit-work-commit">The cycle of git virtue: work, commit, work, commit, …</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-revisited"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> revisited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-mv-and-rm-moving-and-removing-files"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">rm</span></code>: moving and removing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-user-branching">Local user, branching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-remotes-as-a-single-user">Using remotes as a single user</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-important-aside-conflict-management">An important aside: conflict management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborating-on-github-with-a-small-team">Collaborating on github with a small team</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-contact-github-distributed-collaboration-with-large-teams">Full-contact github: distributed collaboration with large teams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-useful-commands">Other useful commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-resources">Git resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-materials">Introductory materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-the-basics">Beyond the basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-few-useful-tips-for-common-tasks">A few useful tips for common tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#better-shell-support">Better shell support</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-git-information-in-latex-documents">Embedding Git information in LaTeX documents</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git-export">git export</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>An interactive Git Tutorial: the tool you didn’t know you needed</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-personal-workflows-to-open-collaboration">
-   From personal workflows to open collaboration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wikipedia">
-   Wikipedia
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-is-an-enabling-technology-use-version-control-for-everything">
-   Git is an enabling technology: Use version control for everything
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#teaching-courses-with-git">
-   Teaching courses with Git
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#annotated-history-of-each-student-s-worfklow-and-backup">
-   Annotated history of each student’s worfklow (and backup!)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-plan-for-this-tutorial">
-   The plan for this tutorial
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#very-high-level-picture-an-overview-of-key-concepts">
-   Very high level picture: an overview of key concepts
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-things-first-git-must-be-configured-before-first-use">
-   First things first: git must be configured before first use
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convenient-credentials-management">
-     Convenient credentials management
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stage-1-local-single-user-linear-workflow">
-   Stage 1: Local, single-user, linear workflow
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-init-create-an-empty-repository">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       init
-      </span>
-     </code>
-     : create an empty repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-add-tell-git-about-this-new-file">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       add
-      </span>
-     </code>
-     : tell git about this new file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-commit-permanently-record-our-changes-in-git-s-database">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       commit
-      </span>
-     </code>
-     : permanently record our changes in git’s database
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-log-what-has-been-committed-so-far">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       log
-      </span>
-     </code>
-     : what has been committed so far
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-diff-what-have-i-changed">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       diff
-      </span>
-     </code>
-     : what have I changed?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-cycle-of-git-virtue-work-commit-work-commit">
-     The cycle of git virtue: work, commit, work, commit, …
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-log-revisited">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       log
-      </span>
-     </code>
-     revisited
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-mv-and-rm-moving-and-removing-files">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       mv
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       rm
-      </span>
-     </code>
-     : moving and removing files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#local-user-branching">
-   Local user, branching
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-remotes-as-a-single-user">
-   Using remotes as a single user
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-important-aside-conflict-management">
-     An important aside: conflict management
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaborating-on-github-with-a-small-team">
-   Collaborating on github with a small team
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#full-contact-github-distributed-collaboration-with-large-teams">
-   Full-contact github: distributed collaboration with large teams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-useful-commands">
-   Other useful commands
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-resources">
-   Git resources
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introductory-materials">
-     Introductory materials
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#beyond-the-basics">
-     Beyond the basics
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-few-useful-tips-for-common-tasks">
-     A few useful tips for common tasks
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#better-shell-support">
-       Better shell support
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#embedding-git-information-in-latex-documents">
-       Embedding Git information in LaTeX documents
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#git-export">
-       git export
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="an-interactive-git-tutorial-the-tool-you-didn-t-know-you-needed">
-<h1>An interactive Git Tutorial: the tool you didn’t know you needed<a class="headerlink" href="#an-interactive-git-tutorial-the-tool-you-didn-t-know-you-needed" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="from-personal-workflows-to-open-collaboration">
-<h2>From personal workflows to open collaboration<a class="headerlink" href="#from-personal-workflows-to-open-collaboration" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="an-interactive-git-tutorial-the-tool-you-didn-t-know-you-needed">
+<h1>An interactive Git Tutorial: the tool you didn’t know you needed<a class="headerlink" href="#an-interactive-git-tutorial-the-tool-you-didn-t-know-you-needed" title="Permalink to this heading">#</a></h1>
+<section id="from-personal-workflows-to-open-collaboration">
+<h2>From personal workflows to open collaboration<a class="headerlink" href="#from-personal-workflows-to-open-collaboration" title="Permalink to this heading">#</a></h2>
 <p><strong>Note:</strong> this tutorial was particularly modeled, and therefore owes a lot, to the excellent materials offered in:</p>
 <ul class="simple">
 <li><p>“Git for Scientists: A Tutorial” by John McDonnell (no link as this tutorial seems to have disappeared from the internet).</p></li>
@@ -932,9 +476,9 @@
 </ul>
 <p>In particular I’ve reused the excellent images from the <a class="reference external" href="http://git-scm.com/book">Pro Git book</a> that John had already selected and downloaded, as well as some of his outline.  But this version of the tutorial aims to be 100% reproducible by being executed directly as an IPython notebook and is hosted itself on github so that others can more easily make improvements to it by collaborating on Github.  Many thanks to John and Emanuele for making their materials available online.</p>
 <p>After writing this document, I discovered <a class="reference external" href="https://github.com/jrjohansson">J.R. Johansson</a>’s <a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/jrjohansson/scientific-python-lectures/master/Lecture-7-Revision-Control-Software.ipynb">tutorial on version control</a> that is also written as a fully reproducible notebook and is also aimed at a scientific audience.  It has a similar spirit to this one, and is part of his excellent series <a class="reference external" href="https://github.com/jrjohansson/scientific-python-lectures">Lectures on Scientific Computing with Python</a> that is entirely available as Jupyter Notebooks.</p>
-</div>
-<div class="section" id="wikipedia">
-<h2>Wikipedia<a class="headerlink" href="#wikipedia" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="wikipedia">
+<h2>Wikipedia<a class="headerlink" href="#wikipedia" title="Permalink to this heading">#</a></h2>
 <p>“Revision control, also known as version control, source control
 or software configuration management (SCM), is the
 <strong>management of changes to documents, programs, and other
@@ -950,35 +494,35 @@ information stored as computer files.</strong>”</p>
 <li><p>Freedom (exploratory branching)</p></li>
 <li><p>Collaboration (synchronization)</p></li>
 </ul>
-</div>
-<div class="section" id="git-is-an-enabling-technology-use-version-control-for-everything">
-<h2>Git is an enabling technology: Use version control for everything<a class="headerlink" href="#git-is-an-enabling-technology-use-version-control-for-everything" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="git-is-an-enabling-technology-use-version-control-for-everything">
+<h2>Git is an enabling technology: Use version control for everything<a class="headerlink" href="#git-is-an-enabling-technology-use-version-control-for-everything" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Paper writing (never get <code class="docutils literal notranslate"><span class="pre">paper_v5_john_jane_final_oct22_really_final.tex</span></code> by email again!)</p></li>
 <li><p>Grant writing</p></li>
 <li><p>Everyday research</p></li>
 <li><p>Teaching (never accept an emailed homework assignment again!)</p></li>
 </ul>
-</div>
-<div class="section" id="teaching-courses-with-git">
-<h2>Teaching courses with Git<a class="headerlink" href="#teaching-courses-with-git" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="teaching-courses-with-git">
+<h2>Teaching courses with Git<a class="headerlink" href="#teaching-courses-with-git" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/indefero_projects_notes.png" /></p>
 <!-- offline: 
 <img src="files/images/indefero_projects_notes.png" width="100%">
 <img src="https://raw.github.com/fperez/reprosw/master/fig/indefero_projects_notes.png" width="100%">
---></div>
-<div class="section" id="annotated-history-of-each-student-s-worfklow-and-backup">
-<h2>Annotated history of each student’s worfklow (and backup!)<a class="headerlink" href="#annotated-history-of-each-student-s-worfklow-and-backup" title="Permalink to this headline">¶</a></h2>
+--></section>
+<section id="annotated-history-of-each-student-s-worfklow-and-backup">
+<h2>Annotated history of each student’s worfklow (and backup!)<a class="headerlink" href="#annotated-history-of-each-student-s-worfklow-and-backup" title="Permalink to this heading">#</a></h2>
 <!-- offline: 
     <img src="files/images/indefero_projects1.png" width="100%">
 <img src="https://raw.github.com/fperez/reprosw/master/fig/indefero_projects1.png" width="100%">
     -->
 <p><img alt="" src="../../_images/indefero_projects1.png" /></p>
-</div>
-<div class="section" id="the-plan-for-this-tutorial">
-<h2>The plan for this tutorial<a class="headerlink" href="#the-plan-for-this-tutorial" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-plan-for-this-tutorial">
+<h2>The plan for this tutorial<a class="headerlink" href="#the-plan-for-this-tutorial" title="Permalink to this heading">#</a></h2>
 <p>This tutorial is structured in the following way: we will begin with a brief overview of key concepts you need to understand in order for git to really make sense.  We will then dive into hands-on work: after a brief interlude into necessary configuration we will discuss 5 “stages of git” with scenarios of increasing sophistication and complexity, introducing the necessary commands for each stage:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Local, single-user, linear workflow</p></li>
 <li><p>Single local user, branching</p></li>
 <li><p>Using remotes as a single user</p></li>
@@ -986,9 +530,9 @@ information stored as computer files.</strong>”</p>
 <li><p>Full-contact github: distributed collaboration with large teams</p></li>
 </ol>
 <p>In reality, this tutorial only covers stages 1-4, since for #5 there are many software develoment-oriented tutorials and documents of very high quality online.  But most scientists start working alone with a few files or with a small team, so I feel it’s important to build first the key concepts and practices based on problems scientists encounter in their everyday life and without the jargon of the software world.  Once you’ve become familiar with 1-4, the excellent tutorials that exist about collaborating on github on open-source projects should make sense.</p>
-</div>
-<div class="section" id="very-high-level-picture-an-overview-of-key-concepts">
-<h2>Very high level picture: an overview of key concepts<a class="headerlink" href="#very-high-level-picture-an-overview-of-key-concepts" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="very-high-level-picture-an-overview-of-key-concepts">
+<h2>Very high level picture: an overview of key concepts<a class="headerlink" href="#very-high-level-picture-an-overview-of-key-concepts" title="Permalink to this heading">#</a></h2>
 <p>The <strong>commit</strong>: <em>a snapshot of work at a point in time</em></p>
 <!-- offline: 
 ![](images/commit_anatomy.png)
@@ -1037,9 +581,9 @@ information stored as computer files.</strong>”</p>
 </div>
 </div>
 <p>And this is pretty much the essence of Git!</p>
-</div>
-<div class="section" id="first-things-first-git-must-be-configured-before-first-use">
-<h2>First things first: git must be configured before first use<a class="headerlink" href="#first-things-first-git-must-be-configured-before-first-use" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="first-things-first-git-must-be-configured-before-first-use">
+<h2>First things first: git must be configured before first use<a class="headerlink" href="#first-things-first-git-must-be-configured-before-first-use" title="Permalink to this heading">#</a></h2>
 <p>The minimal amount of configuration for git to work without pestering you is to tell it who you are. You should run a version of these commands in your shell:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Fernando Perez&quot;</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;Fernando.Perez@berkeley.edu&quot;</span>
@@ -1049,8 +593,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span><span class="s2">&quot;auto&quot;</span>
 </pre></div>
 </div>
-<div class="section" id="convenient-credentials-management">
-<h3>Convenient credentials management<a class="headerlink" href="#convenient-credentials-management" title="Permalink to this headline">¶</a></h3>
+<section id="convenient-credentials-management">
+<h3>Convenient credentials management<a class="headerlink" href="#convenient-credentials-management" title="Permalink to this heading">#</a></h3>
 <p>Next, we configure git so that we manage our credentials without having to manually type our passwords for each and every operation.</p>
 <p>For general users, Github offers in its help pages instructions on how to configure the credentials helper for <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Mac OSX</a>, <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Windows</a> and <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux">Linux</a>.</p>
 <p>But in this document we will focus on configuring the <a class="reference external" href="https://github.com/yuvipanda/github-app-user-auth">github app for JupyterHub</a> developed by Berkeley’s Yuvi Panda. Our JupyterHub already has this app pre-installed, which makes it very convenient to push and pull securely from selected repositories.</p>
@@ -1059,7 +603,7 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 </pre></div>
 </div>
 <p>And then, follow these steps, which you’ll need to do again each time you log into the Hub and want to push/pull to/from GitHub:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Go to the <a class="reference external" href="https://github.com/apps/stat159-berkeley-datahub-access">Stat159 GitHub Auth App page</a> and add this app to your account. For now you can give it access to all your repos, or if you prefer, you can manually configure which repos you’ll be using (this will require a bit more manual maintenance through the semester).</p></li>
 <li><p>Open a terminal, and type <code class="docutils literal notranslate"><span class="pre">github-app-user-auth</span></code>.</p></li>
 <li><p>It should give you a link to go to, and a code to input into the web page when that link is opened. Open the link, enter the code there.</p></li>
@@ -1067,10 +611,10 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 </ol>
 <p>Authentication is valid for 8 hours, and once it expires, this process will need to be repeated, <em>except for the first step</em>. In the future, we might have a web app or other process to make this less painful. However, keeping the length of this session limited drastically helps with security too.</p>
 <p>Later, you can see what repositories you’ve given it access to by visiting <a class="reference external" href="https://github.com/settings/installations">your GitHub installations page</a>.</p>
-</div>
-</div>
-<div class="section" id="stage-1-local-single-user-linear-workflow">
-<h2>Stage 1: Local, single-user, linear workflow<a class="headerlink" href="#stage-1-local-single-user-linear-workflow" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="stage-1-local-single-user-linear-workflow">
+<h2>Stage 1: Local, single-user, linear workflow<a class="headerlink" href="#stage-1-local-single-user-linear-workflow" title="Permalink to this heading">#</a></h2>
 <p>Type <code class="docutils literal notranslate"><span class="pre">git</span></code> to see a full list of all the ‘core’ commands.  We’ll now go through most of these via small practical exercises:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1128,8 +672,8 @@ See &#39;git help git&#39; for an overview of the system.
 </div>
 </div>
 </div>
-<div class="section" id="git-init-create-an-empty-repository">
-<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>: create an empty repository<a class="headerlink" href="#git-init-create-an-empty-repository" title="Permalink to this headline">¶</a></h3>
+<section id="git-init-create-an-empty-repository">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>: create an empty repository<a class="headerlink" href="#git-init-create-an-empty-repository" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pwd</span>
@@ -1195,9 +739,9 @@ echo &quot;My first bit of text&quot; &gt; file1.txt
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="git-add-tell-git-about-this-new-file">
-<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>: tell git about this new file<a class="headerlink" href="#git-add-tell-git-about-this-new-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-add-tell-git-about-this-new-file">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>: tell git about this new file<a class="headerlink" href="#git-add-tell-git-about-this-new-file" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -1219,9 +763,9 @@ git status
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="git-commit-permanently-record-our-changes-in-git-s-database">
-<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>: permanently record our changes in git’s database<a class="headerlink" href="#git-commit-permanently-record-our-changes-in-git-s-database" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-commit-permanently-record-our-changes-in-git-s-database">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>: permanently record our changes in git’s database<a class="headerlink" href="#git-commit-permanently-record-our-changes-in-git-s-database" title="Permalink to this heading">#</a></h3>
 <p>For now, we are <em>always</em> going to call <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> either with the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option <em>or</em> with specific filenames (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">file1</span> <span class="pre">file2...</span></code>).  This delays the discussion of an aspect of git called the <em>index</em> (often referred to also as the ‘staging area’) that we will cover later.  Most everyday work in regular scientific practice doesn’t require understanding the extra moving parts that the index involves, so on a first round we’ll bypass it.  Later on we will discuss how to use it to achieve more fine-grained control of what and how git records our actions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1234,9 +778,9 @@ git commit -a -m&quot;This is our first commit&quot;
 </div>
 </div>
 <p>In the commit above, we  used the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag to specify a message at the command line.  If we don’t do that, git will open the editor we specified in our configuration above and require that we enter a message.  By default, git refuses to record changes that don’t have a message to go along with them (though you can obviously ‘cheat’ by using an empty or meaningless string: git only tries to facilitate best practices, it’s not your nanny).</p>
-</div>
-<div class="section" id="git-log-what-has-been-committed-so-far">
-<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>: what has been committed so far<a class="headerlink" href="#git-log-what-has-been-committed-so-far" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-log-what-has-been-committed-so-far">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>: what has been committed so far<a class="headerlink" href="#git-log-what-has-been-committed-so-far" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -1247,9 +791,9 @@ git log
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="git-diff-what-have-i-changed">
-<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>: what have I changed?<a class="headerlink" href="#git-diff-what-have-i-changed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-diff-what-have-i-changed">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>: what have I changed?<a class="headerlink" href="#git-diff-what-have-i-changed" title="Permalink to this heading">#</a></h3>
 <p>Let’s do a little bit more work… Again, in practice you’ll be editing the files by hand, here we do it via shell commands for the sake of automation (and therefore the reproducibility of this tutorial!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1295,9 +839,9 @@ git diff
 <span class="o">+</span><span class="n">And</span> <span class="n">now</span> <span class="n">some</span> <span class="n">more</span> <span class="n">text</span><span class="o">...</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-cycle-of-git-virtue-work-commit-work-commit">
-<h3>The cycle of git virtue: work, commit, work, commit, …<a class="headerlink" href="#the-cycle-of-git-virtue-work-commit-work-commit" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-cycle-of-git-virtue-work-commit-work-commit">
+<h3>The cycle of git virtue: work, commit, work, commit, …<a class="headerlink" href="#the-cycle-of-git-virtue-work-commit-work-commit" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -1308,9 +852,9 @@ git commit -a -m&quot;I have made great progress on this critical matter.&quot;
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="git-log-revisited">
-<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> revisited<a class="headerlink" href="#git-log-revisited" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-log-revisited">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> revisited<a class="headerlink" href="#git-log-revisited" title="Permalink to this heading">#</a></h3>
 <p>First, let’s see what the log shows us now:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1348,9 +892,9 @@ git slog
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="git-mv-and-rm-moving-and-removing-files">
-<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">rm</span></code>: moving and removing files<a class="headerlink" href="#git-mv-and-rm-moving-and-removing-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-mv-and-rm-moving-and-removing-files">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">rm</span></code>: moving and removing files<a class="headerlink" href="#git-mv-and-rm-moving-and-removing-files" title="Permalink to this heading">#</a></h3>
 <p>While <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is used to add fils to the list git tracks, we must also tell it if we want their  names to change or for it to stop tracking them.  In familiar Unix fashion, the <code class="docutils literal notranslate"><span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">rm</span></code> git commands do precisely this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1377,14 +921,14 @@ git slog
 </div>
 </div>
 <p>And <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code> works in a similar fashion.</p>
-</div>
-<div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <p>Add a new file <code class="docutils literal notranslate"><span class="pre">file2.txt</span></code>, commit it, make some changes to it, commit them again, and then remove it (and don’t forget to commit this last step!).</p>
-</div>
-</div>
-<div class="section" id="local-user-branching">
-<h2>Local user, branching<a class="headerlink" href="#local-user-branching" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="local-user-branching">
+<h2>Local user, branching<a class="headerlink" href="#local-user-branching" title="Permalink to this heading">#</a></h2>
 <p>What is a branch?  Simply a <em>label for the ‘current’ commit in a sequence of ongoing commits</em>:</p>
 <p><img alt="" src="../../_images/masterbranch.png" /></p>
 <!-- offline: 
@@ -1491,9 +1035,9 @@ git slog
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="using-remotes-as-a-single-user">
-<h2>Using remotes as a single user<a class="headerlink" href="#using-remotes-as-a-single-user" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-remotes-as-a-single-user">
+<h2>Using remotes as a single user<a class="headerlink" href="#using-remotes-as-a-single-user" title="Permalink to this heading">#</a></h2>
 <p>We are now going to introduce the concept of a <em>remote repository</em>: a pointer to another copy of the repository that lives on a different location.  This can be simply a different path on the filesystem or a server on the internet.</p>
 <p>For this discussion, we’ll be using remotes hosted on the <a class="reference external" href="http://github.com">GitHub.com</a> service, but you can equally use other services like <a class="reference external" href="http://bitbucket.org">BitBucket</a> or <a class="reference external" href="http://gitorious.org">Gitorious</a> as well as host your own.</p>
 <div class="cell docutils container">
@@ -1582,8 +1126,8 @@ git pull
 </div>
 </div>
 </div>
-<div class="section" id="an-important-aside-conflict-management">
-<h3>An important aside: conflict management<a class="headerlink" href="#an-important-aside-conflict-management" title="Permalink to this headline">¶</a></h3>
+<section id="an-important-aside-conflict-management">
+<h3>An important aside: conflict management<a class="headerlink" href="#an-important-aside-conflict-management" title="Permalink to this heading">#</a></h3>
 <p>While git is very good at merging, if two different branches modify the same file in the same location, it simply can’t decide which change should prevail.  At that point, human intervention is necessary to make the decision.  Git will help you by marking the location in the file that has a problem, but it’s up to you to resolve the conflict.  Let’s see how that works by intentionally creating a conflict.</p>
 <p>We start by creating a branch and making a change to our experiment file:</p>
 <div class="cell docutils container">
@@ -1657,10 +1201,10 @@ git slog
 </div>
 </div>
 <p><em>Note:</em> While it’s a good idea to understand the basics of fixing merge conflicts by hand, in some cases you may find the use of an automated tool useful.  Git supports multiple <a class="reference external" href="https://www.kernel.org/pub/software/scm/git/docs/git-mergetool.html">merge tools</a>: a merge tool is a piece of software that conforms to a basic interface and knows how to merge two files into a new one.  Since these are typically graphical tools, there are various to choose from for the different operating systems, and as long as they obey a basic command structure, git can work with any of them.</p>
-</div>
-</div>
-<div class="section" id="collaborating-on-github-with-a-small-team">
-<h2>Collaborating on github with a small team<a class="headerlink" href="#collaborating-on-github-with-a-small-team" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="collaborating-on-github-with-a-small-team">
+<h2>Collaborating on github with a small team<a class="headerlink" href="#collaborating-on-github-with-a-small-team" title="Permalink to this heading">#</a></h2>
 <p>Single remote with shared access: we are going to set up a shared collaboration with one partner (the person sitting next to you).  This will show the basic workflow of collaborating on a project with a small team where everyone has write privileges to the same repository.</p>
 <p>Note for SVN users: this is similar to the classic SVN workflow, with the distinction that commit and push are separate steps.  SVN, having no local repository, commits directly to the shared central resource, so to a first approximation you can think of <code class="docutils literal notranslate"><span class="pre">svn</span> <span class="pre">commit</span></code> as being synonymous with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit;</span> <span class="pre">git</span> <span class="pre">push</span></code>.</p>
 <p>We will have two people, let’s call them Alice and Bob, sharing a repository.  Alice will be the owner of the repo and she will give Bob write privileges.</p>
@@ -1679,29 +1223,29 @@ git slog
 <li><p>Bob tries to push to github.  What happens here?</p></li>
 </ul>
 <p>The problem is that Bob’s changes create a commit that conflicts with Alice’s, so git refuses to apply them.  It forces Bob to first do the merge on his machine, so that if there is a conflict in the merge, Bob deals with the conflict manually (git could try to do the merge on the server, but in that case if there’s a conflict, the server repo would be left in a conflicted state without a human to fix things up).  The solution is for Bob to first pull the changes (pull in git is really fetch+merge), and then push again.</p>
-</div>
-<div class="section" id="full-contact-github-distributed-collaboration-with-large-teams">
-<h2>Full-contact github: distributed collaboration with large teams<a class="headerlink" href="#full-contact-github-distributed-collaboration-with-large-teams" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="full-contact-github-distributed-collaboration-with-large-teams">
+<h2>Full-contact github: distributed collaboration with large teams<a class="headerlink" href="#full-contact-github-distributed-collaboration-with-large-teams" title="Permalink to this heading">#</a></h2>
 <p>Multiple remotes and merging based on pull request workflow: this is beyond the scope of this brief tutorial, so we’ll simply discuss how it works very briefly, illustrating it with the activity on the <a class="reference external" href="http://github.com/ipython/ipython">IPython github repository</a>.</p>
-</div>
-<div class="section" id="other-useful-commands">
-<h2>Other useful commands<a class="headerlink" href="#other-useful-commands" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="other-useful-commands">
+<h2>Other useful commands<a class="headerlink" href="#other-useful-commands" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-show.html">show</a></p></li>
 <li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-reflog.html">reflog</a></p></li>
 <li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html">rebase</a></p></li>
 <li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-tag.html">tag</a></p></li>
 </ul>
-</div>
-<div class="section" id="git-resources">
-<h2>Git resources<a class="headerlink" href="#git-resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="introductory-materials">
-<h3>Introductory materials<a class="headerlink" href="#introductory-materials" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-resources">
+<h2>Git resources<a class="headerlink" href="#git-resources" title="Permalink to this heading">#</a></h2>
+<section id="introductory-materials">
+<h3>Introductory materials<a class="headerlink" href="#introductory-materials" title="Permalink to this heading">#</a></h3>
 <p>There are lots of good tutorials and introductions for Git, which you
 can easily find yourself; this is just a short list of things I’ve found
 useful.  For a beginner, I would recommend the following ‘core’ reading list, and
 below I mention a few extra resources:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The smallest, and in the style of this tuorial: <a class="reference external" href="http://rogerdudler.github.com/git-guide">git - the simple guide</a>
 contains ‘just the basics’.  Very quick read.</p></li>
 <li><p>In my own experience, the most useful resource was <a class="reference external" href="http://www.sbf5.com/~cduan/technical/git">Understanding Git
@@ -1718,9 +1262,9 @@ may be sufficient. It is nicely illustrated with diagrams that show what happens
 it contains also some information about handling SSH (necessary to interface with git hosted on remote servers when collaborating) as well
 as screenshots of the Windows interface.</p>
 <p>Cheat sheets: a useful <a class="reference external" href="https://github.com/nerdgirl/git-cheatsheet-visual/blob/master/gitcheatsheet.pdf">summary of common commands</a> in PDF format that can be printed for frequent reference.  <a class="reference external" href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf">Another nice PDF one</a>.</p>
-</div>
-<div class="section" id="beyond-the-basics">
-<h3>Beyond the basics<a class="headerlink" href="#beyond-the-basics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="beyond-the-basics">
+<h3>Beyond the basics<a class="headerlink" href="#beyond-the-basics" title="Permalink to this heading">#</a></h3>
 <p>At some point, it will pay off to understand how git itself is <em>built</em>.  These two documents, written in a similar spirit, are probably the most useful descriptions of the Git architecture short of diving into the actual implementation.  They walk you through
 how you would go about building a version control system with a little story. By the end you realize that Git’s model is almost an inevitable outcome of the proposed constraints:</p>
 <p>The <a class="reference external" href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html">Git parable</a> by Tom Preston-Werner.</p>
@@ -1741,11 +1285,11 @@ how you would go about building a version control system with a little story. By
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-few-useful-tips-for-common-tasks">
-<h3>A few useful tips for common tasks<a class="headerlink" href="#a-few-useful-tips-for-common-tasks" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="better-shell-support">
-<h4>Better shell support<a class="headerlink" href="#better-shell-support" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="a-few-useful-tips-for-common-tasks">
+<h3>A few useful tips for common tasks<a class="headerlink" href="#a-few-useful-tips-for-common-tasks" title="Permalink to this heading">#</a></h3>
+<section id="better-shell-support">
+<h4>Better shell support<a class="headerlink" href="#better-shell-support" title="Permalink to this heading">#</a></h4>
 <p>Adding git branch info to your bash prompt and tab completion for git commands and branches is extremely useful.  I suggest you at least copy:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">git-completion.bash</a></p></li>
@@ -1758,9 +1302,9 @@ PS1=&#39;[\u@\h \W$(__git_ps1 &quot; (%s)&quot;)]\$ &#39;   # adjust this to you
 </pre></div>
 </div>
 <p>See the comments in both of those files for lots of extra functionality they offer.</p>
-</div>
-<div class="section" id="embedding-git-information-in-latex-documents">
-<h4>Embedding Git information in LaTeX documents<a class="headerlink" href="#embedding-git-information-in-latex-documents" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="embedding-git-information-in-latex-documents">
+<h4>Embedding Git information in LaTeX documents<a class="headerlink" href="#embedding-git-information-in-latex-documents" title="Permalink to this heading">#</a></h4>
 <p>(Sent by <a class="reference external" href="http://www.onerussian.com">Yaroslav Halchenko</a>)</p>
 <p>I use a Make rule:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Helper if interested in providing proper version tag within the manuscript
@@ -1779,17 +1323,17 @@ subdirectories which actually contain papers (hence all those
 </div>
 <p>The corresponding <code class="docutils literal notranslate"><span class="pre">paper.pdf</span></code> depends on <code class="docutils literal notranslate"><span class="pre">revision.tex</span></code> and includes the
 line <code class="docutils literal notranslate"><span class="pre">\input{revision}</span></code> to load up the actual revision mark.</p>
-</div>
-<div class="section" id="git-export">
-<h4>git export<a class="headerlink" href="#git-export" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="git-export">
+<h4>git export<a class="headerlink" href="#git-export" title="Permalink to this heading">#</a></h4>
 <p>Git doesn’t have a native export command, but this works just fine:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git archive --prefix=fperez.org/  master | gzip &gt; ~/tmp/source.tgz
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1803,7 +1347,7 @@ line <code class="docutils literal notranslate"><span class="pre">\input{revisio
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./lectures/intro-git"
         },
         predefinedOutput: true
@@ -1811,30 +1355,122 @@ line <code class="docutils literal notranslate"><span class="pre">\input{revisio
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-personal-workflows-to-open-collaboration">From personal workflows to open collaboration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wikipedia">Wikipedia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-is-an-enabling-technology-use-version-control-for-everything">Git is an enabling technology: Use version control for everything</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-courses-with-git">Teaching courses with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotated-history-of-each-student-s-worfklow-and-backup">Annotated history of each student’s worfklow (and backup!)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-plan-for-this-tutorial">The plan for this tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#very-high-level-picture-an-overview-of-key-concepts">Very high level picture: an overview of key concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-things-first-git-must-be-configured-before-first-use">First things first: git must be configured before first use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convenient-credentials-management">Convenient credentials management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-local-single-user-linear-workflow">Stage 1: Local, single-user, linear workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-create-an-empty-repository"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>: create an empty repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-tell-git-about-this-new-file"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>: tell git about this new file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-permanently-record-our-changes-in-git-s-database"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>: permanently record our changes in git’s database</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-what-has-been-committed-so-far"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>: what has been committed so far</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-what-have-i-changed"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>: what have I changed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cycle-of-git-virtue-work-commit-work-commit">The cycle of git virtue: work, commit, work, commit, …</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-revisited"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> revisited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-mv-and-rm-moving-and-removing-files"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">rm</span></code>: moving and removing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-user-branching">Local user, branching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-remotes-as-a-single-user">Using remotes as a single user</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-important-aside-conflict-management">An important aside: conflict management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborating-on-github-with-a-small-team">Collaborating on github with a small team</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-contact-github-distributed-collaboration-with-large-teams">Full-contact github: distributed collaboration with large teams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-useful-commands">Other useful commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-resources">Git resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-materials">Introductory materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-the-basics">Beyond the basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-few-useful-tips-for-common-tasks">A few useful tips for common tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#better-shell-support">Better shell support</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-git-information-in-latex-documents">Embedding Git information in LaTeX documents</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git-export">git export</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Fernando Pérez and Facundo Sapienza<br/>
-    
-        &copy; Copyright 2023.<br/>
-  </p>
-</footer>
-</main>
-
-
-      </div>
-    </div>
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fernando Pérez and Facundo Sapienza
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

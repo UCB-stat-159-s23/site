@@ -1,547 +1,448 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Lab Session 6: Climate data and xarray &#8212; Collaborative and Reproducible Data Science</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab06/lab06';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Real time collaboration (RTC)" href="../../appendix/rtc.html" />
     <link rel="prev" title="Lab Session 5: Testing" href="../lab05/lab05.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Statistics 159/259, Spring 2023 Course Summary
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Statistics 159/259, Spring 2023 Course Summary
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/schedule.html">
-   Weekly Plan
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/homework.html">
-   Homeworks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/ra.html">
-   Reading Assignments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../overview/references.html">
-   Textbook and Supporting Materials
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Weekly Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/homework.html">Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/ra.html">Reading Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/references.html">Textbook and Supporting Materials</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Lectures
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/intro-git/intro.html">
-   Git
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/configuration.html">
-     Configuration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/local.html">
-     Local, single-user, linear workflow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/branch.html">
-     Local user, branching
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/remote.html">
-     Remotes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/conflict.html">
-     Conflict management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-git/git-visuals.html">
-     Git Visuals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/intro-jupyter/Index.html">
-   An overview of Jupyter tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-jupyter/01-Intro-Jupyter.html">
-     A quick, practical intro to the Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-jupyter/02-Beyond-Plain-Python.html">
-     IPython: beyond plain Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/intro-jupyter/03-Custom-Display-Logic.html">
-     Custom Display Logic
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lectures/modularity/modularity.html">
-   Modularity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../lectures/environments/environments.html">
-   Environments
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/testing/index.html">
-   Testing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/testing/building-blocks.html">
-     Building Blocks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/testing/workflow.html">
-     Workflow and Automation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../lectures/climate-xarray/index.html">
-   Climate and Xarray
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/climate-xarray/climate-data.html">
-     Climate, oceans and data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lectures/climate-xarray/xarray.html">
-     Introduction to Xarray
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/intro-git/intro.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/local.html">Local, single-user, linear workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/branch.html">Local user, branching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/remote.html">Remotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/conflict.html">Conflict management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-git/git-visuals.html">Git Visuals</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Labs
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/intro-jupyter/Index.html">An overview of Jupyter tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-jupyter/01-Intro-Jupyter.html">A quick, practical intro to the Jupyter Notebook</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-jupyter/02-Beyond-Plain-Python.html">IPython: beyond plain Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/intro-jupyter/03-Custom-Display-Logic.html">Custom Display Logic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/modularity/modularity.html">Modularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/environments/environments.html">Environments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/testing/index.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/testing/building-blocks.html">Building Blocks</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/testing/workflow.html">Workflow and Automation</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/climate-xarray/index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/climate-xarray/climate-data.html">Climate, oceans and data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lectures/climate-xarray/xarray.html">Introduction to Xarray</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/intro.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab00/lab00.html">
-   Lab Session 0 - Introduction to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab01/lab01.html">
-   Lab Session 1: Git &amp; The Shell
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab02/lab02.html">
-   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab03/lab03.html">
-   Lab Session 3: GitHub Continued, Pull Requests
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab04/lab04.html">
-   Lab Session 4: Modularization, Environments, Binder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab05/lab05.html">
-   Lab Session 5: Testing
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Lab Session 6: Climate data and xarray
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab00/lab00.html">Lab Session 0 - Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab01/lab01.html">Lab Session 1: Git &amp; The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab02/lab02.html">Lab Session 2: Dotfiles, Branches, Conflics and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab03/lab03.html">Lab Session 3: GitHub Continued, Pull Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab04/lab04.html">Lab Session 4: Modularization, Environments, Binder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab05/lab05.html">Lab Session 5: Testing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab Session 6: Climate data and xarray</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/rtc.html">
-   Real time collaboration (RTC)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/local-installation.html">
-   Local Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/contribute.html">
-   Contribute
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/rtc.html">Real time collaboration (RTC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/local-installation.html">Local Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/contribute.html">Contribute</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lab/lab06/lab06.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/UCB-stat-159-s23/site"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flab/lab06/lab06.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-</div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+<div class="article-header-buttons">
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/site/main?urlpath=tree/lab/lab06/lab06.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-1">
-   Question 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-2">
-   Question 2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploring-snow-with-era-5">
-   2. Exploring Snow with ERA 5
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-3">
-     Question 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-4">
-     Question 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-5">
-     Question 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-6">
-     Question 6
-    </a>
-   </li>
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flab/lab06/lab06.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
- </li>
-</ul>
+</div>
 
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lab/lab06/lab06.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab Session 6: Climate data and xarray</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-snow-with-era-5">2. Exploring Snow with ERA 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab Session 6: Climate data and xarray</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-1">
-   Question 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-2">
-   Question 2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploring-snow-with-era-5">
-   2. Exploring Snow with ERA 5
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-3">
-     Question 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-4">
-     Question 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-5">
-     Question 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-6">
-     Question 6
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-session-6-climate-data-and-xarray">
-<h1>Lab Session 6: Climate data and xarray<a class="headerlink" href="#lab-session-6-climate-data-and-xarray" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-session-6-climate-data-and-xarray">
+<h1>Lab Session 6: Climate data and xarray<a class="headerlink" href="#lab-session-6-climate-data-and-xarray" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Statistics 159/259, Spring 2022</strong></p></li>
 <li><p>Prof. F. Pérez and GSI F. Sapienza, Department of Statistics, UC Berkeley.</p></li>
 <li><p>03/10/2022</p></li>
 </ul>
 <p>Menu for today:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><strong>Introduction to xarray.</strong> We will be using xarry to manipulate climate data.</p></li>
 <li><p><strong>Working with ERA 5 data.</strong> As an example, we are going to practice data manipulation and visualization with xarray using a different climate dataset.</p></li>
 </ol>
@@ -590,8 +491,8 @@
 </div>
 </div>
 <p>EXPLORATION</p>
-<div class="section" id="question-1">
-<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Plot the average temperature as a function of the latitude:</p>
 <div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
@@ -602,9 +503,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-2">
-<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <p>Plot the yearly average temperature. That is, time series where the x-axis are the years and the y-axis is the averaged yearly temperature over all latitude and longitudes. Repeat this analysis separately for both south and north hemispheres.</p>
 <p>Remember to weight the averages by latitude!!! We did this in class using the weighted mean:</p>
 <div class="cell docutils container">
@@ -616,7 +517,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lab06_8_0.png" src="../../_images/lab06_8_0.png" />
+<img alt="../../_images/34ac5b47909fe4270e9fbc20b4c157ff1c1e2c7f049211502980355f5b186004.png" src="../../_images/34ac5b47909fe4270e9fbc20b4c157ff1c1e2c7f049211502980355f5b186004.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -641,9 +542,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exploring-snow-with-era-5">
-<h2>2. Exploring Snow with ERA 5<a class="headerlink" href="#exploring-snow-with-era-5" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exploring-snow-with-era-5">
+<h2>2. Exploring Snow with ERA 5<a class="headerlink" href="#exploring-snow-with-era-5" title="Permalink to this heading">#</a></h2>
 <p>Now, we turn our attention to other questions - ERA5 a very rich and interesting dataset, and the lecture only scratched its surface!</p>
 <p>We are going today to focus on just one more bit: we’ll take a look at the snow accumulation data for the northern and southern hemispheres.</p>
 <p>But you should see this as an invitation to keep learning from these data! Think of looking at other variables in the dataset. Is there annual cycle? trend? Some of the data might look very different than the air temperature - eg. precipitation which is either 0 or +. Can you use PDFs to look at changes in distributions over a region? at a point? Or talk about the data a little &amp; what you understand it is measuring? Are any of the data variables related to each other? Can you plot correlations between data?</p>
@@ -655,7 +556,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lab06_12_0.png" src="../../_images/lab06_12_0.png" />
+<img alt="../../_images/64ddd54f554311019cd071644aa389006816f476a47f8721179f4fac9cc99813.png" src="../../_images/64ddd54f554311019cd071644aa389006816f476a47f8721179f4fac9cc99813.png" />
 </div>
 </div>
 <p>What are the units of this? Where can you find that information?</p>
@@ -666,8 +567,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="question-3">
-<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h3>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h3>
 <p>Let’s look at the snow across the globe in February and August, which are roughly the peaks of the summer/winter seasons.</p>
 <p>Recreate the following figure, along with a corresponding one for August 1980:</p>
 <a class="reference internal image-reference" href="../../_images/snow-distribution-1980-02.png"><img alt="../../_images/snow-distribution-1980-02.png" src="../../_images/snow-distribution-1980-02.png" style="width: 500px;" /></a>
@@ -680,9 +581,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-4">
-<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h3>
 <p>Let’s now find the peaks in the northern and southern hemispheres. Plot a time series of density of ice coverage for both the north and south hemisphere.</p>
 <div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
@@ -697,9 +598,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-5">
-<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h3>
 <p>Let’s look for example at what the cycle in the northern hemisphere looks like for the year 1979. You need to replicate this figure:</p>
 <a class="reference internal image-reference" href="../../_images/snow-cycle-1979.png"><img alt="../../_images/snow-cycle-1979.png" src="../../_images/snow-cycle-1979.png" style="width: 500px;" /></a>
 <div class="cell tag_otter_assign_solution_cell docutils container">
@@ -711,15 +612,15 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-6">
-<h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-6">
+<h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h3>
 <p>And finally, we’re going to find the peaks for the maximum and minimum snow accumulation in both hemispheres, and study when those peaks happen, how much snow there is, and whether the amounto of total snow is going up or down.</p>
 <p>You’ll need to recreate a dataframe like the one pictured here (only a few rows shown, and this is for the northern hemisphere, you’ll make one for each hemisphere):</p>
 <a class="reference internal image-reference" href="../../_images/snow-peaks-north-df.png"><img alt="../../_images/snow-peaks-north-df.png" src="../../_images/snow-peaks-north-df.png" style="width: 900px;" /></a>
 <p><strong>Hint:</strong> look up the documentation for the xarray <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> method.</p>
 <p><strong>Hint:</strong></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>First, we want to extract the years from the data and iterate over them (try using <code class="docutils literal notranslate"><span class="pre">range</span></code>).</p></li>
 <li><p>When iterating over the years, we want to first pick the designated year, then find the days with the most and least snow as well as the amount of snow on those days.</p></li>
 <li><p>Once we’ve found the days, assign <code class="docutils literal notranslate"><span class="pre">vals</span></code> to be an array of the information we’ve calculated.</p></li>
@@ -791,7 +692,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lab06_29_0.png" src="../../_images/lab06_29_0.png" />
+<img alt="../../_images/24ae6f569c4c6205aaedd5ca772a40a5281150c4ee61fd2b140cdb1d8fd436ec.png" src="../../_images/24ae6f569c4c6205aaedd5ca772a40a5281150c4ee61fd2b140cdb1d8fd436ec.png" />
 </div>
 </div>
 <div class="cell tag_otter_assign_solution_cell docutils container">
@@ -803,16 +704,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lab06_30_0.png" src="../../_images/lab06_30_0.png" />
+<img alt="../../_images/5ceeac192361c00260329e2838e76c8b4c037025ced1c93d2392afb4f9d1eef7.png" src="../../_images/5ceeac192361c00260329e2838e76c8b4c037025ced1c93d2392afb4f9d1eef7.png" />
 </div>
 </div>
 <p>What do you think this is telling us about the ice in the northern hemisphere? What are the main sources of ice there, and what is happening to them?</p>
 <p>The above figures are for the northern hemisphere. Repeat them for the southern one. What do you observe? Any differences?</p>
 <p>I hope this lab has taught you some useful skills regarding tools like xarray and data with a different structure than data frames. But more importantly, that it has shown you how the ideas from this course also apply to problems as critical to humanity as climate change, and that you have the foundations on which to better understand these questions.</p>
 <p>Don’t stop here! This dataset is fascinating, and both the lecture and the lab were barely an appetizer!</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -826,7 +727,7 @@
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./lab/lab06"
         },
         predefinedOutput: true
@@ -834,44 +735,107 @@
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../lab05/lab05.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab Session 5: Testing</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lab05/lab05.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab Session 5: Testing</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../../appendix/rtc.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../../appendix/rtc.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Real time collaboration (RTC)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Fernando Pérez and Facundo Sapienza<br/>
-    
-        &copy; Copyright 2023.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-snow-with-era-5">2. Exploring Snow with ERA 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fernando Pérez and Facundo Sapienza
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

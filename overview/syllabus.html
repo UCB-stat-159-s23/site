@@ -1,586 +1,457 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Syllabus &#8212; Collaborative and Reproducible Data Science</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'overview/syllabus';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homeworks" href="homework.html" />
     <link rel="prev" title="Weekly Plan" href="schedule.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Statistics 159/259, Spring 2023 Course Summary
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Statistics 159/259, Spring 2023 Course Summary
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="schedule.html">
-   Weekly Plan
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="homework.html">
-   Homeworks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ra.html">
-   Reading Assignments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
-   Textbook and Supporting Materials
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Weekly Plan</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework.html">Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra.html">Reading Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Textbook and Supporting Materials</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Lectures
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/intro-git/intro.html">
-   Git
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-git/configuration.html">
-     Configuration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-git/local.html">
-     Local, single-user, linear workflow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-git/branch.html">
-     Local user, branching
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-git/remote.html">
-     Remotes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-git/conflict.html">
-     Conflict management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-git/git-visuals.html">
-     Git Visuals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/intro-jupyter/Index.html">
-   An overview of Jupyter tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-jupyter/01-Intro-Jupyter.html">
-     A quick, practical intro to the Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-jupyter/02-Beyond-Plain-Python.html">
-     IPython: beyond plain Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/intro-jupyter/03-Custom-Display-Logic.html">
-     Custom Display Logic
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/modularity/modularity.html">
-   Modularity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/environments/environments.html">
-   Environments
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/testing/index.html">
-   Testing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/testing/building-blocks.html">
-     Building Blocks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/testing/workflow.html">
-     Workflow and Automation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/climate-xarray/index.html">
-   Climate and Xarray
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/climate-xarray/climate-data.html">
-     Climate, oceans and data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/climate-xarray/xarray.html">
-     Introduction to Xarray
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/intro-git/intro.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-git/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-git/local.html">Local, single-user, linear workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-git/branch.html">Local user, branching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-git/remote.html">Remotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-git/conflict.html">Conflict management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-git/git-visuals.html">Git Visuals</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Labs
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/intro/intro.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab00/lab00.html">
-   Lab Session 0 - Introduction to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab01/lab01.html">
-   Lab Session 1: Git &amp; The Shell
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab02/lab02.html">
-   Lab Session 2: Dotfiles, Branches, Conflics and GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab03/lab03.html">
-   Lab Session 3: GitHub Continued, Pull Requests
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab04/lab04.html">
-   Lab Session 4: Modularization, Environments, Binder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab05/lab05.html">
-   Lab Session 5: Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab06/lab06.html">
-   Lab Session 6: Climate data and xarray
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/intro-jupyter/Index.html">An overview of Jupyter tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-jupyter/01-Intro-Jupyter.html">A quick, practical intro to the Jupyter Notebook</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-jupyter/02-Beyond-Plain-Python.html">IPython: beyond plain Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/intro-jupyter/03-Custom-Display-Logic.html">Custom Display Logic</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/modularity/modularity.html">Modularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/environments/environments.html">Environments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/testing/index.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/testing/building-blocks.html">Building Blocks</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../lectures/testing/workflow.html">Workflow and Automation</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/climate-xarray/index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/climate-xarray/climate-data.html">Climate, oceans and data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/climate-xarray/xarray.html">Introduction to Xarray</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/rtc.html">
-   Real time collaboration (RTC)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/local-installation.html">
-   Local Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/contribute.html">
-   Contribute
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/intro/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab00/lab00.html">Lab Session 0 - Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab01/lab01.html">Lab Session 1: Git &amp; The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab02/lab02.html">Lab Session 2: Dotfiles, Branches, Conflics and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab03/lab03.html">Lab Session 3: GitHub Continued, Pull Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab04/lab04.html">Lab Session 4: Modularization, Environments, Binder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab05/lab05.html">Lab Session 5: Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab06/lab06.html">Lab Session 6: Climate data and xarray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/rtc.html">Real time collaboration (RTC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/local-installation.html">Local Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/contribute.html">Contribute</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/overview/syllabus.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/UCB-stat-159-s23/site"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Foverview/syllabus.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Foverview/syllabus.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/overview/syllabus.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Syllabus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#textbook">
-   Textbook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#administrativia">
-   Administrativia
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prerequisites">
-     Prerequisites
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#format-and-assessment">
-     Format and assessment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#office-hours">
-     Office hours
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graduate-student-instructor">
-     Graduate Student Instructor
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#communication">
-     Communication
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grading">
-     Grading
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#homework-assignments">
-       Homework assignments
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#reading-assignments">
-       Reading assignments
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-of-conduct-attribution-of-work">
-     Code of conduct; attribution of work
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#disability-accommodations">
-     Disability accommodations
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbook">Textbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administrativia">Administrativia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-and-assessment">Format and assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#office-hours">Office hours</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graduate-student-instructor">Graduate Student Instructor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignments">Homework assignments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-assignments">Reading assignments</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct-attribution-of-work">Code of conduct; attribution of work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disability-accommodations">Disability accommodations</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Syllabus</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#textbook">
-   Textbook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#administrativia">
-   Administrativia
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prerequisites">
-     Prerequisites
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#format-and-assessment">
-     Format and assessment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#office-hours">
-     Office hours
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graduate-student-instructor">
-     Graduate Student Instructor
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#communication">
-     Communication
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grading">
-     Grading
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#homework-assignments">
-       Homework assignments
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#reading-assignments">
-       Reading assignments
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-of-conduct-attribution-of-work">
-     Code of conduct; attribution of work
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#disability-accommodations">
-     Disability accommodations
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="syllabus">
-<h1>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="syllabus">
+<h1>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this heading">#</a></h1>
 <p><strong>Statistics 159/259: Reproducible and Collaborative Statistical Data Science</strong></p>
-<div class="section" id="textbook">
-<h2>Textbook<a class="headerlink" href="#textbook" title="Permalink to this headline">¶</a></h2>
+<section id="textbook">
+<h2>Textbook<a class="headerlink" href="#textbook" title="Permalink to this heading">#</a></h2>
 <p>While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: <a class="reference external" href="https://merely-useful.tech/py-rse">Research software engineering in Python</a>. More resources are listed in the <span class="xref myst">course overview page</span>.</p>
-</div>
-<div class="section" id="administrativia">
-<h2>Administrativia<a class="headerlink" href="#administrativia" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="administrativia">
+<h2>Administrativia<a class="headerlink" href="#administrativia" title="Permalink to this heading">#</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Statistics 133, 134, 135</p></li>
 <li><p>Graduate standing is required to register for Statistics 259.</p></li>
@@ -593,9 +464,9 @@ Markdown, pandoc)</p></li>
 <li><p>Willingness to learn some statistical methodology by reading on one’s own (materials and links
 will be provided, but not all topics required to do the homework will be covered in lecture).</p></li>
 </ul>
-</div>
-<div class="section" id="format-and-assessment">
-<h3>Format and assessment<a class="headerlink" href="#format-and-assessment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="format-and-assessment">
+<h3>Format and assessment<a class="headerlink" href="#format-and-assessment" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>3 hours of lecture and 2 hours of lab per week</p>
 <ul>
@@ -605,29 +476,29 @@ will be provided, but not all topics required to do the homework will be covered
 </li>
 </ul>
 <p>For each assigned reading, you will submit a brief, 2 paragraph report by Wednesday at 9pm (Exception: the first one will be due <em>Thursday Jan 26</em>). The first paragraph should summarize the reading. The second paragraph should briefly explore something that interested you (e.g., you may wish to focus on one aspect of the paper in more depth, you may wish to discuss something in the reading that you disagree with).  During lecture, we will draw upon your reports for some group discussion.</p>
-</div>
-<div class="section" id="office-hours">
-<h3>Office hours<a class="headerlink" href="#office-hours" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="office-hours">
+<h3>Office hours<a class="headerlink" href="#office-hours" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Perez: Wednesday, 10-11AM, 419 Evans Hall. I will normally also keep an open <a class="reference external" href="https://berkeley.zoom.us/j/91957788039?pwd=WE5UMGdUWGp0bFVUUXFFSS9DblhEUT09Meeting">Zoom session</a> for those needing to join remotely for Covid or other reasons.</p></li>
 </ul>
-</div>
-<div class="section" id="graduate-student-instructor">
-<h3>Graduate Student Instructor<a class="headerlink" href="#graduate-student-instructor" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="graduate-student-instructor">
+<h3>Graduate Student Instructor<a class="headerlink" href="#graduate-student-instructor" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="mailto:fsapienza&#37;&#52;&#48;berkeley&#46;edu">Facu Sapienza</a></p></li>
 <li><p>Labs: Friday 9AM-11AM &amp; 12AM-2PM (340 Evans Hall).</p></li>
 <li><p>Office hours: Tuesdays 1PM-2PM &amp; Thursdays 2:30PM-3:30PM (428 Evans Hall).</p></li>
 </ul>
-</div>
-<div class="section" id="communication">
-<h3>Communication<a class="headerlink" href="#communication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="communication">
+<h3>Communication<a class="headerlink" href="#communication" title="Permalink to this heading">#</a></h3>
 <p>Please use the <a class="reference external" href="https://edstem.org/us/courses/35870/discussion/">course Ed</a> for questions about course material and logistics.
 For personal matters (illness, accommodations, etc.) that should remain private, please make a private Piazza post that only the instructor and GSI will see. You may obviously email one of us privately if you need, but in general we’ll be able to more efficiently handle class communications if they stay on Piazza.</p>
 <p>During the work week, we expect to be able to reply to Piazza messages and email within 24 hours. On weekends, we might need longer.</p>
-</div>
-<div class="section" id="grading">
-<h3>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="grading">
+<h3>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h3>
 <p>The course is <em>not</em> graded on a curve. It is possible for every student to make an A.
 We encourage you to focus on mastering the material, not on your grade.
 The weight of each assignment will be announced with the assignment; the overall grade structure will be:</p>
@@ -636,8 +507,8 @@ The weight of each assignment will be announced with the assignment; the overall
 <li><p>15%: reading assignments (weekly, on average).</p></li>
 </ul>
 <p>In case of medical exception, submit on Ed a private note to the instructors with a medical proof showing that you are unable to complete the assignment. We will grant extra 48hrs to the reading assignment/homework to be submitted, unless more time is required.</p>
-<div class="section" id="homework-assignments">
-<h4>Homework assignments<a class="headerlink" href="#homework-assignments" title="Permalink to this headline">¶</a></h4>
+<section id="homework-assignments">
+<h4>Homework assignments<a class="headerlink" href="#homework-assignments" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Homeworks deadlines will be posted immediately after the homework is released.</p></li>
 <li><p>We will accept late homework assignments until 24hrs after the deadline of the homework. However, in those cases a 25% penalty will be applied to the final score.</p></li>
@@ -645,19 +516,19 @@ The weight of each assignment will be announced with the assignment; the overall
 <li><p><em>Submitting assignments:</em> Submit written assignments by making a pull request
 to your private repository within the Berkeley <a class="reference external" href="https://github.berkeley.edu/stat-159-s23">GitHub organization for the class</a>, using the <a class="reference external" href="https://classroom.github.com/classrooms/106109551-ucb-stat-159-s23-classroom">GitHub Classroom</a> (you will practice all this, don’t worry).</p></li>
 </ul>
-</div>
-<div class="section" id="reading-assignments">
-<h4>Reading assignments<a class="headerlink" href="#reading-assignments" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="reading-assignments">
+<h4>Reading assignments<a class="headerlink" href="#reading-assignments" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>These will be posted on the course website under Assigned Readings. For each paper/reading in the weekly list, you should submit a summary paragraph and idea highlight paragraph. You will submit your reading assignments in bCourses.</p></li>
 <li><p>Reading assignments will be due every Wednesday at 9pm (Exception: the first one will be due <em>Thursday Jan 26</em>). No later reading assignments will be accepted unless there is a medical exception. In that case, you will need to submit in Ed a private note to the instructors with a medical proof showing that you are unable to complete the assignment.</p></li>
 <li><p>You can drop two readings without need of justification. Notice that this applies to INDIVIDUAL readings. For example, if the weekly reading consists of 4 papers, you can drop a maximum of two of them. If you drop two readings in one week, you cannot drop any other one without penalty.</p></li>
 <li><p>Each paragraph per reading assignment gives 1 point (a total of 2 per reading). The final points for the reading assignments is the sum of all the readings. Notice that this means that the maximum credit you can obtain per week depends on the number of readings that week.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="code-of-conduct-attribution-of-work">
-<h3>Code of conduct; attribution of work<a class="headerlink" href="#code-of-conduct-attribution-of-work" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="code-of-conduct-attribution-of-work">
+<h3>Code of conduct; attribution of work<a class="headerlink" href="#code-of-conduct-attribution-of-work" title="Permalink to this heading">#</a></h3>
 <p>The high academic standard at the University of California, Berkeley, is reflected in each degree awarded.
 Every student is expected to maintain this high standard by ensuring that all
 academic work reflects unique ideas or properly attributes the ideas to the original sources.</p>
@@ -671,18 +542,18 @@ This includes drafts and homework assignments!
 If you are unclear about expectations, ask your instructor.</p>
 <p>Do not collaborate or work with other students on assignments or projects unless the
 instructor gives you permission or instruction to do so.</p>
-</div>
-<div class="section" id="disability-accommodations">
-<h3>Disability accommodations<a class="headerlink" href="#disability-accommodations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="disability-accommodations">
+<h3>Disability accommodations<a class="headerlink" href="#disability-accommodations" title="Permalink to this heading">#</a></h3>
 <p>If you need an accommodation for a disability, if you have information your wish to share with
 the instructor about a medical emergency,
 or if you need special arrangements if the building needs to be evacuated, please inform the
 instructor as soon as possible.</p>
 <p>If you are not currently listed with DSP (the Disabled Students’ Program) and believe you might
 benefit from their support, please apply online at <a class="reference external" href="https://dsp.berkeley.edu">https://dsp.berkeley.edu</a>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -696,7 +567,7 @@ benefit from their support, please apply online at <a class="reference external"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./overview"
         },
         predefinedOutput: true
@@ -704,44 +575,114 @@ benefit from their support, please apply online at <a class="reference external"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Weekly Plan</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="schedule.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Weekly Plan</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="homework.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="homework.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Homeworks</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Fernando Pérez and Facundo Sapienza<br/>
-    
-        &copy; Copyright 2023.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbook">Textbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administrativia">Administrativia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-and-assessment">Format and assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#office-hours">Office hours</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graduate-student-instructor">Graduate Student Instructor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignments">Homework assignments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-assignments">Reading assignments</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct-attribution-of-work">Code of conduct; attribution of work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disability-accommodations">Disability accommodations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fernando Pérez and Facundo Sapienza
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
