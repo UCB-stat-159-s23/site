@@ -1,99 +1,124 @@
-name: stat159-s22
+name: stat159-s23
 
 channels:
   - conda-forge
 
 dependencies:
-  - python=3.9.9
+  # Base language runtimes
+  - python==3.10.8
+  - nodejs=16 # VS code-server requires node < 17
 
-  - altair=4.2.0
-  - beautifulsoup4=4.10.0
-  - black=21.12b0
-  - bokeh=2.4.2
-  - bqplot=0.12.32
-  - cartopy=0.20.2
-  - coverage=6.2
-  - cython=0.29.26
-  - dask=2022.1.0
-  - dask-labextension=5.2.0
-  - flake8=4.0.1
-  - fortran-magic=0.7
-  - geopandas=0.10.2
-  - geos=3.10.1
-  - geotiff=1.7.0
-  - h5netcdf=0.13.0
-  - h5py=3.6.0
-  - hdf4=4.2.15
-  - hdf5=1.12.1
-  - hypothesis=6.39.3
-  - intake=0.6.5
-  - intake-esm=2021.8.17
-  - intake-xarray=0.5.0
-  - ipycanvas=0.10.2
-  - ipydatagrid=1.1.8
-  - ipykernel=6.7.0
-  - ipympl=0.8.6
-  - ipyparallel=8.1.0
-  - ipython=8.0.0
-  - ipywidgets=7.6.5
-  - jupyter-book=0.12.1
-  - jupyter-repo2docker=2021.8.0
-  - jupyter-resource-usage=0.6.1
-  - jupyter-sphinx=0.3.2
-  - jupyter_bokeh=3.0.4
-  - jupyterlab=3.3.0
-  - jupyterlab-drawio=0.9.0
-  - jupyterlab-favorites=3.0.0
-  - jupyterlab-geojson=3.2.0
-  - jupyterlab-git=0.34.2
-  - jupyterlab-link-share==0.2.4
-  - jupyterlab-variableinspector=3.0.9
-  - jupyterlab_pygments=0.1.2
-  - jupyterlab_widgets=1.0.2
-  - jupytext=1.11.5
-  - mamba=0.19.1
-  - markdown-it-py=1.1.0
-  - markupsafe=2.0.1
-  - matplotlib=3.5.1
-  - matplotlib-inline=0.1.3
-  - mdit-py-plugins=0.2.8
-  - mock=4.0.3
-  - myst-nb=0.13.1
-  - myst-parser=0.15.2
-  - nbconvert=6.4.0
-  - nbdime=3.1.1
-  - nbformat=5.1.3
-  - nbgitpuller=1.0.2
-  - networkx=2.6.3
-  - notebook=6.4.7
-  - numba=0.55.0
-  - numpy=1.21.5
-  - pandas=1.3.5
-  - pandoc=2.17.0.1
-  - pandocfilters=1.5.0
-  - pep8=1.7.1
-  - pillow=8.4.0
-  - plotly=5.5.0
-  - pooch=1.5.2
-  - pytables=3.6.1
-  - pytest=6.2.5
-  - pytest-cov=3.0.0
-  - pytest-notebook=0.6.1
-  - requests=2.27.1
-  - retrolab=0.3.16
-  - scikit-image=0.19.1
-  - scikit-learn=1.0.2
-  - scipy=1.7.3
-  - seaborn=0.11.2
-  - sphinx=4.4.0
-  - sphinx-jupyterbook-latex=0.4.6
-  - statsmodels=0.13.1
-  - sympy=1.9
-  - tqdm=4.62.3
-  - xarray=0.20.2
-  - xlrd=2.0.1
+  # Other user-facing Python packages
+  - altair==4.2.2
+  - bash_kernel==0.9.0
+  - beautifulsoup4==4.11.1
+  - black==22.12.0
+  - bokeh==2.4.3
+  - bqplot==0.12.36
+  - cartopy==0.21.1
+  - coverage==7.0.5
+  - cython==0.29.33
+  - dask==2023.1.1
+  - dask-labextension==6.0.0
+  - datascience==0.17.6
+  - fortran-magic==0.7
+  - gh-scoped-creds==4.1
+  - h5netcdf==1.1.0
+  - h5py==3.7.0
+  - hdf4==4.2.15
+  - hdf5==1.12.2
+  - intake==0.6.6
+  - intake-esm==2022.9.18
+  - intake-xarray==0.6.1
+  - ipycanvas==0.13.1
+  - ipydatagrid==1.1.14
+  - ipympl==0.9.2
+  - ipyparallel==8.4.1
+  - ipywidgets==8.0.4
+  - jupyter-resource-usage==0.7.1
+  - jupyter_bokeh==3.0.5
+  - jupyter_server==2.2.1
+  - jupyterlab==3.6.1
+  - jupyterlab-drawio==0.9.0
+  - jupyterlab-favorites==3.1.1
+  - jupyterlab-geojson==3.3.1
+  - jupyterlab-git==0.41.0
+  - jupyterlab-link-share==0.2.5
+  - jupyterlab-variableinspector==3.0.9
+  - jupyterlab-myst==1.1.1
+  - jupyterlab_pygments==0.2.2
+  - jupyterlab_server==2.19.0
+  - jupyterlab-spellchecker==0.7.3
+  - jupyterlab_widgets==3.0.5
+  - jupytext==1.14.4
+  - mamba==1.2.0
+  - matplotlib==3.6.3
+  - matplotlib-inline==0.1.6
+  - mock==5.0.1
+  - nbconvert==6.5.3
+  
+  # nbdime 3.1.1 is incompatible with jupyter server 2.0
+  # See https://github.com/jupyter/nbdime/pull/649.
+  # Use manual pip install from git (see below), revert once
+  # official compatible release is available.
+  #- nbdime==3.1.1
+  
+  - nbgitpuller==1.1.1
+  - networkx==3.0
+  - numba==0.56.4
+  - numpy==1.23.5
+  - pandas==1.5.3
+  - pandoc==2.19.2
+  - pandocfilters==1.5.0
+  - pep8==1.7.1
+  - pillow==9.4.0
+  - pip==22.3.1
+  - plotly==5.12.0
+  - pooch==1.6.0
+  - prettytable==3.6.0
+  - pyarrow==10.0.1
+  - pypdf2==2.11.1
+  - pytables==3.7.0
+  - pytest==7.2.1
+  - pytest-cov==4.0.0
+  - pytest-notebook==0.6.1
+  - requests==2.28.2
+  - ruyaml==0.91.0
+  - scikit-image==0.19.3
+  - scikit-learn==1.2.0
+  - scipy==1.10.0
+  - seaborn==0.12.2
+  - sqlparse==0.4.3
+  - statsmodels==0.13.5
+  - sympy==1.11.1
+  - tk==8.6.12
+  - tornado==6.2.0
+  - tqdm==4.64.1
+  - xarray==2023.1.0
+  - xlrd==2.0.1
 
-  - pip
+  # Packages for Jupyter book. These are normal packages, but we put them in a
+  # separate section so they are easier to manually sync between the main
+  # environment.yml file and a pip requirements file that _only_ builds
+  # jupyterbook sites using Github Actions.
+  - jupyter-book==0.15.0
+  - jupyter-sphinx==0.4.0
+  - markdown-it-py==2.2.0
+  - markupsafe==2.1.2
+  - myst-nb==0.17.1
+
+  # Packages that could be installed via the system package manager
+  # (apt, homebrew, etc) but we bring them through here for better
+  # reproducibility
+  - git==2.39.1
+  - pandoc==2.19.2
+  - pandocfilters==1.5.0
+
+# Packages not available on conda-forge, installed through pip
   - pip:
-    - -r infra-requirements.txt
-    - -r book-requirements.txt
+    - ipython-sql==0.4.1
+    - ipytest==0.13.0
+    - nbval==0.10.0
+    # nbdime 3.1.1 is incompatible with jupyter server 2.0
+    # See https://github.com/jupyter/nbdime/pull/649, remove once newer release available.
+    - git+https://github.com/jupyter/nbdime.git@2da614b
