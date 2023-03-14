@@ -2,11 +2,12 @@
 # JupyterBook settings
 # See: https://jupyterbook.org/en/stable/customize/config.html
 
-title                       : Collaborative and Reproducible Data Science  # The title of the book. Will be placed in the left navbar.
-author                      : Fernando Pérez and Facundo Sapienza
-copyright                   : "2023"  # Goes in the footer
-logo                        : logo.png  # A path to the book logo
+title     : Collaborative and Reproducible Data Science # Left navbar
+author    : Fernando Pérez and Facundo Sapienza
+copyright : "2023"  # Goes in the footer
+logo      : berkeley-logo-white.png # Above title, left navbar
 
+# Render content from stored notebooks
 execute:
   execute_notebooks: 'off'
 
