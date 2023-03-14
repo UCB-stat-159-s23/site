@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>An overview of Jupyter tools &#8212; Collaborative and Reproducible Data Science</title>
+    <title>Testing &#8212; Collaborative and Reproducible Data Science</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="A quick, practical intro to the Jupyter Notebook" href="01-Intro-Jupyter.html" />
-    <link rel="prev" title="Git Visuals" href="../intro-git/git-visuals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -133,7 +131,7 @@
   Lectures
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../intro-git/intro.html">
    Git
@@ -176,28 +174,28 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../intro-jupyter/Index.html">
    An overview of Jupyter tools
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="01-Intro-Jupyter.html">
+    <a class="reference internal" href="../intro-jupyter/01-Intro-Jupyter.html">
      A quick, practical intro to the Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02-Beyond-Plain-Python.html">
+    <a class="reference internal" href="../intro-jupyter/02-Beyond-Plain-Python.html">
      IPython: beyond plain Python
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03-Custom-Display-Logic.html">
+    <a class="reference internal" href="../intro-jupyter/03-Custom-Display-Logic.html">
      Custom Display Logic
     </a>
    </li>
@@ -214,7 +212,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../testing/index.html">
+  <a class="reference internal" href="index.html">
    Testing
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -224,12 +222,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../testing/building-blocks.html">
+    <a class="reference internal" href="building-blocks.html">
      Building Blocks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../testing/workflow.html">
+    <a class="reference internal" href="workflow.html">
      Workflow and Automation
     </a>
    </li>
@@ -367,7 +365,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/intro-jupyter/Index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/testing/testing.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -392,7 +390,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-jupyter/Index.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/testing/testing.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -409,6 +407,43 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Testing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-motivation-chaotic-systems-and-numerical-precision">
+     Simple motivation: chaotic systems and numerical precision
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-are-always-testing">
+   We are always testing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-testing">
+     Simple testing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-a-test-suite">
+     Writing a test suite
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -416,27 +451,138 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>An overview of Jupyter tools</h1>
+                <h1>Testing</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Testing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-motivation-chaotic-systems-and-numerical-precision">
+     Simple motivation: chaotic systems and numerical precision
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-are-always-testing">
+   We are always testing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-testing">
+     Simple testing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-a-test-suite">
+     Writing a test suite
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="an-overview-of-jupyter-tools">
-<h1>An overview of Jupyter tools<a class="headerlink" href="#an-overview-of-jupyter-tools" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p><a class="reference internal" href="01-Intro-Jupyter.html"><span class="doc std std-doc">Intro-Jupyter</span></a></p></li>
-<li><p><a class="reference internal" href="02-Beyond-Plain-Python.html"><span class="doc std std-doc">Beyond-Plain-Python</span></a></p></li>
-<li><p><a class="reference internal" href="03-Custom-Display-Logic.html"><span class="doc std std-doc">Custom display logic</span></a></p></li>
-<li><p><a class="reference internal" href="04-Rich-Output.html"><span class="doc std std-doc">Rich Output</span></a></p></li>
-<li><p><a class="reference internal" href="05-widgets-interact.html"><span class="doc std std-doc">Widgets-interact</span></a></p></li>
-</ol>
-<div class="toctree-wrapper compound">
+  <div class="section" id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+<p><em>Optimization is the route to all evil</em></p>
+<p><em>Getting right first and fast then</em> by D. Knuth. AKA “Get it right first, then make it fast”.</p>
+<p>How do we do this?</p>
+<p>Useful links:</p>
+<ul class="simple">
+<li><p>We’ll follow the concise <a class="reference external" href="http://carpentries-incubator.github.io/python-testing/">Software Carpentry Testing Tutorial</a> authored by <a class="reference external" href="http://katyhuff.github.io">Dr. Katy Huff</a>.</p></li>
+<li><p>Also <a class="reference external" href="https://www.energy.gov/ne/person/dr-kathryn-huff">this Dr. Katy Huff</a>.</p></li>
+<li><p><a class="reference external" href="https://yihui.org/en/2018/09/notebook-war/">The First Notebook War</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There isn’t a clear borderline between software engineers and data analysts.</p>
+<p>How would you write unit tests for data analysis? I feel it will be both tricky and unnecessary. For a function/method, if you defined it, you know what its expected output should be. For data, you often don’t know what exactly to expect in the output. For example, when you subset a dataset, how do you know the result is correct?</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">mtcars2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span><span class="w"> </span><span class="n">hp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That is probably not something you, as a data analyst, need to worry about. It is the responsibility of the package author (the software engineer) to write enough unit tests in the package that you are using.</p>
+<p>On the other hand, data analysts often do tests in an informal way, too. As they explore the data, they may draw plots or create summary tables, in which they may be able to discover problems (e.g., wrong categories, outliers, and so on). Notebooks are great for these inline output elements, from which you can make quick discoveries.</p>
+</div>
+<div class="section" id="simple-motivation-chaotic-systems-and-numerical-precision">
+<h2>Simple motivation: chaotic systems and numerical precision<a class="headerlink" href="#simple-motivation-chaotic-systems-and-numerical-precision" title="Permalink to this headline">¶</a></h2>
+<p>We are going to play with the notebook <code class="docutils literal notranslate"><span class="pre">simple-numerical-chaos.ipynb</span></code>. Consider for example the following operation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1e-16</span><span class="p">,</span> <span class="mf">1e-16</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(a + b) + c = </span><span class="si">{</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a + (b + c) = </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(a + b) + c = 1.0
+a + (b + c) = 1.0000000000000002
+</pre></div>
+</div>
+</div>
+</div>
+<p>The problem here is caused by rounding of floating point numbers. A good reference for this is included in <a class="reference external" href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>.</p>
+<p>In Python, we can use a different standard for floting point numbers with the module <a class="reference external" href="https://docs.python.org/3/library/decimal.html">decimal</a>. This is particularly useful for real world cases where small number operations may be critical, for example when making tons of bank transactions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mf">3.9</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1:&#39;</span><span class="p">,</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f2:&#39;</span><span class="p">,</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;difference:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f1: 0.6239999999999999
+f2: 0.6239999999999997
+difference: 2.220446049250313e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, the decimal digits of the difference are just garbage: eirher <code class="docutils literal notranslate"><span class="pre">f1(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">f2(x)</span></code> have no information after the last digit.</p>
+<p>Now, this raises the question about what does it mean to get the <em>right answer</em> from our code and <em>what does it mean to be reproducible</em>
+in scientific computing.</p>
+<p>This short example help us to undersrand what is important in the context of computational</p>
+</div>
+</div>
+<div class="section" id="we-are-always-testing">
+<h1>We are always testing<a class="headerlink" href="#we-are-always-testing" title="Permalink to this headline">¶</a></h1>
+<p>Scientist, studetents, we are always doing test of our code and our methods. We do this in a subtle way, by printing an output, making a plot, etc. All these are quite similar to unit tests.</p>
+<p>Exploratory data analysis</p>
+<p>Testing also help us for creating a to do list when we make significant changes in the code (Fernando’s example from numerics to numpy).</p>
+<div class="section" id="simple-testing">
+<h2>Simple testing<a class="headerlink" href="#simple-testing" title="Permalink to this headline">¶</a></h2>
+<p>There is a functin in Python that help us to see how much of our current code is under testing right now.</p>
+</div>
+<div class="section" id="writing-a-test-suite">
+<h2>Writing a test suite<a class="headerlink" href="#writing-a-test-suite" title="Permalink to this headline">¶</a></h2>
+<p>Super simple: pytest just finds all the files that start with <code class="docutils literal notranslate"><span class="pre">test_</span></code> and run them. These need to be argumentless and return a bolean variable.</p>
+<p>Notice that the output of pytest is quite inteligent: it tells you where the error has been induced and also prints the values of the variables that induce the error.</p>
+<p>Forcing to write test force you to write good code.</p>
+<p><code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">except</span></code> vs <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
 </div>
 </div>
 
@@ -453,7 +599,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lectures/intro-jupyter"
+            path: "./lectures/testing"
         },
         predefinedOutput: true
     }
@@ -464,21 +610,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro-git/git-visuals.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Git Visuals</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="01-Intro-Jupyter.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A quick, practical intro to the Jupyter Notebook</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
