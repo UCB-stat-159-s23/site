@@ -1,12 +1,9 @@
-# Pip packages required only for the book build, to be used by github actions
-# Note that these deps should already be satisfied by the environment.yml,
-# but we list them here separately so github actions runs as fast as possible.
-
-jupyter-book==0.12.1
-jupyter-sphinx==0.3.2
-markdown-it-py==1.1.0
-markupsafe==2.0.1
-myst-nb==0.13.1
-myst-parser==0.15.2
-sphinx==4.4.0
-sphinx-jupyterbook-latex==0.4.6
+# Packages for Jupyter book. These are normal packages, but we put them in a
+# separate section so they are easier to manually sync between the main
+# environment.yml file and a pip requirements file that _only_ builds
+# jupyterbook sites using Github Actions.
+jupyter-book==0.15.0
+jupyter-sphinx==0.4.0
+markdown-it-py==2.2.0
+markupsafe==2.1.2
+myst-nb==0.17.1
