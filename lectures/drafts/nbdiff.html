@@ -477,7 +477,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="nbdime-version-control-for-jupyter-notebooks">
 <h1>nbdime - version control for Jupyter notebooks<a class="headerlink" href="#nbdime-version-control-for-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>Documentation: https://nbdime.readthedocs.io</p>
+<p>Documentation: <a class="reference external" href="https://nbdime.readthedocs.io">https://nbdime.readthedocs.io</a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="accessing-nbdime-on-the-hub">
 <h1>Accessing nbdime on the hub<a class="headerlink" href="#accessing-nbdime-on-the-hub" title="Permalink to this headline">¶</a></h1>
@@ -486,15 +486,15 @@
 </pre></div>
 </div>
 <p>in the folder where the file to diff resides. And then the following URL should be accessed:</p>
-<p>https://stat159.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/difftool</p>
+<p><a class="reference external" href="https://stat159.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/difftool">https://stat159.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/difftool</a></p>
 <p>When instead accessing a manual diff of two files, that on a local machine would be done with <code class="docutils literal notranslate"><span class="pre">nbdiff-web</span> <span class="pre">nb1.ipynb</span> <span class="pre">nb2.ipynb</span></code>, you should similarly execute</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nbdiff-web --ip 0.0.0.0 -p 9999 --base-url ${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/9999 nb1.ipynb nb2.ipynb
 </pre></div>
 </div>
 <p>but then you need to access the URL:</p>
-<p>https://stat159.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/diff?base=nb1.ipynb&amp;remote=nb2.ipynb</p>
+<p><a class="reference external" href="https://stat159.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/diff?base=nb1.ipynb&amp;remote=nb2.ipynb">https://stat159.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/diff?base=nb1.ipynb&amp;remote=nb2.ipynb</a></p>
 <p>(or use instead this if working in the staging hub):</p>
-<p>https://stat159-staging.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/diff?base=nb1.ipynb&amp;remote=nb2.ipynb</p>
+<p><a class="reference external" href="https://stat159-staging.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/diff?base=nb1.ipynb&amp;remote=nb2.ipynb">https://stat159-staging.datahub.berkeley.edu/user-redirect/proxy/absolute/9999/diff?base=nb1.ipynb&amp;remote=nb2.ipynb</a></p>
 <div class="section" id="code-to-semi-automate-the-above">
 <h2>Code to semi-automate the above<a class="headerlink" href="#code-to-semi-automate-the-above" title="Permalink to this headline">¶</a></h2>
 <p>Let’s first define some little utilities that we’ll use to display cleaner code later:</p>
