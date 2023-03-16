@@ -39,7 +39,7 @@ parts:
     sections:
     - file: lectures/climate-xarray/climate-data
     - file: lectures/climate-xarray/xarray
- - file: lectures/serialization/data-serialization
+  - file: lectures/serialization/data-serialization
 - caption: Labs
   chapters:
   - file: lab/intro/intro.ipynb
