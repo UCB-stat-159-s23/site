@@ -175,7 +175,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../lectures/intro-git/git-visuals.html">Git Visuals</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/intro-jupyter/Index.html">An overview of Jupyter tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/collaboration/index.html">Collaboration</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/collaboration/github-workflow.html">Working in teams on GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lectures/collaboration/rtc.html">Real time collaboration (RTC)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/intro-jupyter/Index.html">An overview of Jupyter tools</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lectures/intro-jupyter/01-Intro-Jupyter.html">A quick, practical intro to the Jupyter Notebook</a></li>
 
 
@@ -188,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lectures/modularity/modularity.html">Modularity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lectures/environments/environments.html">Environments</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/testing/index.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/testing/index.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lectures/testing/building-blocks.html">Building Blocks</a></li>
 
 
@@ -198,12 +203,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/climate-xarray/index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/climate-xarray/index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lectures/climate-xarray/climate-data.html">Climate, oceans and data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lectures/climate-xarray/xarray.html">Introduction to Xarray</a></li>
 
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/serialization/data-serialization.html">Data Serialization</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
@@ -218,7 +224,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../appendix/rtc.html">Real time collaboration (RTC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/local-installation.html">Local Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/contribute.html">Contribute</a></li>
 </ul>
@@ -472,6 +477,13 @@ document.write(`
 <li><p><a class="reference external" href="http://dx.plos.org/10.1371/journal.pcbi.1003244">Ten Simple Rules for Cultivating Open Science and Collaborative R&amp;D</a>.</p></li>
 </ul>
 </li>
+<li><p>#9, due Mar 22, 2023. Earth and Climate Science in the Cloud</p>
+<ul>
+<li><p><a class="reference external" href="https://eos.org/opinions/improving-reproducibility-in-earth-science-research">Liu et al. 2019, improving reproducibility in Earth science research</a>.</p></li>
+<li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12">Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science</a>.</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9354557">Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data</a>.</p></li>
+</ul>
+</li>
 </ul>
 <p>Future reading assignments</p>
 <ul class="simple">
@@ -486,13 +498,6 @@ document.write(`
 <li><p><a class="reference external" href="https://www.nap.edu/catalog/25217/open-source-software-policy-options-for-nasa-earth-and-space-sciences">Open Source Software Policy Options for NASA Earth and Space Sciences, 2018</a>. Chapter 4, Lessons Learned from Community Perspectives.</p></li>
 <li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK525417">Open Science by Design, Realizing a Vision for 21st Century Research (2018)</a>. Chapter 4, A VISION FOR OPEN SCIENCE BY DESIGN.</p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/1301.7064">Turk 2013, How to Scale a Code in the Human Dimension</a></p></li>
-</ul>
-</li>
-<li><p>Earth and Climate Science in the Cloud</p>
-<ul>
-<li><p><a class="reference external" href="https://eos.org/opinions/improving-reproducibility-in-earth-science-research">Liu et al. 2019, improving reproducibility in Earth science research</a>.</p></li>
-<li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12">Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science</a>.</p></li>
-<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9354557">Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data</a>.</p></li>
 </ul>
 </li>
 <li><p>Earth and climate science</p>

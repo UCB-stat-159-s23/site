@@ -48,6 +48,13 @@ Each paragraph per reading assignment gives 1 point (a total of 2 per reading). 
     - [Ten simple rules for helping newcomers become contributors to open projects](http://dx.plos.org/10.1371/journal.pcbi.1007296).
     - [Ten Simple Rules for Cultivating Open Science and Collaborative R&D](http://dx.plos.org/10.1371/journal.pcbi.1003244).
     
+* #9, due Mar 22, 2023. Earth and Climate Science in the Cloud
+    - [Liu et al. 2019, improving reproducibility in Earth science research](https://eos.org/opinions/improving-reproducibility-in-earth-science-research).
+    - [Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science](https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12).
+    - [Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/document/9354557).
+
+
+    
 Future reading assignments
 
 
@@ -60,13 +67,6 @@ Future reading assignments
     - [Open Source Software Policy Options for NASA Earth and Space Sciences, 2018](https://www.nap.edu/catalog/25217/open-source-software-policy-options-for-nasa-earth-and-space-sciences). Chapter 4, Lessons Learned from Community Perspectives.
     - [Open Science by Design, Realizing a Vision for 21st Century Research (2018)](https://www.ncbi.nlm.nih.gov/books/NBK525417). Chapter 4, A VISION FOR OPEN SCIENCE BY DESIGN.
    - [Turk 2013, How to Scale a Code in the Human Dimension](https://arxiv.org/abs/1301.7064)
-
-
-* Earth and Climate Science in the Cloud
-    - [Liu et al. 2019, improving reproducibility in Earth science research](https://eos.org/opinions/improving-reproducibility-in-earth-science-research).
-    - [Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science](https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12).
-    - [Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/document/9354557).
-
 
 * Earth and climate science
     - [Hoffimann et al. 2021, Geostatistical Learning: Challenges and Opportunities](https://arxiv.org/abs/2102.08791)
