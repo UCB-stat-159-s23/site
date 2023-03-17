@@ -18,6 +18,10 @@ parts:
     - file: lectures/intro-git/remote
     - file: lectures/intro-git/conflict
     - file: lectures/intro-git/git-visuals
+  - file: lectures/collaboration/index
+    sections:
+    - file: lectures/collaboration/github-workflow
+    - file: lectures/collaboration/rtc
   - file: lectures/intro-jupyter/Index
     sections:
     - file: lectures/intro-jupyter/01-Intro-Jupyter
@@ -35,10 +39,7 @@ parts:
     sections:
     - file: lectures/climate-xarray/climate-data
     - file: lectures/climate-xarray/xarray
-#  - file: lectures/environments/conda-envs
-#  - file: lectures/matplotlib_beyond_basics
-#  - file: lectures/documentation
-#  - file: lectures/data-serialization
+  - file: lectures/serialization/data-serialization
 - caption: Labs
   chapters:
   - file: lab/intro/intro.ipynb
@@ -51,6 +52,5 @@ parts:
   - file: lab/lab06/lab06.ipynb
 - caption: Appendix
   chapters:
-  - file: appendix/rtc
   - file: appendix/local-installation
   - file: appendix/contribute
