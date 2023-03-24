@@ -430,7 +430,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-installation-and-configuration-of-miniconda">Part 1: Installation and configuration of miniconda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-setting-the-hub-environment-in-local">Part 2: Setting the Hub environment in local</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-reproducibility-check">Part 3: Reproducibility check</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-comments">Additional Comments</a></li>
 </ul>
             </nav>
@@ -445,7 +444,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="local-installation">
 <h1>Local Installation<a class="headerlink" href="#local-installation" title="Permalink to this heading">#</a></h1>
-<p>These notes will help to setup your local machine with the JupyterLab we are using in the Stat 159/259 Hub. Even if you already have conda installed in your local machine, it’s not a bad idea to reset the conda instal. The idea is to have a very simplistic <code class="docutils literal notranslate"><span class="pre">base</span></code> environment from which you can launch JupyterLab and connect it to the kernels associated to other environmnets you create.</p>
+<p>These notes will help to setup your local machine with the JupyterLab we are using in the Stat 159/259 Hub. Even if you already have conda installed in your local machine, it’s not a bad idea to reset the conda installation. The idea is to have a very simplistic <code class="docutils literal notranslate"><span class="pre">base</span></code> environment from which you can launch JupyterLab and connect it to the kernels associated to other environments you create.</p>
 <p>Useful links:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Managing environments with Anaconda</a></p></li>
@@ -455,6 +454,18 @@ document.write(`
 <section id="part-1-installation-and-configuration-of-miniconda">
 <h2>Part 1: Installation and configuration of miniconda<a class="headerlink" href="#part-1-installation-and-configuration-of-miniconda" title="Permalink to this heading">#</a></h2>
 <p>Instead of installing conda with the full package management system and many Python libraries, we are going to install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>, a minimalist version of conda that included the package management tool and a small number of useful packages. If you already have conda installed in your machine, you may don’t need to do this. An easy way to check if conda is installed in your computes is by enter <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--help</span></code> in the terminal. You are also welcome of installing conda from zero by removing all conda directories and installing miniconda.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also install the full <a class="reference external" href="https://docs.anaconda.com/anaconda/install/index.html">Anaconda distribution</a>. This will take more time and it will install more things that you actually need for this, but it may be worth it depending how much do you will use Anaconda.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We recommend you to work from shell with Bash. It may be the case that your default is <code class="docutils literal notranslate"><span class="pre">zsh</span></code>. You can change this by entering</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chsh<span class="w"> </span>-s<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<p>Then, the next time you open a terminal it will open it with Bash.</p>
+</div>
 <p>You can install the last version of miniconda depending on you operating system from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda website</a>. For unix machines, a more simple way of doing this is by using the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command followed by the installer link (<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/macos.html#install-macos-silent">silent installation mode</a>). For example, for a MacOSX machine (without M1 chip) you can use</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh<span class="w"> </span>-O<span class="w"> </span>~/miniconda.sh
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/local/conda
@@ -487,11 +498,14 @@ conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>--yes<span class="w"> </span>mamba
 </pre></div>
 </div>
-<p>If this doesn’t work, you can also try <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">mamba</span> <span class="pre">-n</span> <span class="pre">base</span> <span class="pre">-c</span> <span class="pre">conda-forge</span></code>. If this still doesn’t work, you can always replace <code class="docutils literal notranslate"><span class="pre">mamba</span></code> by <code class="docutils literal notranslate"><span class="pre">conda</span></code> in the following section, but it will be much slower and unefficient.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If this doesn’t work, you can also try <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">mamba</span> <span class="pre">-n</span> <span class="pre">base</span> <span class="pre">-c</span> <span class="pre">conda-forge</span></code>. If this still doesn’t work, you can always replace <code class="docutils literal notranslate"><span class="pre">mamba</span></code> by <code class="docutils literal notranslate"><span class="pre">conda</span></code> in the following section, but it will be much slower and inefficient.</p>
+</div>
 </section>
 <section id="part-2-setting-the-hub-environment-in-local">
 <h2>Part 2: Setting the Hub environment in local<a class="headerlink" href="#part-2-setting-the-hub-environment-in-local" title="Permalink to this heading">#</a></h2>
-<p>Once you had installed miniconda, you can create virtual environments from a <code class="docutils literal notranslate"><span class="pre">yml</span></code> file just as we did in the Hub. As a first step, we are going to create a virtual environment with the same configuration we have in the Hub. The configuration file <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> for the Hub is available at the <a class="reference external" href="https://github.com/UCB-stat-159-s23/site/blob/main/environment.yml">site repository for the course</a>. Before using <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> to create a new environment, take a look to the text file and try to identify parts of the file that are not necessary or irrelevant to create the Hub environment; you will have to remove the last lines of the file that include the pip instructions for the requirements of the JupyterBook we use for the website, which are not necessary for the creation of the virtual environment.</p>
+<p>Once you had installed miniconda, you can create a virtual environments from a <code class="docutils literal notranslate"><span class="pre">yml</span></code> file just as we did in the JupyterHub in the Environment lectures. As a first step, we are going to create a virtual environment with the same configuration we have in the JupyterHub. The configuration file <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> for the Hub is available at the <a class="reference external" href="https://github.com/UCB-stat-159-s23/site/blob/main/environment.yml">site repository for the course</a>. Before using <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> to create a new environment, take a look to the text file and try to identify parts of the file that are not necessary or irrelevant to create the Hub environment; you will have to remove the last lines of the file that include the pip instructions for the requirements of the JupyterBook we use for the website, which are not necessary for the creation of the virtual environment.</p>
 <p>Then, you can create a the virtual environment with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environmnent.yml
 </pre></div>
@@ -508,18 +522,6 @@ mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
 </pre></div>
 </div>
 <p>Now, if we comeback to <code class="docutils literal notranslate"><span class="pre">base</span></code> and lunch Jupyter Lab with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>, we should see the option creating a new notebook with the <code class="docutils literal notranslate"><span class="pre">IPython</span> <span class="pre">-</span> <span class="pre">STAT</span> <span class="pre">159</span></code> kernel.</p>
-</section>
-<section id="part-3-reproducibility-check">
-<h2>Part 3: Reproducibility check<a class="headerlink" href="#part-3-reproducibility-check" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is suppose to be completed after finishing Homework No2.</p>
-</div>
-<p>For Homework No2 you created a virtual environment with the desired installation for reproducing one of the papers. Clone the repository for the homework in you local machine and use the <code class="docutils literal notranslate"><span class="pre">yml</span></code> file in the GitHub repository to create a virtual environment in your local machine from which you are able to run the same code you ran in the Hub.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you don’t have git installed on your machine, you can get it via conda/mamba too!</p>
-</div>
 </section>
 <section id="additional-comments">
 <h2>Additional Comments<a class="headerlink" href="#additional-comments" title="Permalink to this heading">#</a></h2>
@@ -594,7 +596,6 @@ mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-installation-and-configuration-of-miniconda">Part 1: Installation and configuration of miniconda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-setting-the-hub-environment-in-local">Part 2: Setting the Hub environment in local</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-reproducibility-check">Part 3: Reproducibility check</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-comments">Additional Comments</a></li>
 </ul>
   </nav></div>
