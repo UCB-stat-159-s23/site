@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lab Session 5: Testing &#8212; Collaborative and Reproducible Data Science</title>
+    <title>Lab Session 7: Jupyter Book &#8212; Collaborative and Reproducible Data Science</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab05/lab05';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab07/lab07';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab Session 6: Climate data and xarray" href="../lab06/lab06.html" />
-    <link rel="prev" title="Lab Session 4: Modularization, Environments, Binder" href="../lab04/lab04.html" />
+    <link rel="next" title="Local Installation" href="../../appendix/local-installation.html" />
+    <link rel="prev" title="Lab Session 6: Climate data and xarray" href="../lab06/lab06.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -227,9 +227,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../lab02/lab02.html">Lab Session 2: Dotfiles, Branches, Conflics and GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab03/lab03.html">Lab Session 3: GitHub Continued, Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab04/lab04.html">Lab Session 4: Modularization, Environments, Binder</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab Session 5: Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab05/lab05.html">Lab Session 5: Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab06/lab06.html">Lab Session 6: Climate data and xarray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab07/lab07.html">Lab Session 7: Jupyter Book</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab Session 7: Jupyter Book</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -306,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flab/lab05/lab05.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flab/lab07/lab07.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/lab/lab05/lab05.ipynb" target="_blank"
+      <li><a href="../../_sources/lab/lab07/lab07.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lab Session 5: Testing</h1>
+    <h1>Lab Session 7: Jupyter Book</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,9 +428,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-testing">1. Simple Testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pytest">2. Using PyTest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-for-testing">3. Continuous Integration for testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-first-book">1. Create your first Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-some-extra-features">2. Add some extra features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-your-book-online">3. Publish your book online</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-to-keep-book-updated">4. Continuous Integration to keep book updated</a></li>
 </ul>
             </nav>
         </div>
@@ -442,34 +443,50 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lab-session-5-testing">
-<h1>Lab Session 5: Testing<a class="headerlink" href="#lab-session-5-testing" title="Permalink to this heading">#</a></h1>
-<blockquote>
-<div><p>Friday 03-01-2023, 9AM-11AM &amp; 12AM-2PM</p>
-<p>Instructor: <a class="reference external" href="https://statistics.berkeley.edu/people/facu-sapienza">Facundo Sapienza</a></p>
-</div></blockquote>
-<p>During Lab04 we turned the <code class="docutils literal notranslate"><span class="pre">Erasthostenes.ipynb</span></code> (located in this same folder <code class="docutils literal notranslate"><span class="pre">lab04</span></code> in the <code class="docutils literal notranslate"><span class="pre">site</span></code> repository) into a project with its own installable modules, well writen notebook documentation and conda environment. In this follow up lab, we are going to be adding some tests to the code.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>We are going to continue working with this project for the rest of the semester. For this reason, we encourage you to finish the labs regarding the Eratosthenes notebook at some point. You can also compare the state of your repository with the one available in <a class="reference external" href="https://github.com/UCB-stat-159-s23/facusapienza21-eratosthenes">facusapienza21-eratosthenes</a> under the tag <code class="docutils literal notranslate"><span class="pre">Lab04</span></code>.</p>
-</div>
-<p>Today’s lab we are going to continue working in the tutorial on Testing, which you will find in the course website.</p>
-<section id="simple-testing">
-<h2>1. Simple Testing<a class="headerlink" href="#simple-testing" title="Permalink to this heading">#</a></h2>
-<p>Design some unit, integration and regression tests for your Eratosthenes project. As we discussed in class, the first ones are the more easy to make, but still there are some things you need to think about</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-session-7-jupyter-book">
+<h1>Lab Session 7: Jupyter Book<a class="headerlink" href="#lab-session-7-jupyter-book" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Statistics 159/259, Spring 2022</strong></p></li>
+<li><p>Prof. F. Pérez and GSI F. Sapienza, Department of Statistics, UC Berkeley.</p></li>
+<li><p>03/24/2023</p></li>
+</ul>
+<p>Today we are going to construct and deploy our first Jupyter Book! This is an incredible tool that allow us to transform contents in our project such as Jupyter notebooks, markdown files and figures into <code class="docutils literal notranslate"><span class="pre">html</span></code> and <code class="docutils literal notranslate"><span class="pre">pdf</span></code> files that can be then shared or even hosted on the web. Even if you haven’t use it yet, you had been exposed to Jupyter Book during all the semester: the <a class="reference external" href="https://github.com/UCB-stat-159-s23/site">course website</a> is the Jupyter Book generated from the <a class="reference external" href="https://ucb-stat-159-s23.github.io/site/overview.html">site repository</a>.</p>
+<p>We are going to put in practice the concepts we had covered in <a class="reference external" href="https://docs.google.com/presentation/d/1D7jZ9mI-VcU9-s9IEEuGCvQH4rm5Bpwc3xek1Mu_Nak/edit#slide=id.gdffb14669d_0_176">Jupyter Book 101</a>. A complete documentation of how to <a class="reference external" href="https://jupyterbook.org/start/your-first-book.html">create your first book</a> can be found in the Jupyter Book documentation. We recommend you to use these two to create the books for this lab and use the course website as a guide.</p>
+<p>We recommend you to use Jupyter book both in the Hub and in the local installation you have in your machine. In this last case, check you have installed <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> (either enter <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">jupyter-book</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--help</span></code> from the terminal).</p>
+<section id="create-your-first-book">
+<h2>1. Create your first Book<a class="headerlink" href="#create-your-first-book" title="Permalink to this heading">#</a></h2>
+<p>We are going to follow step by step the example in <a class="reference external" href="https://jupyterbook.org/start/your-first-book.html">create your first book</a>. For now, we are going to create a book in our machine (Hub or local computer) and then we are going to add these files into a GitHub repository.</p>
 <ol class="arabic simple">
-<li><p>How to test code involving floting point number?</p></li>
-<li><p>How to test code that produces figures?</p></li>
-<li><p>How to test code that runs simulations or compute performance benchmarkings?</p></li>
+<li><p>Create a new sample book using the command <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span> <span class="pre">mynewbook/</span></code>.This will create a new template folder with some basic files used to deploy the book. Explore each one of the configuration files, specially <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>. All these are explained in the tutorial.</p></li>
+<li><p>Build your book. Do this both from the Hub and your local machine.</p>
+<ol class="arabic simple">
+<li><p>If you are working in your local machine, you can simply execute <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">mynewbook/</span></code>.</p></li>
+<li><p>If you are working from the Stat159 Hub, you have to run Sphinx manually. Check on the lectures notes for this.</p></li>
+</ol>
+</li>
+<li><p>Explore the markdown and Jupyter notebook created in your book. They both explain the different elements you can include in them.</p></li>
 </ol>
 </section>
-<section id="using-pytest">
-<h2>2. Using PyTest<a class="headerlink" href="#using-pytest" title="Permalink to this heading">#</a></h2>
-<p>The first part in the lecture <em>Workflow and Automation</em> includes examples of how to run the tests from previous section automatically all at once by using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>. Follow these steps in order to reproduce the results of your tests but now using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p>
+<section id="add-some-extra-features">
+<h2>2. Add some extra features<a class="headerlink" href="#add-some-extra-features" title="Permalink to this heading">#</a></h2>
+<p>Let’s customize our new Jupyter Book a little bit. After each change, remember to re-build your book.</p>
+<ol class="arabic simple">
+<li><p>Add a new image to your book and use it as the logo of the Jupyter book.</p></li>
+<li><p>Add a new reference to <code class="docutils literal notranslate"><span class="pre">references.bib</span></code> and cite such reference in either a markdown or Jupyter notebook in your book. Check that when deployed, the reference appears in the right format in the book. How to add more than one citation at once? You can explore the <a class="reference external" href="https://jupyterbook.org/tutorials/references.html">Get started with references</a>.</p></li>
+<li><p>Create a new Jupyter notebook inside your book and add it to the table of contents so it appears in the book.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>, there is an option to enable and disable the execution of notebooks when the book is build. Change the setup such that it both creates and static version and then a dynamical version that actually executes the code in the notebook.</p></li>
+<li><p>In a notebook, make an import of new library that is not already included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and add it to it so the notebook runs when the book is build. What is the difference between this <code class="docutils literal notranslate"><span class="pre">requirement.txt</span></code> and the requirement file usually named <code class="docutils literal notranslate"><span class="pre">environmnet.yml</span></code> we were using before?</p></li>
+</ol>
 </section>
-<section id="continuous-integration-for-testing">
-<h2>3. Continuous Integration for testing<a class="headerlink" href="#continuous-integration-for-testing" title="Permalink to this heading">#</a></h2>
-<p>The last section in the <em>Workflow and Automation</em> section in the lecture has a tuturial about how to automatically test your code everytime you push a new commit to GitHub. This is the first example of Continuous Integration (CI) you will explore in this course. Follow these steps in order to automatize your new tests!</p>
+<section id="publish-your-book-online">
+<h2>3. Publish your book online<a class="headerlink" href="#publish-your-book-online" title="Permalink to this heading">#</a></h2>
+<p>For this part, use the tutorial <a class="reference external" href="https://jupyterbook.org/start/publish.html">Publish your book online</a>. All the instructions of how to create a new repository in GitHub with the contents of your book are included there plus and explanation about how the hosting of the Jupyter book works. After following these instructions, you should see your book hosted in <code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;myonlinebook&gt;/</span></code>. Add this link to the description of your GitHub repository.</p>
+</section>
+<section id="continuous-integration-to-keep-book-updated">
+<h2>4. Continuous Integration to keep book updated<a class="headerlink" href="#continuous-integration-to-keep-book-updated" title="Permalink to this heading">#</a></h2>
+<p>You can use the previous workflow any time you update the contents of you book or instead you can set a GitHub action that does this for you any time you make a change in the book repository. You can explore different ways of doing this in <a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html?highlight=actions">GitHub Pages and Actions</a>.</p>
+<p>In order to create a new action, go to the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> window in your GitHub repository and do <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">workflow</span> <span class="pre">&gt;</span>&#160; <span class="pre">set</span> <span class="pre">up</span> <span class="pre">a</span> <span class="pre">workflow</span> <span class="pre">yourself</span></code>. Create a new file <code class="docutils literal notranslate"><span class="pre">.github/workflows/book.yml</span></code> with the same contents we have in <code class="docutils literal notranslate"><span class="pre">book.yml</span></code> file in the <a class="reference external" href="https://github.com/UCB-stat-159-s23/site/blob/main/.github/workflows/book.yml">site repository</a>. Notice that in the site we are using <code class="docutils literal notranslate"><span class="pre">book-requirement.txt</span></code> while the default name for the requirement file for Jupyter book is <code class="docutils literal notranslate"><span class="pre">requirement.txt</span></code>. In order to GitHub actions to run without an error, you should standardize the name of the requirement file.</p>
+<p>Now, when you push or make a new commit to the repository your changes should be reflected in the website after the corresponded GitHub action has been completed without errors (you can see this in the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> window in GitHub).</p>
 </section>
 </section>
 
@@ -486,7 +503,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./lab/lab05"
+            path: "./lab/lab07"
         },
         predefinedOutput: true
     }
@@ -502,20 +519,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lab04/lab04.html"
+       href="../lab06/lab06.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lab Session 4: Modularization, Environments, Binder</p>
+        <p class="prev-next-title">Lab Session 6: Climate data and xarray</p>
       </div>
     </a>
     <a class="right-next"
-       href="../lab06/lab06.html"
+       href="../../appendix/local-installation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab Session 6: Climate data and xarray</p>
+        <p class="prev-next-title">Local Installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -534,9 +551,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-testing">1. Simple Testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pytest">2. Using PyTest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-for-testing">3. Continuous Integration for testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-first-book">1. Create your first Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-some-extra-features">2. Add some extra features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-your-book-online">3. Publish your book online</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-to-keep-book-updated">4. Continuous Integration to keep book updated</a></li>
 </ul>
   </nav></div>
 
