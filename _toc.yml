@@ -27,8 +27,8 @@ parts:
     - file: lectures/intro-jupyter/01-Intro-Jupyter
     - file: lectures/intro-jupyter/02-Beyond-Plain-Python
     - file: lectures/intro-jupyter/03-Custom-Display-Logic
-#    - file: lectures/intro-jupyter/04-Rich-Output
-#    - file: lectures/intro-jupyter/05-widgets-interact
+    - file: lectures/intro-jupyter/04-Rich-Output
+    - file: lectures/intro-jupyter/05-widgets-interact
   - file: lectures/modularity/modularity
   - file: lectures/environments/environments
   - file: lectures/testing/index
@@ -40,6 +40,10 @@ parts:
     - file: lectures/climate-xarray/climate-data
     - file: lectures/climate-xarray/xarray
   - file: lectures/serialization/data-serialization
+  - file: lectures/documentation/index
+    sections:
+    - file: lectures/documentation/documentation
+    - file: lectures/documentation/jupyter-book
 - caption: Labs
   chapters:
   - file: lab/intro/intro.ipynb
@@ -50,6 +54,7 @@ parts:
   - file: lab/lab04/lab04.ipynb
   - file: lab/lab05/lab05.ipynb
   - file: lab/lab06/lab06.ipynb
+  - file: lab/lab07/lab07.ipynb
 - caption: Appendix
   chapters:
   - file: appendix/local-installation
