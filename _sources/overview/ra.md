@@ -53,7 +53,13 @@ Each paragraph per reading assignment gives 1 point (a total of 2 per reading). 
     - [Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science](https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12).
     - [Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/document/9354557).
 
-
+* #10, due Apr 6, 2023. Open Source and Open Science
+    - [Open Source Software Policy Options for NASA Earth and Space Sciences, 2018](https://www.nap.edu/catalog/25217/open-source-software-policy-options-for-nasa-earth-and-space-sciences). Chapter 4, Lessons Learned from Community Perspectives.
+    - [Open Science by Design, Realizing a Vision for 21st Century Research (2018)](https://www.ncbi.nlm.nih.gov/books/NBK525417). Chapter 4, A Vision for Open Science by Design.
+   - [Turk 2013, How to Scale a Code in the Human Dimension](https://arxiv.org/abs/1301.7064)
+    
+* #11, due Apr 12, 2023. Principles for Data Analysis Workflows.
+   - [Stoudt et al. 2021, Principles for data analysis workflows](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008770). One of the authors of this paper, Ciera Martinez, will lead give the invited lecture on Monday 04/17.
     
 Future reading assignments
 
@@ -62,11 +68,6 @@ Future reading assignments
     - [Schwab, M., Karrenbach, N., Claerbout, J. (2000) Making scientific computations reproducible, Comp. Sci. Eng. 2(6):61–67, doi: 10.1109/5992.881708](https://ieeexplore.ieee.org/document/881708).
     - [Reproducible Research, by the Yale Law School Roundtable on Data and Code Sharing, Comp. Sci. Eng. 12(5): 8–13 (Sept.-Oct. 2010), doi:10.1109/mcse.2010.113](https://ieeexplore.ieee.org/document/5562471).
 
-
-* Open Source and Open Science
-    - [Open Source Software Policy Options for NASA Earth and Space Sciences, 2018](https://www.nap.edu/catalog/25217/open-source-software-policy-options-for-nasa-earth-and-space-sciences). Chapter 4, Lessons Learned from Community Perspectives.
-    - [Open Science by Design, Realizing a Vision for 21st Century Research (2018)](https://www.ncbi.nlm.nih.gov/books/NBK525417). Chapter 4, A VISION FOR OPEN SCIENCE BY DESIGN.
-   - [Turk 2013, How to Scale a Code in the Human Dimension](https://arxiv.org/abs/1301.7064)
 
 * Earth and climate science
     - [Hoffimann et al. 2021, Geostatistical Learning: Challenges and Opportunities](https://arxiv.org/abs/2102.08791)
