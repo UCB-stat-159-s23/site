@@ -30,6 +30,7 @@ parts:
     - file: lectures/intro-jupyter/04-Rich-Output
     - file: lectures/intro-jupyter/05-widgets-interact
   - file: lectures/modularity/modularity
+  - file: lectures/packaging/packaging
   - file: lectures/environments/environments
   - file: lectures/testing/index
     sections:
