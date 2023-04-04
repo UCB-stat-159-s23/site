@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Climate and xArray &#8212; Collaborative and Reproducible Data Science</title>
+    <title>Packaging &#8212; Collaborative and Reproducible Data Science</title>
   
   
   
@@ -61,9 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/climate-xarray/climate-Copy1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/packaging/packaging';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Environments" href="../environments/environments.html" />
+    <link rel="prev" title="Modularity" href="../modularity/modularity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../overview/references.html">Textbook and Supporting Materials</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../intro-git/intro.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro-git/configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro-git/local.html">Local, single-user, linear workflow</a></li>
@@ -193,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../modularity/modularity.html">Modularity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../packaging/packaging.html">Packaging</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Packaging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../environments/environments.html">Environments</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../testing/index.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing/building-blocks.html">Building Blocks</a></li>
@@ -205,9 +207,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="climate-data.html">Climate, oceans and data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../climate-xarray/index.html">Climate and Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../climate-xarray/climate-data.html">Climate, oceans and data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../climate-xarray/xarray.html">Introduction to Xarray</a></li>
 
 </ul>
 </li>
@@ -305,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flectures/climate-xarray/climate-Copy1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UCB-stat-159-s23/site/issues/new?title=Issue%20on%20page%20%2Flectures/packaging/packaging.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/lectures/climate-xarray/climate-Copy1.ipynb" target="_blank"
+      <li><a href="../../_sources/lectures/packaging/packaging.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -417,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Climate and xArray</h1>
+    <h1>Packaging</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,7 +429,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co2-curve">CO2 curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-package">1. Import a package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-package-installable">2. Making a package installable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">3. Running tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-our-package">4. Publishing our package</a></li>
 </ul>
             </nav>
         </div>
@@ -439,21 +444,129 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="climate-and-xarray">
-<h1>Climate and xArray<a class="headerlink" href="#climate-and-xarray" title="Permalink to this heading">#</a></h1>
-<p>Today we have the pleasure of having invited speaker Chelle Gentemann giving our invited lecture. Her slides are available in this <a class="reference external" href="https://docs.google.com/presentation/d/11Tqlzbfq2rSjRJ6HoggLCFzdl-Nx8k1HWsefRWoaSGc/edit#slide=id.g215fc39eaf6_0_6">link</a>.</p>
-<p>Working in real science:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="packaging">
+<h1>Packaging<a class="headerlink" href="#packaging" title="Permalink to this heading">#</a></h1>
+<p>In our previous lecture about modularization, we already discussed the concept of modules and how to import them. A package is a collection of modules that we can now import together and document separately.
+For this lecture, we are going to follow the following minimal Python package, <a class="reference external" href="https://github.com/fperez/mytoy">mytoy</a>. You can clone this repository in you local machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fperez/mytoy.git
+</pre></div>
+</div>
+<p>This repository contains a minimal, toy Python package with a few files as illustration for students of how to lay out their code to meet minimal Python packaging requirements.</p>
+<p>It has a single source directory (<code class="docutils literal notranslate"><span class="pre">mytoy</span></code>) with an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and one “implementation” file (<code class="docutils literal notranslate"><span class="pre">toys.py</span></code>) as well as a few tests in <code class="docutils literal notranslate"><span class="pre">mytoy/tests</span></code>.</p>
+<p>In addition to this <code class="docutils literal notranslate"><span class="pre">README.md</span></code> it includes some basic infrastructure: <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>, <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> files.</p>
+<p>The only docs included are this <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file - a larger package would have a proper docs directory and associated Sphinx/JupyterBook build.</p>
+<p>This is more or less the absolute minimum for a “real” python package that can be installed from source, tested and experimented with on Binder.  For a more “official” version of this same idea, see the <a class="reference external" href="https://github.com/pypa/sampleproject">PyPA sample project repo</a>, documented in detail in the <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects">Packaging Tutorial</a>. The <a class="reference external" href="https://packaging.python.org">Python Packaging User Guide</a> contains comprehensive documentation on this topic.</p>
+<p>Let’s now disentangled some of the contents in <code class="docutils literal notranslate"><span class="pre">mytoy</span></code>. Let’s begin with some simple example.</p>
+<section id="import-a-package">
+<h2>1. Import a package<a class="headerlink" href="#import-a-package" title="Permalink to this heading">#</a></h2>
+<p>Let’s begging by creating a simple analysis notebook <code class="docutils literal notranslate"><span class="pre">Analysis.ipynb</span></code>. Inside the notebook we make an import of a new package called <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> with the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mytoy</span>
+</pre></div>
+</div>
+<p>where in the same folder we have a folder called my toy with the following contents. You folder should like something like this:</p>
+<p>The actual Python code is contained in the <code class="docutils literal notranslate"><span class="pre">.py</span></code> files, where we include some basic functions, classes and other objects we want to import. In order to the import to work, we need to create the index file <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> with the following contents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">My Toy package</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.1&quot;</span>
+
+<span class="kn">from</span> <span class="nn">.toys</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>The first part of the script is the docstring we already discussed in the lecture about documentation. The <code class="docutils literal notranslate"><span class="pre">__version__</span></code> variable follows the convention of specifying the version number with a sequence of three digits, labeled as major, minor and patch (more information about the convention of these three digits in the <a class="reference external" href="https://semver.org">Semantic Version documentation</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case of being constantly making changes to your package code, you can include the <code class="docutils literal notranslate"><span class="pre">autoreload</span></code> command so the changes in the package are updated in the notebook without the need of restarting the kernel</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
+<span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="making-a-package-installable">
+<h2>2. Making a package installable<a class="headerlink" href="#making-a-package-installable" title="Permalink to this heading">#</a></h2>
+<p>Now, in order to import <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> we need to be in the folder where <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> lives. However, we want <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> to be available everywhere where Python is available, in the same way we can import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> from every notebook and Python session.</p>
+<p>In order to make a package installable, we need to include these three files inside <code class="docutils literal notranslate"><span class="pre">mytoy</span></code></p>
 <ul class="simple">
-<li><p>advatanges of having access to previous grant proporsalr. People in some circles may have access to it (eg, NASA), which are no available for other people. Why is this?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproj.toml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code></p></li>
 </ul>
-<p>Different types of datasets:</p>
+<p>For the first two files, you can use the same ones that are available inside <a class="reference external" href="https://github.com/fperez/mytoy">mytoy</a> without the need of making any change on them. The file <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> needs to be customizable based on the specifics of the package. This is an example of how the <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file in <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declarative configuration for setup.py</span>
+
+<span class="c1"># For more details on this format, see the official docs here:</span>
+<span class="c1"># https://setuptools.pypa.io/en/latest/userguide/declarative_config.html</span>
+<span class="c1"># And a useful annotated template can be found here:</span>
+<span class="c1"># https://gist.github.com/althonos/6914b896789d3f2078d1e6237642c35c</span>
+
+<span class="p">[</span><span class="n">metadata</span><span class="p">]</span>
+<span class="n">name</span>             <span class="o">=</span> <span class="n">mytoy</span>
+<span class="n">version</span>          <span class="o">=</span> <span class="n">attr</span><span class="p">:</span> <span class="n">mytoy</span><span class="o">.</span><span class="n">__version__</span>
+<span class="n">author</span>           <span class="o">=</span> <span class="n">My</span> <span class="n">Name</span>
+<span class="n">author_email</span>     <span class="o">=</span> <span class="n">me</span><span class="nd">@myemail</span><span class="o">.</span><span class="n">com</span>
+<span class="n">description</span>      <span class="o">=</span> <span class="n">A</span> <span class="n">Python</span> <span class="n">library</span> <span class="n">to</span> <span class="n">make</span> <span class="n">toys</span>
+<span class="n">long_description</span> <span class="o">=</span> <span class="n">file</span><span class="p">:</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span><span class="p">,</span> <span class="n">LICENSE</span>
+<span class="n">long_description_content_type</span> <span class="o">=</span> <span class="n">text</span><span class="o">/</span><span class="n">markdown</span>
+<span class="n">keywords</span>         <span class="o">=</span> <span class="n">tools</span><span class="p">,</span> <span class="n">toys</span>
+<span class="n">license</span>          <span class="o">=</span> <span class="n">BSD</span> <span class="mi">3</span><span class="o">-</span><span class="n">Clause</span> <span class="n">License</span>
+<span class="n">classifiers</span>      <span class="o">=</span>
+	<span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mi">3</span>
+    <span class="n">License</span> <span class="p">::</span> <span class="n">OSI</span> <span class="n">Approved</span> <span class="p">::</span> <span class="n">BSD</span> <span class="n">License</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">OS</span> <span class="n">Independent</span>
+
+<span class="p">[</span><span class="n">options</span><span class="p">]</span>
+<span class="n">include_package_data</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">packages</span> <span class="o">=</span> <span class="n">find</span><span class="p">:</span>
+<span class="c1"># These should be consistent with what is specified in the environment.yml</span>
+<span class="n">python_requires</span>  <span class="o">=</span> <span class="o">&gt;=</span> <span class="mf">3.6</span><span class="p">,</span>
+<span class="n">install_requires</span> <span class="o">=</span>
+	<span class="n">tqdm</span>
+
+<span class="p">[</span><span class="n">options</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">find</span><span class="p">]</span>
+<span class="n">exclude</span> <span class="o">=</span>
+    <span class="n">examples</span><span class="o">*</span>
+    <span class="n">docs</span><span class="o">*</span>
+</pre></div>
+</div>
+<p>Notice that to your package you can also include a <code class="docutils literal notranslate"><span class="pre">LICENCE</span></code> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The license is what specifies the condition under which you code can or cannot be used by someone else. Just by putting code in GitHub doesn’t imply that code is open source. That extra step requires you to specify the type of license. Notice that when you create a new repository in GitHub, one of the available options is to create the repository with a given license. Some examples of popular licenses are</p>
 <ul class="simple">
-<li><p>different satellites, with different orbits, scales, etc but also data being stored in differern locations.</p></li>
-<li><p>different in-situ measurements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BSD</span></code> (Berkeley Software Distribution) / <code class="docutils literal notranslate"><span class="pre">MIT</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPL</span></code> (GNU Public License) or copy-left licenses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LGPL</span></code> (GNU Lesser General Public License)</p></li>
 </ul>
-<p>How to combine all these?</p>
-<section id="co2-curve">
-<h2>CO2 curve<a class="headerlink" href="#co2-curve" title="Permalink to this heading">#</a></h2>
+<p>Here you can find the <a class="reference external" href="https://cio.ucop.edu/a-guide-for-licensing-open-source-software/">recommendation of UCB</a> regarding which license to use.</p>
+</div>
+<p>Once these files are present in your package folder, you can install the Python package using <code class="docutils literal notranslate"><span class="pre">pip</span></code>. From the folder where <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> lives and you have the configuration files, you can run from a terminal</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>and this will install <code class="docutils literal notranslate"><span class="pre">mytoy</span></code>. After you complete the installation, you can import <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> from any Python session (for example, now you can open python from a terminal and make a <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mytoy</span></code> from there).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also install in development mode with the editable flag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This is useful when we are making changes in the package as we make progress. If we don’t do this, every time we make a change in the library we need to uninstall and install again in order to those changes to be reflected.</p>
+</div>
+</section>
+<section id="running-tests">
+<h2>3. Running tests<a class="headerlink" href="#running-tests" title="Permalink to this heading">#</a></h2>
+<p>As we mentioned in previous lectures, a very important element of writing code is having easy way of testing it. Just as we did using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, we can automatically run the tests included inside a Python package. After you had installed <code class="docutils literal notranslate"><span class="pre">mytoy</span></code>, you can run all the tests located inside the folder <code class="docutils literal notranslate"><span class="pre">tests</span></code> by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>mytoy
+</pre></div>
+</div>
+<p>Notice that you can run this command from any directory in your system.</p>
+</section>
+<section id="publishing-our-package">
+<h2>4. Publishing our package<a class="headerlink" href="#publishing-our-package" title="Permalink to this heading">#</a></h2>
+<p>You can eventually publish your code in the <span class="xref myst">Python Package Index</span>. We are not going to do that here, but from the structure of <code class="docutils literal notranslate"><span class="pre">mytoy</span></code> it’s easy to make a package available for other users to install using some package management system.</p>
+<p>An example of this is the small <a class="reference external" href="https://github.com/fperez/jupytee">jupitee project</a>, that you can directly install using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupytee</span></code> (see the associated <a class="reference external" href="https://pypi.org/project/jupyter/">PyPI documentation</a> documentation for extra information).</p>
 </section>
 </section>
 
@@ -470,7 +583,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./lectures/climate-xarray"
+            path: "./lectures/packaging"
         },
         predefinedOutput: true
     }
@@ -488,6 +601,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../modularity/modularity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modularity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../environments/environments.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environments</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -506,7 +637,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co2-curve">CO2 curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-package">1. Import a package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-package-installable">2. Making a package installable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">3. Running tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-our-package">4. Publishing our package</a></li>
 </ul>
   </nav></div>
 
