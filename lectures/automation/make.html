@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/automation/make';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction" href="../../lab/intro/intro.html" />
+    <link rel="prev" title="Jupyter Book" href="../documentation/jupyter-book.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../overview/references.html">Textbook and Supporting Materials</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../intro-git/intro.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro-git/configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro-git/local.html">Local, single-user, linear workflow</a></li>
@@ -217,6 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../documentation/jupyter-book.html">Jupyter Book</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Automation and Make</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
@@ -431,17 +434,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-with-bash">1. Automation with Bash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-first-makefile">2. Our first Makefile</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-executing-code">2.1. Re executing code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not-repeat-file-names">2.2. Do not repeat file names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters">2.2. Special characters</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-more-functions-to-out-makefile">3. Adding more functions to out Makefile</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">3.1. Cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-operations">3.2. Grouping operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard">3.3. Wildcard</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-directory-setup">3.3. Working directory setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-for-creating-a-new-environment">3.3. Make for creating a new environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-for-creating-a-new-environment">3.4. Make for creating a new environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-documenting-makefile">3.5. Self-documenting Makefile</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">4. Continuous Integration</a></li>
 </ul>
             </nav>
         </div>
@@ -458,8 +462,8 @@ document.write(`
 <p>As we work in a project, we often encounter certain commands and operations that we end up running multiple times. Many of these operations regards the behaviour of certain programs and corresponds to programs that we execute from the terminal.For example, so far in this course we were</p>
 <ul class="simple">
 <li><p>File management: creation of files/folders.</p></li>
-<li><p>Running code from Python scripts and Jupyter notebooks that perform certain analysis, reading data and genereting outputs.</p></li>
-<li><p>Creating virtual environemnte; activate them; install new packages; creating an iPython kernel.</p></li>
+<li><p>Running code from Python scripts and Jupyter notebooks that perform certain analysis, reading data and generating outputs.</p></li>
+<li><p>Creating virtual environment; activate them; install new packages; creating an iPython kernel.</p></li>
 <li><p>Creating a JupyterBook</p></li>
 </ul>
 <p>As our workflow of grows, these operations start becoming more complex and dependent of each other. Make allow us not just to automatize the execution of programs, but also keep a track of the network of commands between the different parts of out project.</p>
@@ -538,6 +542,13 @@ document.write(`
 </pre></div>
 </div>
 <p>This will create the file <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> file inside the folder <code class="docutils literal notranslate"><span class="pre">results</span></code> with the printed outputs.</p>
+<div class="admonition-running-from-ipython admonition">
+<p class="admonition-title">Running from iPython</p>
+<p>You can also run the previous command directly from the iPython cell inside Jupyter Notebook instead of a terminal by using the <code class="docutils literal notranslate"><span class="pre">%run</span></code> magic command:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> calculate_prime.py input.txt output.txt
+</pre></div>
+</div>
+</div>
 </section>
 <section id="automation-with-bash">
 <h2>1. Automation with Bash<a class="headerlink" href="#automation-with-bash" title="Permalink to this heading">#</a></h2>
@@ -589,31 +600,46 @@ python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input.tx
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">#</span></code> is used for comments. The section for programs can include multiple lines of scrip and with increasing level of complexity, for example by including conditional statements. The important thing you need to know is that inside <code class="docutils literal notranslate"><span class="pre">&lt;PROGRAM&gt;</span></code>, you are running bash code.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="n">you</span> <span class="n">can</span> <span class="n">see</span> <span class="n">form</span> 
-</pre></div>
-</div>
-</div>
-</div>
 <section id="re-executing-code">
 <h3>2.1. Re executing code<a class="headerlink" href="#re-executing-code" title="Permalink to this heading">#</a></h3>
-<p>One of the things that makes Make special is that it doesn’t execute operations that had been executed already with dependencies that haven’t change over the course of time. For example, in the previous example, the <code class="docutils literal notranslate"><span class="pre">output.py</span></code> depends of both the input data <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> and the Python script <code class="docutils literal notranslate"><span class="pre">calculate_prime.py</span></code>. If we don’t change these two files and execute one more time</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+<p>One of the things that makes Make special is that it doesn’t execute operations that had been executed already with dependencies that haven’t change over the course of time. For example, in the previous example, the <code class="docutils literal notranslate"><span class="pre">output.py</span></code> depends of both the input data <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> and the Python script <code class="docutils literal notranslate"><span class="pre">calculate_prime.py</span></code>. If we don’t change these two files and execute one more time <code class="docutils literal notranslate"><span class="pre">make</span></code> you will observe no change, plus male will print a message similar to this one:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>make
 </pre></div>
 </div>
-<p>we will observe no change, plus male will print a message similar to this one:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mxcmxm</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: Nothing to be done for &#39;outputs&#39;.
 </pre></div>
+</div>
+</div>
 </div>
 <p>Now, if we make the minimum change to any of the dependencies files, then Make will execute the program again. For example, if you just update the timestamp of any of the files (<code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">input.txt</span></code>) and run <code class="docutils literal notranslate"><span class="pre">make</span></code> again, you will see the Python code will be executed again and the timestamp of <code class="docutils literal notranslate"><span class="pre">output.py</span></code> will be updated too.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+touch input.txt
+make
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bash: /srv/conda/envs/notebook/bin/../lib/./libtinfo.so.6: no version information available (required by /srv/conda/envs/notebook/bin/../lib/libreadline.so.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: Nothing to be done for &#39;outputs&#39;.
+</pre></div>
+</div>
+</div>
+</div>
 <p>Some advantages of this build-in memory system of Makefiles are</p>
 <ul class="simple">
 <li><p>We save repeating unnecessary operations as we run a dataflow.</p></li>
 </ul>
 </section>
-<section id="do-not-repeat-file-names">
-<h3>2.2. Do not repeat file names<a class="headerlink" href="#do-not-repeat-file-names" title="Permalink to this heading">#</a></h3>
+<section id="special-characters">
+<h3>2.2. Special characters<a class="headerlink" href="#special-characters" title="Permalink to this heading">#</a></h3>
 <p>As you can see from <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, we are being redundant about the name of both dependency and target files. Instead of</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">results/output.txt </span><span class="o">:</span><span class="w"> </span><span class="n">input</span>.<span class="n">txt</span>
 <span class="w">    </span>python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input.txt<span class="w"> </span>results/output.txt
@@ -629,6 +655,7 @@ python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input.tx
 <li><p><code class="docutils literal notranslate"><span class="pre">$^</span></code>: The list of all dependencies</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">$&lt;</span></code>: The name of the first dependency</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">$&#64;</span></code>: The name of the target</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$%</span></code>: Make wildcard (See Section 3.3)</p></li>
 </ul>
 </section>
 </section>
@@ -649,35 +676,89 @@ python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input.tx
 </div>
 <div class="admonition-phony-target admonition">
 <p class="admonition-title">Phony target</p>
-<p>ds</p>
+<p>A phony target is one that is not really the name of a file. It is just a name for some commands to be executed when you make an explicit request. There are two reasons to use a phony target: to avoid a conflict with a file of the same name, and to improve performance (see <a class="reference external" href="https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_node/make_34.html">here</a> for mor information).</p>
 </div>
 </section>
 <section id="grouping-operations">
 <h3>3.2. Grouping operations<a class="headerlink" href="#grouping-operations" title="Permalink to this heading">#</a></h3>
+<p>Now, we can combine multiple operation under the same group. By creating the target <code class="docutils literal notranslate"><span class="pre">output</span></code>, we can create all the output files using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">outputs</span></code>:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">outputs</span>
 <span class="nf">outputs </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">output</span>1.<span class="n">txt</span> <span class="n">results</span>/<span class="n">output</span>2.<span class="n">txt</span>
 
 <span class="nf">result/output1.txt </span><span class="o">:</span><span class="w"> </span><span class="n">input</span>1.<span class="n">txt</span>
-<span class="w">	</span>python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input1.txt<span class="w"> </span>results/output1.txt
+<span class="w">	</span>python<span class="w"> </span>calculate_prime.py<span class="w"> </span>$^<span class="w"> </span><span class="nv">$@</span>
 <span class="w">    </span>
 <span class="nf">result/output2.txt </span><span class="o">:</span><span class="w"> </span><span class="n">input</span>2.<span class="n">txt</span>
-<span class="w">	</span>python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input2.txt<span class="w"> </span>results/output2.txt
+<span class="w">	</span>python<span class="w"> </span>calculate_prime.py<span class="w"> </span>$^<span class="w"> </span><span class="nv">$@</span>
 <span class="w">    </span>
 <span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
 <span class="nf">clean </span><span class="o">:</span><span class="w"> </span>
 <span class="w">	</span>rm<span class="w"> </span>-f<span class="w"> </span>results/*
 </pre></div>
 </div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">outputs</span></code> doesn’t refer to the name of any target file, we add it as a <code class="docutils literal notranslate"><span class="pre">.PHONY</span></code> target, just as we did with <code class="docutils literal notranslate"><span class="pre">clean</span></code>.</p>
+<p>Make will automatically run the first make command inside our <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>. That means that if we locate the following line</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">outputs</span>
+<span class="nf">outputs </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">output</span>1.<span class="n">txt</span> <span class="n">results</span>/<span class="n">output</span>2.<span class="n">txt</span>
+</pre></div>
+</div>
+<p>in the top of our ``Makefile<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">then</span> <span class="pre">the</span> </code>make<code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">will</span> <span class="pre">execute</span> <span class="pre">by</span> <span class="pre">default</span></code>make outputs`.</p>
+</section>
+<section id="wildcard">
+<h3>3.3. Wildcard<a class="headerlink" href="#wildcard" title="Permalink to this heading">#</a></h3>
+<p>In our Makefile, there are two ways of using wildcards. For targets and dependencies (the <code class="docutils literal notranslate"><span class="pre">&lt;TARGETS&gt;</span> <span class="pre">:</span> <span class="pre">&lt;DEPENDENCIES&gt;</span></code> part in our Makefile) we can use a generic wildcard <code class="docutils literal notranslate"><span class="pre">%</span></code>. This is used to find patterns and automatize the processing of them. For example, we simplify the last two commands into one by using</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">result/output%.txt </span><span class="o">:</span><span class="w"> </span><span class="n">input</span>%.<span class="n">txt</span>
+<span class="w">    </span>python<span class="w"> </span>calculate_primes.py<span class="w"> </span>$^<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
+</div>
+<p>Now, we can use the placeholder <code class="docutils literal notranslate"><span class="pre">$*</span></code> in to call any matching run we found with <code class="docutils literal notranslate"><span class="pre">%</span></code> between the commands. For example, an equivalent way of running the previous command would be doing</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">results/output%.txt </span><span class="o">:</span><span class="w"> </span><span class="n">input</span>%.<span class="n">txt</span>
+<span class="w">    </span>python<span class="w"> </span>calculate_prime.py<span class="w"> </span>$&lt;<span class="w"> </span>results/output<span class="nv">$*</span>.txt
+</pre></div>
+</div>
 </section>
 <section id="working-directory-setup">
 <h3>3.3. Working directory setup<a class="headerlink" href="#working-directory-setup" title="Permalink to this heading">#</a></h3>
+<p>You can also use Make to setup your working directory, running the same operations you will run from the terminal but in a more axiomatic way.</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">setup</span>
+<span class="nf">setup</span><span class="o">:</span>
+<span class="w">    </span>mkdir<span class="w"> </span>results
+</pre></div>
+</div>
 </section>
 <section id="make-for-creating-a-new-environment">
-<h3>3.3. Make for creating a new environment<a class="headerlink" href="#make-for-creating-a-new-environment" title="Permalink to this heading">#</a></h3>
+<h3>3.4. Make for creating a new environment<a class="headerlink" href="#make-for-creating-a-new-environment" title="Permalink to this heading">#</a></h3>
+<p>You can use commands in make to create and manipulate conda environments. You can do this in such a way that you can automatize the process of creating an environment form a <code class="docutils literal notranslate"><span class="pre">.yml</span></code> file, install new dependencies (eg <code class="docutils literal notranslate"><span class="pre">ipython</span></code>) and then create the corresponding kernel for the environment.</p>
 </section>
+<section id="self-documenting-makefile">
+<h3>3.5. Self-documenting Makefile<a class="headerlink" href="#self-documenting-makefile" title="Permalink to this heading">#</a></h3>
+<p>A very useful feature we can add to our Makefile is to include documentation for the different operations we write. A simple <a class="reference external" href="https://swcarpentry.github.io/make-novice/08-self-doc/index.html">hack</a> for doing this automatically consists in including a commented line starting with <code class="docutils literal notranslate"><span class="pre">##</span></code> on top of each operation, for example,</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c">## clean             : Remove output files</span>
+<span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
+<span class="nf">clean </span><span class="o">:</span><span class="w"> </span>
+<span class="w">	</span>rm<span class="w"> </span>-f<span class="w"> </span>results/*
+</pre></div>
+</div>
+<p>and then include the following command in your Makefile.</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">help</span>
+<span class="nf">help </span><span class="o">:</span><span class="w"> </span><span class="n">Makefile</span>
+<span class="w">	</span>@sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;s/^##//p&#39;</span><span class="w"> </span>$&lt;
+</pre></div>
+</div>
+<p>Now, the next time you execute <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code> from the terminal you will see</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>make<span class="w"> </span>help
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> clean       : Remove auto-generated files.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="continuous-integration">
-<h2>4. Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -712,6 +793,24 @@ python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input.tx
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../documentation/jupyter-book.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../lab/intro/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -734,17 +833,18 @@ python<span class="w"> </span>calculate_prime.py<span class="w"> </span>input.tx
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-with-bash">1. Automation with Bash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-first-makefile">2. Our first Makefile</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-executing-code">2.1. Re executing code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not-repeat-file-names">2.2. Do not repeat file names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters">2.2. Special characters</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-more-functions-to-out-makefile">3. Adding more functions to out Makefile</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">3.1. Cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-operations">3.2. Grouping operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard">3.3. Wildcard</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-directory-setup">3.3. Working directory setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-for-creating-a-new-environment">3.3. Make for creating a new environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-for-creating-a-new-environment">3.4. Make for creating a new environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-documenting-makefile">3.5. Self-documenting Makefile</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">4. Continuous Integration</a></li>
 </ul>
   </nav></div>
 
