@@ -45,6 +45,7 @@ parts:
     sections:
     - file: lectures/documentation/documentation
     - file: lectures/documentation/jupyter-book
+  - file: lectures/automation/make
 - caption: Labs
   chapters:
   - file: lab/intro/intro.ipynb
