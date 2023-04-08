@@ -1,4 +1,5 @@
-# Statistics 159/259, Spring 2023 Course Summary
+# Collaborative and Reproducible Data Science - Spring 2023
+## Statistics 159/259 Course Summary
 
 **Instructor**: [Fernando Pérez](https://statistics.berkeley.edu/people/fernando-perez), Department of Statistics, UC Berkeley
 
