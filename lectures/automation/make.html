@@ -730,6 +730,18 @@ make
 <section id="make-for-creating-a-new-environment">
 <h3>3.4. Make for creating a new environment<a class="headerlink" href="#make-for-creating-a-new-environment" title="Permalink to this heading">#</a></h3>
 <p>You can use commands in make to create and manipulate conda environments. You can do this in such a way that you can automatize the process of creating an environment form a <code class="docutils literal notranslate"><span class="pre">.yml</span></code> file, install new dependencies (eg <code class="docutils literal notranslate"><span class="pre">ipython</span></code>) and then create the corresponding kernel for the environment.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unfortunately, it is not possible to activate environments using make. A workaround solution to this problem is to have separate make commands to create your environment and install the required dependencies. By doing this, you can execute the full creation and deletion of a conda environment with the bash commands</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>create_environment<span class="w"> </span>
+conda<span class="w"> </span>activate<span class="w"> </span>&lt;myenv&gt;
+make<span class="w"> </span>update_environment
+<span class="w">    </span>
+make<span class="w"> </span>delete_environment
+</pre></div>
+</div>
+<p>You can find more information about this workflow in this <a class="reference external" href="https://www.youtube.com/watch?v=cCzkL9DhWEE">talk</a>.</p>
+</div>
 </section>
 <section id="self-documenting-makefile">
 <h3>3.5. Self-documenting Makefile<a class="headerlink" href="#self-documenting-makefile" title="Permalink to this heading">#</a></h3>
