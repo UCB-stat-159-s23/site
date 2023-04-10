@@ -1,5 +1,7 @@
 # Public  website for Berkeley Statistics 159/259, Reproducible and Collaborative Statistical Data Science, Spring 2023
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s23/site/HEAD)
+
 This repository contains all source materials (lecture notes, homework
 assignments, etc.) for the class, and is available as a static website
 [here](https://ucb-stat-159-s23.github.io/site), rendered
