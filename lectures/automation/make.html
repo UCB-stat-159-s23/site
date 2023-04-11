@@ -741,6 +741,23 @@ make<span class="w"> </span>delete_environment
 </pre></div>
 </div>
 <p>You can find more information about this workflow in this <a class="reference external" href="https://www.youtube.com/watch?v=cCzkL9DhWEE">talk</a>.</p>
+<p>Another solution to this is to include the following command to your <code class="docutils literal notranslate"><span class="pre">Makefile</span></code></p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">.ONESHELL</span><span class="o">:</span>
+<span class="nv">SHELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<p>By default, every line in a recipe of a make command is executed in a different process. The <code class="docutils literal notranslate"><span class="pre">.ONESHELL:</span></code> command allow us to run all the commands inside an operation in the same shell. The line <code class="docutils literal notranslate"><span class="pre">SHELL</span> <span class="pre">=</span> <span class="pre">/bin/bash</span></code> makes explicit the use of shell, which allow us to do</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">.ONESHELL</span><span class="o">:</span>
+<span class="nv">SHELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/bin/bash
+
+<span class="nf">create_environment </span><span class="o">:</span>
+<span class="w">	</span><span class="nb">source</span><span class="w"> </span>/srv/conda/etc/profile.d/conda.sh
+<span class="w">	</span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml<span class="w"> </span>
+<span class="w">	</span>conda<span class="w"> </span>activate<span class="w"> </span>notebook
+<span class="w">	</span>conda<span class="w"> </span>install<span class="w"> </span>ipykernel
+<span class="w">	</span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>make-env<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;IPython - Make&quot;</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="self-documenting-makefile">
