@@ -7,6 +7,7 @@
 
 **Reader**: Isaac Sloan
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s23/site/HEAD)
 
 This course teaches _the why and how_ of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today's research environment.  We will interleave practical topics in software engineering and statistical computing with broader discussions on elements of the
 philosophy of science and the foundations of statistics.
