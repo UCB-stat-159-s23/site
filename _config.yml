@@ -39,6 +39,10 @@ html:
   use_issues_button     : true
   announcement          : "" # A banner announcement at the top of the site.
 
+launch_buttons:
+  binderhub_url: "https://mybinder.org"
+  notebook_interface: "jupyterlab"
+
 # Uncomment this later if bibliographic references are desired
 # See: https://jupyterbook.org/en/stable/tutorials/references.html
 
