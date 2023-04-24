@@ -477,13 +477,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-plots">Logarithmic plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plots">Bar plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aribitrary-text-and-latex-support">Aribitrary text and LaTeX support</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-display">Image display</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -545,7 +544,6 @@ common case.</p></li>
 <li><p>Sufficient for simple and moderately complex plots.</p></li>
 <li><p>Does not offer complete control over all details.</p></li>
 </ul>
-<p>Before we look at our first simple example, we must activate matplotlib support in the notebook:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -580,23 +578,25 @@ common case.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4d8d1e558d9da77ab1901b73be56d47799767dbcd23980388269d8f88090b68c.png" src="../_images/4d8d1e558d9da77ab1901b73be56d47799767dbcd23980388269d8f88090b68c.png" />
-<img alt="../_images/6422dfe51184b1b137c66f22c7778145488707a74a395f6294584fd39379778d.png" src="../_images/6422dfe51184b1b137c66f22c7778145488707a74a395f6294584fd39379778d.png" />
+<img alt="../_images/bbb50502689724dc0e49235f83261cce6cee2cf99d73b61966ad68fe07f2efe5.png" src="../_images/bbb50502689724dc0e49235f83261cce6cee2cf99d73b61966ad68fe07f2efe5.png" />
+<img alt="../_images/865f60982fa47d593455e434406f94aadc6b51a3bd9df37a3b6bb4f21321e6f5.png" src="../_images/865f60982fa47d593455e434406f94aadc6b51a3bd9df37a3b6bb4f21321e6f5.png" />
 </div>
 </div>
 <p>Here is how to create the same two plots, using explicit management of the figure and axis objects:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># we manually make a figure and axis</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="o">&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="o">&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>
+               <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
-<img alt="../_images/acf8b18dcf2c5918dca86ee7dd477a1e58f3bc043cdd9a261c9cab3c24addebd.png" src="../_images/acf8b18dcf2c5918dca86ee7dd477a1e58f3bc043cdd9a261c9cab3c24addebd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -621,8 +621,8 @@ common case.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4d8d1e558d9da77ab1901b73be56d47799767dbcd23980388269d8f88090b68c.png" src="../_images/4d8d1e558d9da77ab1901b73be56d47799767dbcd23980388269d8f88090b68c.png" />
-<img alt="../_images/6422dfe51184b1b137c66f22c7778145488707a74a395f6294584fd39379778d.png" src="../_images/6422dfe51184b1b137c66f22c7778145488707a74a395f6294584fd39379778d.png" />
+<img alt="../_images/bbb50502689724dc0e49235f83261cce6cee2cf99d73b61966ad68fe07f2efe5.png" src="../_images/bbb50502689724dc0e49235f83261cce6cee2cf99d73b61966ad68fe07f2efe5.png" />
+<img alt="../_images/865f60982fa47d593455e434406f94aadc6b51a3bd9df37a3b6bb4f21321e6f5.png" src="../_images/865f60982fa47d593455e434406f94aadc6b51a3bd9df37a3b6bb4f21321e6f5.png" />
 </div>
 </div>
 <p>It’s important to understand the existence of these objects, even if you use mostly the top-level pyplot calls most of the time. Many things can be accomplished in MPL with mostly pyplot and a little bit of tweaking of the underlying objects. We’ll revisit the object-oriented API later.</p>
@@ -666,8 +666,8 @@ ax = f.add_subplot(111)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50daae5b32304af5103be3eaad3e79678a6bc09d0b39895b085e4c35bfe514f4.png" src="../_images/50daae5b32304af5103be3eaad3e79678a6bc09d0b39895b085e4c35bfe514f4.png" />
-<img alt="../_images/07633f4ac979f8844c7b87d76859834f2530fb565304bb8172a90186c63b6653.png" src="../_images/07633f4ac979f8844c7b87d76859834f2530fb565304bb8172a90186c63b6653.png" />
+<img alt="../_images/a7e37749dddc0fd737963d3c361384293e0b015c01242bbdf25ae2bb0f5f68ad.png" src="../_images/a7e37749dddc0fd737963d3c361384293e0b015c01242bbdf25ae2bb0f5f68ad.png" />
+<img alt="../_images/757a783b859f4d80deca399eef6caffa49aa393968b56e4126d3ce30984f63ba.png" src="../_images/757a783b859f4d80deca399eef6caffa49aa393968b56e4126d3ce30984f63ba.png" />
 </div>
 </div>
 <p>And finally, an arbitrarily complex grid can be made with <code class="docutils literal notranslate"><span class="pre">subplot2grid</span></code>:</p>
@@ -691,7 +691,7 @@ ax = f.add_subplot(111)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0fc2719ef9c4857423e981573f423d47fdb0d65cdf22bb4b61875ae9672478da.png" src="../_images/0fc2719ef9c4857423e981573f423d47fdb0d65cdf22bb4b61875ae9672478da.png" />
+<img alt="../_images/15a8f4846a4761935fcf5858a757e27792dc762d7e285947bf6b4214188263cc.png" src="../_images/15a8f4846a4761935fcf5858a757e27792dc762d7e285947bf6b4214188263cc.png" />
 </div>
 </div>
 </section>
@@ -706,7 +706,7 @@ the call:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50daae5b32304af5103be3eaad3e79678a6bc09d0b39895b085e4c35bfe514f4.png" src="../_images/50daae5b32304af5103be3eaad3e79678a6bc09d0b39895b085e4c35bfe514f4.png" />
+<img alt="../_images/15a8f4846a4761935fcf5858a757e27792dc762d7e285947bf6b4214188263cc.png" src="../_images/15a8f4846a4761935fcf5858a757e27792dc762d7e285947bf6b4214188263cc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -716,10 +716,10 @@ the call:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f92321d29d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f104c2ba410&gt;]
 </pre></div>
 </div>
-<img alt="../_images/f488e3239bc457a5ce63b5b727d9daf6d8cc86fee53332660d5d16041f3979eb.png" src="../_images/f488e3239bc457a5ce63b5b727d9daf6d8cc86fee53332660d5d16041f3979eb.png" />
+<img alt="../_images/14cdbe2fa9866179bb6e83e9a5f8035c71f450d5d2ea5fb7a69d0c9fc1307c0c.png" src="../_images/14cdbe2fa9866179bb6e83e9a5f8035c71f450d5d2ea5fb7a69d0c9fc1307c0c.png" />
 </div>
 </div>
 <p>But for finer control you can get a hold of the returned line object (more on
@@ -788,7 +788,7 @@ to get the visual results you need.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None, None, None, None]
 </pre></div>
 </div>
-<img alt="../_images/c07219b89cdcab8c9c316a0a6cd22dab234c0fe244b5e8698b7be4a9f551726d.png" src="../_images/c07219b89cdcab8c9c316a0a6cd22dab234c0fe244b5e8698b7be4a9f551726d.png" />
+<img alt="../_images/3d8a914fe58e63d43935b5a9ca7569b81815d557ff762b64d490a1f6af5478ff.png" src="../_images/3d8a914fe58e63d43935b5a9ca7569b81815d557ff762b64d490a1f6af5478ff.png" />
 </div>
 </div>
 <p>Finally, if you know what properties you want to set on a specific object, a
@@ -804,7 +804,7 @@ plain <code class="docutils literal notranslate"><span class="pre">set</span></c
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None, None, None]
 </pre></div>
 </div>
-<img alt="../_images/6d297546f3cddfc14e7777a7e6004f681e94766fbdd4c8c8af9ef750bd76d5d9.png" src="../_images/6d297546f3cddfc14e7777a7e6004f681e94766fbdd4c8c8af9ef750bd76d5d9.png" />
+<img alt="../_images/47da4d06b4b40f0a6e7bb9a60b9b323948dce49fec180adbdf4a8e2032fe788c.png" src="../_images/47da4d06b4b40f0a6e7bb9a60b9b323948dce49fec180adbdf4a8e2032fe788c.png" />
 </div>
 </div>
 </section>
@@ -820,10 +820,10 @@ plain <code class="docutils literal notranslate"><span class="pre">set</span></c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9232174dc0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f104de48220&gt;]
 </pre></div>
 </div>
-<img alt="../_images/aae7ae16e6297f9c76a49fc19c0d8bf6c300d3e86fcee8bf1a86fb5792c11d7d.png" src="../_images/aae7ae16e6297f9c76a49fc19c0d8bf6c300d3e86fcee8bf1a86fb5792c11d7d.png" />
+<img alt="../_images/f0e5322b9b7819eba27f36738e31c0b4e05befd95c561d4219d14227841ca224.png" src="../_images/f0e5322b9b7819eba27f36738e31c0b4e05befd95c561d4219d14227841ca224.png" />
 </div>
 </div>
 <p>The return value of the plot call is a list of lines, which can be manipulated
@@ -837,7 +837,7 @@ use a one-element tuple):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0bd88edc914bc96ea3af945e7697737e20c5259dbbd9865006ac8735fc47b885.png" src="../_images/0bd88edc914bc96ea3af945e7697737e20c5259dbbd9865006ac8735fc47b885.png" />
+<img alt="../_images/3ff5ff6b9e729d42b5ba86b5fd981ae49af51bb7375540669932050f54c78fdd.png" src="../_images/3ff5ff6b9e729d42b5ba86b5fd981ae49af51bb7375540669932050f54c78fdd.png" />
 </div>
 </div>
 <p>One line property that is particularly useful to be aware of is <code class="docutils literal notranslate"><span class="pre">set_data</span></code>:</p>
@@ -871,7 +871,7 @@ use a one-element tuple):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb56b0dfe4bbbb2dd2b9d822dbea42ea603a34a6780752cea9b054ceaa152314.png" src="../_images/eb56b0dfe4bbbb2dd2b9d822dbea42ea603a34a6780752cea9b054ceaa152314.png" />
+<img alt="../_images/7b8925e91dabaf3a31bcefe87f6d0e20ed1022c5e22fc98c270d6205eb102843.png" src="../_images/7b8925e91dabaf3a31bcefe87f6d0e20ed1022c5e22fc98c270d6205eb102843.png" />
 </div>
 </div>
 </section>
@@ -950,7 +950,7 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;p(x)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/6541172ff3e4fda96fd957a53c3264200f42c1a410e2957412b5e9bc1603f6a1.png" src="../_images/6541172ff3e4fda96fd957a53c3264200f42c1a410e2957412b5e9bc1603f6a1.png" />
+<img alt="../_images/390248bf6ad7a17bfda907cb5c9d4a67ba573fb86c78763559471c501876368d.png" src="../_images/390248bf6ad7a17bfda907cb5c9d4a67ba573fb86c78763559471c501876368d.png" />
 </div>
 </div>
 <p>The <a class="reference external" href="https://matplotlib.org/stable/gallery/showcase/anatomy.html">anatomy of a figure</a> documentation provides a more in-depth look at these ideas:</p>
@@ -974,15 +974,12 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 <span class="c1"># First illustrate basic pyplot interface, using defaults where possible.</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simplest errorbars, 0.2 in x, 0.4 in y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simplest errorbars, 0.2 in x, 0.4 in y&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Simplest errorbars, 0.2 in x, 0.4 in y&#39;)
-</pre></div>
-</div>
-<img alt="../_images/447c2515fe9268628e0b0f3a001c5c6aa95ca817a65036d318a34731271129c2.png" src="../_images/447c2515fe9268628e0b0f3a001c5c6aa95ca817a65036d318a34731271129c2.png" />
+<img alt="../_images/a796aca50f36de1cca25e864410f664fec96147f1c2174546af4bdae57505007.png" src="../_images/a796aca50f36de1cca25e864410f664fec96147f1c2174546af4bdae57505007.png" />
 </div>
 </div>
 <p>Now a more elaborate one, using the OO interface to exercise more features.</p>
@@ -1023,12 +1020,12 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 
 <span class="c1"># Fix layout to minimize overlap between titles and marks </span>
 <span class="c1"># https://matplotlib.org/users/tight_layout_guide.html</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e1a8bac8310a6fa34c6e9920bb3039b1f5439e34a64f4bacd856d46b9961a9e.png" src="../_images/2e1a8bac8310a6fa34c6e9920bb3039b1f5439e34a64f4bacd856d46b9961a9e.png" />
+<img alt="../_images/b54a58e1bbb9827f3bb097d50f26ce4c62f757bb3460d041a6a4591cfd2e5839.png" src="../_images/b54a58e1bbb9827f3bb097d50f26ce4c62f757bb3460d041a6a4591cfd2e5839.png" />
 </div>
 </div>
 </section>
@@ -1042,19 +1039,15 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff140aeacd0&gt;]
-</pre></div>
-</div>
-<img alt="../_images/f67ca6d9dc0953c8d05726e488c56028db465cb0358e02fed5c6c38c66ad94ea.png" src="../_images/f67ca6d9dc0953c8d05726e488c56028db465cb0358e02fed5c6c38c66ad94ea.png" />
+<img alt="../_images/f7b96fdd686f35589badc0976d87d3ce73083786a17e63d721b193534990c7a2.png" src="../_images/f7b96fdd686f35589badc0976d87d3ce73083786a17e63d721b193534990c7a2.png" />
 </div>
 </div>
-<p>A more elaborate log plot using ‘symlog’, that treats a specified range as
-linear (thus handling values near zero) and symmetrizes negative values:</p>
+<p>A more elaborate log plot using <a class="reference external" href="https://matplotlib.org/stable/gallery/scales/symlog_demo.html">‘symlog’</a>, that treats a specified range as linear (thus handling values near zero) and symmetrizes negative values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -1082,15 +1075,12 @@ linear (thus handling values near zero) and symmetrizes negative values:</p>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">)</span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">)</span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;symlog both&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;symlog both&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;symlog both&#39;)
-</pre></div>
-</div>
-<img alt="../_images/535b830c858e2181f08f861e2b3e714ee43d1613395531a389f8be81278c600e.png" src="../_images/535b830c858e2181f08f861e2b3e714ee43d1613395531a389f8be81278c600e.png" />
+<img alt="../_images/916488a6fb5f6e4482485dc7ba268c269cdb58534df64d7492b9676e78868dd7.png" src="../_images/916488a6fb5f6e4482485dc7ba268c269cdb58534df64d7492b9676e78868dd7.png" />
 </div>
 </div>
 </section>
@@ -1122,15 +1112,12 @@ linear (thus handling values near zero) and symmetrizes negative values:</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ind</span><span class="o">+</span><span class="n">width</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span> <span class="p">(</span><span class="s1">&#39;G1&#39;</span><span class="p">,</span> <span class="s1">&#39;G2&#39;</span><span class="p">,</span> <span class="s1">&#39;G3&#39;</span><span class="p">,</span> <span class="s1">&#39;G4&#39;</span><span class="p">,</span> <span class="s1">&#39;G5&#39;</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="p">(</span><span class="n">rects1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rects2</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;Men&#39;</span><span class="p">,</span> <span class="s1">&#39;Women&#39;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="p">(</span><span class="n">rects1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rects2</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;Men&#39;</span><span class="p">,</span> <span class="s1">&#39;Women&#39;</span><span class="p">)</span> <span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ff1403f4c10&gt;
-</pre></div>
-</div>
-<img alt="../_images/0f44aad40306012c40b19da362c3a4fe507c321def0fc83e10b748a2d6a3b55a.png" src="../_images/0f44aad40306012c40b19da362c3a4fe507c321def0fc83e10b748a2d6a3b55a.png" />
+<img alt="../_images/c373460dffb3c2ce81215d614d0f5e4d1d93f9a59b4579d5a491bb9049cc64bb.png" src="../_images/c373460dffb3c2ce81215d614d0f5e4d1d93f9a59b4579d5a491bb9049cc64bb.png" />
 </div>
 </div>
 </section>
@@ -1148,42 +1135,14 @@ linear (thus handling values near zero) and symmetrizes negative values:</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="n">phase</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7ff14032e640&gt;
-</pre></div>
-</div>
-<img alt="../_images/47cc4962a6e8067a12a0008501378ede49d1553198c688da1be57796d5a4cc60.png" src="../_images/47cc4962a6e8067a12a0008501378ede49d1553198c688da1be57796d5a4cc60.png" />
+<img alt="../_images/e2e8bd6fa0839f3fabe4a655ec78029801d1f5b77c1c670f5ba38e7bab926242.png" src="../_images/e2e8bd6fa0839f3fabe4a655ec78029801d1f5b77c1c670f5ba38e7bab926242.png" />
 </div>
 </div>
-</section>
-<section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
-<p>Consider you have the following data in a text file (The file <code class="docutils literal notranslate"><span class="pre">data/stations.txt</span></code> contains the full dataset):</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Station  Lat    Long   Elev 
-BIRA    26.4840 87.2670 0.0120
-BUNG    27.8771 85.8909 1.1910
-GAIG    26.8380 86.6318 0.1660
-HILE    27.0482 87.3242 2.0880
-... etc.
-</pre></div>
-</div>
-<p>These are the names of seismographic stations in the Himalaya, with their coordinates and elevations in Kilometers.</p>
-<ol class="arabic simple">
-<li><p>Make a scatter plot of all of these, using both the size and the color to (redundantly) encode elevation.  Label each station by its 4-letter code, and add a colorbar on the right that shows the color-elevation map.</p></li>
-<li><p>If you have the basemap toolkit installed, repeat the same exercise but draw a grid with parallels and meridians, add rivers in cyan and country boundaries in yellow.  Also, draw the background using the NASA BlueMarble image of Earth.  You can install it with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">basemap</span></code>.</p></li>
-</ol>
-<p><strong>Tips</strong></p>
-<ul>
-<li><p>You can check whether you have Basemap installed with:</p>
-<p>from mpl_toolkits.basemap import Basemap</p>
-</li>
-<li><p>For the basemap part, choose a text label color that provides adequate reading contrast over the image background.</p></li>
-<li><p>Create your Basemap with ‘i’ resolution, otherwise it will take forever to draw.</p></li>
-</ul>
 </section>
 <section id="histograms">
 <h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
@@ -1201,12 +1160,12 @@ HILE    27.0482 87.3242 2.0880
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of IQ&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mf">.025</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mu=100,\ \sigma=15$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/78d90acb088aa229fd163504970104a164e2ea49fd10afec3f417afc13017780.png" src="../_images/78d90acb088aa229fd163504970104a164e2ea49fd10afec3f417afc13017780.png" />
+<img alt="../_images/7e8b690e38c56cd2f0e1e688cce77c687c79f400ab96752dff4b20aecfa44575.png" src="../_images/7e8b690e38c56cd2f0e1e688cce77c687c79f400ab96752dff4b20aecfa44575.png" />
 </div>
 </div>
 </section>
@@ -1264,7 +1223,7 @@ they are enclosed in <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a4a8f4e702f8a3291cab746df0c40301b09e1e57fb6ab26072c92cd0ed8145f9.png" src="../_images/a4a8f4e702f8a3291cab746df0c40301b09e1e57fb6ab26072c92cd0ed8145f9.png" />
+<img alt="../_images/6af5c6c22b1617e87b909fb5374979922d3d79e255c90608117e278727545caf.png" src="../_images/6af5c6c22b1617e87b909fb5374979922d3d79e255c90608117e278727545caf.png" />
 </div>
 </div>
 </section>
@@ -1275,31 +1234,40 @@ array of random numbers, plotted in grayscale:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff1403f48b0&gt;
-</pre></div>
-</div>
-<img alt="../_images/5c6b623fe2539aaaf50b53694340c70e69a541b11d3a645ad3f9aa43417d9a61.png" src="../_images/5c6b623fe2539aaaf50b53694340c70e69a541b11d3a645ad3f9aa43417d9a61.png" />
+<img alt="../_images/78701e8895d7faf0754e21952e00d8733562e0ccbd55fae6e6d6801e68dc4921.png" src="../_images/78701e8895d7faf0754e21952e00d8733562e0ccbd55fae6e6d6801e68dc4921.png" />
 </div>
 </div>
 <p>A real photograph is a multichannel image, <code class="docutils literal notranslate"><span class="pre">imshow</span></code> interprets it correctly:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/stained_glass_barcelona.png&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">);</span>
+<span class="n">img</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e5bed9dc4dec216f9d36fa515df42a406e11bb04b115b372009a10a7755bcb84.png" src="../_images/e5bed9dc4dec216f9d36fa515df42a406e11bb04b115b372009a10a7755bcb84.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1200, 628, 4)
+</pre></div>
 </div>
 </div>
-<section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2587bf6b81564bbeb0c108c049a5b975593cecfc8c96a3186405dec56886eb70.png" src="../_images/2587bf6b81564bbeb0c108c049a5b975593cecfc8c96a3186405dec56886eb70.png" />
+</div>
+</div>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <p>Write a notebook where you can load an image and then perform the following operations on it:</p>
 <ol class="arabic simple">
 <li><p>Create a figure with four plots that show both the full-color image and color channel of the image with the right colormap for that color.  Ensure that the axes are linked so zooming in one image zooms the same region in the others.</p></li>
@@ -1377,13 +1345,12 @@ array of random numbers, plotted in grayscale:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-plots">Logarithmic plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plots">Bar plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aribitrary-text-and-latex-support">Aribitrary text and LaTeX support</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-display">Image display</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
 </li>
 </ul>
