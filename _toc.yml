@@ -47,7 +47,6 @@ parts:
     - file: lectures/documentation/jupyter-book
   - file: lectures/automation/make
   - file: lectures/matplotlib_beyond_basics
-  - file: lectures/intro-jupyter/Index
 - caption: Labs
   chapters:
   - file: lab/intro/intro.ipynb
